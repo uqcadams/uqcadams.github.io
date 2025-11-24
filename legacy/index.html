@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio | Chris Adams V2</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background-shapes.css">
+
+    <!-- JS -->
+    <script src="js/selectors.js" defer></script>
+    <script src="/js/intersectionObserver.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/cardControls.js" defer></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded",function(){
+          let node = document.querySelector('.preload-transitions');
+          node.classList.remove('preload-transitions');
+        });
+      </script>
+
+</head>
+<body class="preload-transitions">
+
+    <header class="header">  <!-- Position absolute -->
+        <a class="logo" href="#home">Chris Adams</a>
+        <div class="social-media">
+            <a href="https://www.instagram.com/muhzungoo/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%"/>
+                      <stop offset="50%"/>
+                      <stop offset="100%"/>
+                    </linearGradient>
+                </defs>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#gradient1)"/></svg></a>
+        </div>
+        <div class="social-media">
+
+            <a href="https://github.com/uqcadams" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <defs>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%"/>
+                      <stop offset="50%"/>
+                      <stop offset="100%"/>
+                    </linearGradient>
+                </defs>
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="url(#gradient2)"/>
+            </svg></a>
+        </div>
+        <div class="hamburger-container">
+            <div class="hamburger" id="top"></div>
+            <div class="hamburger" id="mid"></div>
+            <div class="hamburger" id="bottom"></div>
+        </div>
+    </header>  
+
+    <section class="menu">
+        <a class="menu-home gradient-text" href="#home" onclick="closeHamburgerMenu();">Home</a>
+        <a class="menu-about gradient-text" href="#about" onclick="closeHamburgerMenu();">About Me</a>
+        <a class="menu-portfolio gradient-text" href="#portfolio-1" onclick="closeHamburgerMenu();">Portfolio</a>
+        <a class="menu-portfolio gradient-text" href="#current" onclick="closeHamburgerMenu();">Current Projects</a>
+        <a class="menu-contact gradient-text" href="#contact" onclick="closeHamburgerMenu();">Contact</a>
+    </section>
+
+    <section id="home">
+        
+        <div class="section-image-holder image-border">
+            <img src="img/img1.jpg"  class="section-image" alt="Landing Page Image">
+            <div class="image-overlay">
+            </div>
+        </div>
+
+        <div class="section-text">
+            
+            <div class="text">
+                <h2 class="text-heading">CHRIS ADAMS</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">Web Designer / Teacher / Academic /  Educator</p>
+            </div>
+        </div>
+
+        <div class="section-title">&lt; HOME &gt;</div>
+    </section>
+
+
+
+
+
+    
+
+    <section id="about">
+        <div class="section-image-holder">
+            <img src="img/about1.jpg"  class="section-image" alt="Photo of Traveller">
+            
+        </div>
+
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Who Am I?</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>Hey. My name is Chris. Over the years I've worn a number of different hats: I've been a teacher; scuba divemaster; photographer; political advisor; traveller. Now I'm a web designer and developer.</p>
+                        
+                        <p>I've lived on four continents, met a lot of people, and seen a lot of stuff. Now based in Brisbane, I've been transforming my skillset for the post-Covid world. I'm proficient in HTML, CSS, and Javascript, and I'm about to start working on further refining my backend skills.</p>
+                        <p>When the world starts to open up again, you'll find me on an unknown beach somewhere working remotely.</p>
+                        
+                    </div>
+
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>
+            </div>
+            <div class="text visible">
+                <h2 class="text-heading">ABOUT ME</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">Jack of all trades, master of none - an aimless wanderer</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">&lt; ABOUT &gt;</div>
+    </section>
+
+
+
+
+
+
+    <section id="portfolio-1">
+        <div class="section-image-holder">
+            <img src="img/employee1.jpg"  class="section-image" alt="Employee Notes">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Employee Database</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>A simple WebApp to present, sort, and filter employee information using the Fetch API.</p>
+                        <p>This project fetches data from the Random User Generator API to dynamically build an interactive employee directory. Employees can be filtered within the browser, and more information can be access via an engaging modal display.</p>
+                    </div>
+                        <div class="text-nav">
+                            <a href="https://uqcadams.github.io/FEWD-project8-API-employee-directory/" class="gradient-text" target="_blank">Click here</a> to view the site in action, or alternatively <a href="https://github.com/uqcadams/FEWD-project8-API-employee-directory" class="gradient-text" target="_blank">explore the source code</a> in the GitHub repo. 
+                        </div>
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">Employee Database</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">A simple WebApp to present, sort, and filter employee information using the Fetch API</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; PORTFOLIO - 1 &gt;</div>
+    </section>
+
+
+
+
+
+    
+
+    <section id="portfolio-2">
+        <div class="section-image-holder">
+
+            <img src="img/dashboard4.jpg"  class="section-image" alt="Picture of people working together">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">WebApp Dashboard</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>An interactive dashboard for visualising data using JavaScript and SVG animations.</p>
+                        <p>This dashboard application displays detailed user information through a number of interactive data visualisations. Built to accommodate mobile, tablet, and desktop displays, it utilises CSS Grid to adjust and update content layout according to the current viewport size.</p>
+                    </div>
+                        <div class="text-nav">
+                            <a href="https://uqcadams.github.io/FEWD-project7-webapp-dashboard" class="gradient-text" target="_blank">Click here</a> to view the site in action, or alternatively <a href="https://github.com/uqcadams/FEWD-project7-webapp-dashboard" class="gradient-text" target="_blank">explore the source code</a> in the GitHub repo. 
+                        </div>
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">WebApp Dashboard</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">An interactive dashboard for visualising data using JavaScript and SVG animations.</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; PORTFOLIO - 2 &gt;</div>
+    </section>
+
+
+
+
+
+    
+
+    <section id="portfolio-3">
+        <div class="section-image-holder">
+            <img src="img/img5.jpg"  class="section-image" alt="Photo of concpet sketch">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Game Show App</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>A JavaScript-driven word guessing game following traditional hangman rules.</p>
+                        <p>This WebApp uses JavaScript to dynamically present a randomly chosen phrase in the DOM, and uses onscreen click events to allow users to select letters that may or may not appear within the phrase. Players are allowed to make five incorrect guesses before losing the game.</p>
+                    </div>
+                        <div class="text-nav">
+                            <a href="https://uqcadams.github.io/FEWD-project6-game-show-app/" class="gradient-text" target="_blank">Click here</a> to view the site in action, or alternatively <a href="https://github.com/uqcadams/FEWD-project6-game-show-app" class="gradient-text" target="_blank">explore the source code</a> in the GitHub repo. 
+                        </div>
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">Game Show App</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">A JavaScript-driven word guessing game following traditional hangman rules.</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; PORTFOLIO - 3 &gt;</div>
+    </section>
+
+
+
+
+
+    
+
+    <section id="portfolio-4">
+        <div class="section-image-holder">
+            <img src="img/gallery5.jpg"  class="section-image" alt="Photo of a gallery">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Interactive Photo Gallery</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>An interactive and searchable photo gallery built with CSS Grid and Javascript.</p>
+                        
+                        <p>This project displays a series of selected photographs in a structured grid layout. Images can be filtered according to assigned tags, and displayed in a lightbox slider. The interface is updated and adjusted based on image selection.</p>
+                    </div>
+                        <div class="text-nav">
+                            <a href="https://uqcadams.github.io/FEWD-project5-interactive-photo-gallery/" class="gradient-text" target="_blank">Click here</a> to view the site in action, or alternatively <a href="https://github.com/uqcadams/FEWD-project5-interactive-photo-gallery" class="gradient-text" target="_blank">explore the source code</a> in the GitHub repo. 
+                        </div>
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">Interactive Photo Gallery</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">A searchable photo gallery that allows users to filter images according to pre-assigned tags.</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; PORTFOLIO - 4 &gt;</div>
+    </section>
+
+
+
+    <section id="portfolio-5">
+        <div class="section-image-holder">
+            <img src="img/style1.jpg"  class="section-image" alt="Photo of a color swatch">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Web Style Guide</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>A digital style guide that uses the power of Sass partials, variables, and mixins to rapidly prototype new designs.</p>
+                        
+                        <p>This project demonstrates an evolving skillset in working with Sass and SCSS to make CSS more maneagable within my webdesign workflow. Color palletes can be easily swapped and interchanged to create new and engaging designs.</p>
+                    </div>
+                        <div class="text-nav">
+                            <a href="https://uqcadams.github.io/FEWD-project4-web-style-guide/" class="gradient-text" target="_blank">Click here</a> to view the site in action, or alternatively <a href="https://github.com/uqcadams/FEWD-project4-web-style-guide" class="gradient-text" target="_blank">explore the source code</a> in the GitHub repo. 
+                        </div>
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">Web Style Guide</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">A Sass microframework for rapidly prototyping styles on websites.</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; PORTFOLIO - 5 &gt;</div>
+    </section>
+
+
+
+    
+
+    <section id="current">
+        <div class="section-image-holder">
+            <img src="img/current3.jpg"  class="section-image" alt="Photo of design cutouts">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Current Projects</h2>
+                <div class="text-full-description">
+                    <div class="text-main-description">
+                        <p>I'm always trying to keep a few projects on the go.</p>
+                        
+                        <div class="project-1">
+                            <p><strong>Project 1:</strong> Australian Wildlife Word Game.</p>
+                            <p>This work is an evolution of the Game Show App. It fetches data from the Australian Wildlife API, and randomly generates a phrase based on a common Australian animal. When the game is completed, an animal profile is generated to educate the user about the conservation status of the animal. Images are dynamically populated using both the iNaturalist and WikiMedia APIs.  </p>
+                            <div class="text-nav">
+                                <a href="https://uqcadams.github.io/FEWD-project6-game-show-app/" class="gradient-text" target="_blank">Click here</a> to view the site in action, or alternatively <a href="https://github.com/uqcadams/FEWD-project6-game-show-app" class="gradient-text" target="_blank">explore the source code</a> in the GitHub repo. 
+                            </div>
+                        </div>
+
+                        <div class="project-2">
+                            <p><strong>Project 2:</strong> Ongoing portfolio redevelopment.</p>
+                            <p>The initial design proposal for this portfolio rapidly evolved throughout the development of the project. Ultimately, what I feel looks aesthetically pleasing is bloated with some unnecessary design structures. Limitations have emerged through a fixed height section design. A mix of flexbox and absolute-positioned content was used to allow for text to overlap images - but in retrospect, this could be designed far more smoothly with CSS Grid. I will revisit this project. </p>
+                            <div class="text-nav">
+                                <a href="https://docs.google.com/document/d/1S9wytNidwB4HdTeXyMmguWelo_RZjv60AQSteRrGEYQ/edit?usp=sharing" class="gradient-text" target="_blank">Click here</a> to view preliminary project concept notes and design justifications. 
+                            </div>
+                        </div>
+                        <div id="more-projects">More projects can be viewed on the desktop site.</div>
+                    </div>
+       
+                </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">Current Projects</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">Other projects I am currently working on.</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; CURRENT PROJECTS &gt;</div>
+    </section>
+
+
+
+
+
+    
+
+    <section id="contact">
+        <div class="section-image-holder">
+            <img src="img/img7.jpg"  class="section-image" alt="Remove location image">
+            
+        </div>
+        <div class="section-text">
+            <div class="text-full">
+                <h2 class="text-heading">Contact</h2>
+                <div class="text-full-description">
+                    
+                    <form action="#" class="contact-form">
+                        <p>If you'd like to get in touch, leave me a note and I'll get back to you as soon as possible.</p>
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Enter your first name...">
+           
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Enter your last name...">
+           
+                        <label for="country">Country</label>
+                        <select name="country" id="country">
+                            <option value="australia" selected>Australia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+           
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5"></textarea>
+  
+                        <label for="your-email">Your Email</label>
+                        <input type="text" name="your-email" id="your-email" placeholder="Enter your email address...">
+           
+                        <input type="submit" value="Submit">
+           
+                    </form>
+                        
+                    </div>
+                <div class="text-btn">
+                    <a class="btn-link">Close</a>
+                </div>                
+            </div>
+            <div class="text">
+                <h2 class="text-heading">CONTACT</h2>
+                <div class="dividers">
+                    <div class="text-divider"></div>
+                </div>
+                <p class="text-blurb">Want to know more? Get in touch.</p>
+                <div class="text-btn">
+                    <a class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">&lt; CONTACT &gt;</div>
+    </section>
+
+
+    <footer class="footer">  <!-- Position absolute -->
+        <a class="nav-container" href="#home"><div class="nav"></div></a>
+        <a class="nav-container" href="#about"><div class="nav"></div></a>
+        <a class="nav-container" href="#portfolio-1"><div class="nav"></div></a>
+        <a class="nav-container" href="#portfolio-2"><div class="nav"></div></a>
+        <a class="nav-container" href="#portfolio-3"><div class="nav"></div></a>
+        <a class="nav-container" href="#portfolio-4"><div class="nav"></div></a>
+        <a class="nav-container" href="#portfolio-5"><div class="nav"></div></a>
+        <a class="nav-container" href="#current"><div class="nav"></div></a>
+        <a class="nav-container" href="#contact"><div class="nav"></div></a>
+    </footer>
+
+    <!-- Background image styling -->
+    <!-- <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div> -->
+    
+</body>
+</html>

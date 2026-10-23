@@ -94,6 +94,23 @@
 .map-zoom-hint{position:absolute;top:68px;right:12px;background:#0b1b2cec;border:1px solid #385367;color:#d5e3f6;border-radius:8px;padding:8px 11px;font-size:11px;pointer-events:none;z-index:2}
 @media(max-width:800px){.topbar .danger-reset{display:none}.unit-mini-button{width:32px;height:34px;flex-basis:32px;font-size:14px}.map-tools .coords-toggle{min-width:62px;font-size:10px;padding:0 5px}.map-tools button{height:40px;min-width:36px}}
 
+
+/* Headquarters cards: names, metadata and actions each have their own space. */
+.unit{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0;padding:12px}
+.unit-heading{display:flex;align-items:flex-start;gap:10px;width:100%;min-width:0;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
+.unit-details{display:block;min-width:0}
+.unit-alliance{display:block;margin-bottom:3px;font-size:10px;letter-spacing:.06em;color:#9eb6ce;overflow-wrap:anywhere}
+.unit-name{display:block;font-size:13px;line-height:1.45;font-weight:780;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;unicode-bidi:plaintext}
+.unit-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 10px}
+.unit-coords{margin:0;font-size:11px;line-height:1.5;white-space:nowrap}
+.unit-status{font-size:10px;line-height:1.5}
+.unit-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding-top:10px;border-top:1px solid #314459}
+.unit-action{min-width:0;min-height:36px;padding:7px 4px;border:1px solid #364e65;border-radius:6px;background:#14273a;color:#bbd0e5;font-size:11px;font-weight:700;line-height:1.4;overflow-wrap:anywhere;touch-action:manipulation}
+.unit-action[aria-pressed="true"]{border-color:#bb9756;background:#3b3223;color:#ffe4a4}
+.unit-action:hover{border-color:#69ddbc}
+.unit-heading:focus-visible,.unit-action:focus-visible{outline:2px solid #92f3ce;outline-offset:3px;border-radius:6px}
+@media(max-width:800px),(pointer:coarse) and (max-width:1100px){.unit-action{min-height:44px;font-size:12px}}
+
 </style></head><body><div id="root"></div><script>/*
  React v16.0.0
  react.production.min.js
@@ -551,16 +568,18 @@ class Planner extends React.Component{
  unitRow(hq){
  const s=this.state,v=geomStatus(hq,s.homes,s.outer,s.inner,s),anchor=hq.id===s.anchorId;
  return h('div',{key:hq.id,className:'unit'+(s.selectedId===hq.id?' selected':''),onClick:()=>this.setState({selectedId:hq.id,selectedCell:{x:hq.x,y:hq.y},mode:'inspect'})},
-  h('div',{className:'unit-icon'+(hq.locked?'':' proposed'),style:{background:rgba(colourFor(hq),.22),color:colourFor(hq),border:'1px solid '+rgba(colourFor(hq),.55)}},anchor?'A':hq.locked?'⌂':'⌖'),
-  h('div',{className:'unit-details'},
-   h('div',{className:'unit-name-controls'},
-    h('div',{className:'unit-name',title:'['+hq.alliance+'] '+hq.name},'['+hq.alliance+'] '+hq.name),
-    h('button',{type:'button',className:'unit-mini-button'+(anchor?' locked':''),'aria-label':anchor?'Clear '+hq.name+' as formation anchor':'Set '+hq.name+' as formation anchor','aria-pressed':anchor,title:anchor?'Clear formation anchor':'Set formation anchor',onClick:e=>{e.stopPropagation();this.setAnchor(anchor?null:hq.id);}},anchor?'A★':'A'),
-    h('button',{type:'button',className:'unit-mini-button'+(hq.locked?' locked':''),'aria-label':hq.locked?'Unlock '+hq.name+' for movement':'Lock '+hq.name+' in place','aria-pressed':!!hq.locked,title:hq.locked?'Unlock player HQ':'Lock player HQ',onClick:e=>{e.stopPropagation();this.updateHQ(hq.id,{locked:!hq.locked});}},hq.locked?'🔒':'🔓')
-   ),
-   h('div',{className:'unit-coords'},'X:',hq.x,'  Y:',hq.y)
+  h('button',{type:'button',className:'unit-heading','aria-label':'Select '+hq.name,'aria-pressed':s.selectedId===hq.id},
+   h('span',{className:'unit-icon',style:{background:rgba(colourFor(hq),.22),color:colourFor(hq),border:'1px solid '+rgba(colourFor(hq),.55)}},'⌖'),
+   h('span',{className:'unit-details'},h('span',{className:'unit-alliance'},'['+hq.alliance+']'),h('span',{className:'unit-name',dir:'auto'},hq.name))
   ),
-  h('div',{className:'unit-status'+(!hq.locked&&!v.ok?' badge-warning':'')},hq.locked?'LOCKED':anchor?'ANCHOR':v.ok?'CLEAR':'CHECK')
+  h('div',{className:'unit-meta'},
+   h('span',{className:'unit-coords'},'X: ',hq.x,'  ·  Y: ',hq.y),
+   h('span',{className:'unit-status'+(!hq.locked&&!v.ok?' badge-warning':''),title:hq.locked?'Existing headquarters — position locked':v.ok?'No collision or zone conflict detected':v.reasons.join(' · ')},hq.locked?'Fixed HQ':v.ok?'Clear':'Check placement')
+  ),
+  h('div',{className:'unit-actions'},
+   h('button',{type:'button',className:'unit-action','aria-label':anchor?'Clear '+hq.name+' as formation anchor':'Set '+hq.name+' as formation anchor','aria-pressed':anchor,title:anchor?'Clear formation anchor':'Set formation anchor',onClick:e=>{e.stopPropagation();this.setAnchor(anchor?null:hq.id);}},anchor?'★ Anchor':'☆ Anchor'),
+   h('button',{type:'button',className:'unit-action','aria-label':hq.locked?'Unlock '+hq.name+' for movement':'Lock '+hq.name+' in place','aria-pressed':!!hq.locked,title:hq.locked?'Unlock player HQ':'Lock player HQ',onClick:e=>{e.stopPropagation();this.updateHQ(hq.id,{locked:!hq.locked});}},hq.locked?'🔒 Locked':'🔓 Unlocked')
+  )
  );
 }
  sectionLeft(){const s=this.state;return h('aside',{className:'side left'+(s.mobilePanel==='controls'?' mobile-show':'')},h('div',{className:'side-header'},h('div',{className:'eyebrow'},'TACTICAL CONTROL'),h('div',{className:'h2'},'Deployment planner'),h('div',{className:'subtle'},'Click any cell to read coordinates. Drag the map or a proposed headquarters.')),

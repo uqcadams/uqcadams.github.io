@@ -1,0 +1,5 @@
+name = "acm1-luna-import"
+main = "src/index.js"
+compatibility_date = "2026-10-27"
+[vars]
+ALLOWED_ORIGIN = "https://uqcadams.github.io"

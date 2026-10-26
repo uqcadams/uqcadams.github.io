@@ -1,0 +1,3 @@
+# Luna Import proof of concept
+
+Deploy via Cloudflare Wrangler. Set the server-side secrets with `wrangler secret put OPENAI_API_KEY` and `wrangler secret put IMPORT_ACCESS_TOKEN`, then `wrangler deploy`. Use the Worker HTTPS URL and separate access token in ACM1 Planner. Never put the OpenAI API key in the browser or source. Requires live API testing and verified model access. Original OCR import remains the baseline.

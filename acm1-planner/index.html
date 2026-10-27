@@ -510,7 +510,7 @@ function parseRosterOCR(text,source){
  }
  return out;
 }
-function mergeRosterCandidates(rows){const map=new Map();for(const row of rows){const key=rosterKey(row.name);if(!key)continue;const old=map.get(key);if(!old)map.set(key,Object.assign({},row));else if(old.level!==row.level)old.warning='Different HQ levels found across screenshots — check level';}return Array.from(map.values());}
+function mergeRosterCandidates(rows){const map=new Map();for(const row of rows){const key=rosterKey(row.name);if(!key)continue;const old=map.get(key);if(!old)map.set(key,Object.assign({},row));else if(old.level!==row.level){old.warning='Different HQ levels found across screenshots — check level';old.include=false;}}return Array.from(map.values());}
 function detectMemberCards(pixels,width,height){
  const rgb=(x,y)=>{const i=(y*width+x)*4;return [pixels[i],pixels[i+1],pixels[i+2]];};
  const sample=(fraction,y)=>{const centre=Math.round(width*fraction),v=[0,0,0];for(let dx=-2;dx<=2;dx++){const p=rgb(centre+dx,y);for(let k=0;k<3;k++)v[k]+=p[k]/5;}return v;};
@@ -889,22 +889,30 @@ class Planner extends React.Component{
   try{const T=await loadRosterOCR();if(run!==this.ocrRun)return;worker=await T.createWorker('eng',1,{logger:m=>{if(run===this.ocrRun&&m.status==='recognizing text')this.setState({ocrProgress:Math.round((m.progress||0)*100)});}});if(run!==this.ocrRun){await worker.terminate();return;}this.ocrWorker=worker;
    await worker.setParameters({tessedit_pageseg_mode:'11',preserve_interword_spaces:'1'});
    for(let index=0;index<images.length;index++){
-    if(run!==this.ocrRun)break;const file=images[index];this.setState({ocrStatus:'Reading '+(index+1)+' / '+images.length+': '+file.name,ocrProgress:0});
+    if(run!==this.ocrRun)break;const file=images[index];this.setState({ocrStatus:'Pass 1 / 2 · Reading '+(index+1)+' / '+images.length+': '+file.name,ocrProgress:0});
     try{if(file.size>25*1024*1024)throw Error('File is over 25 MB. Resize it and try again.');const image=await screenshotImage(file);if(image.naturalWidth*image.naturalHeight>35000000)throw Error('Image is too large. Resize below 35 megapixels.');
      // Detect a leader card first; scrolled lists use the full column height.
-      const crop=(region,white)=>{const [x,y,w,h]=region,canvas=document.createElement('canvas');canvas.width=1200;canvas.height=Math.round(image.naturalHeight*h*1200/(image.naturalWidth*w));const ctx=canvas.getContext('2d');ctx.drawImage(image,image.naturalWidth*x,image.naturalHeight*y,image.naturalWidth*w,image.naturalHeight*h,0,0,canvas.width,canvas.height);const pixels=ctx.getImageData(0,0,canvas.width,canvas.height),d=pixels.data;for(let i=0;i<d.length;i+=4){const lum=.299*d[i]+.587*d[i+1]+.114*d[i+2],v=(white?lum>190:lum<115)?0:255;d[i]=d[i+1]=d[i+2]=v;}ctx.putImageData(pixels,0,0);return canvas;};
+      const crop=(region,white,verify=false)=>{const [x,y,w,h]=region,canvas=document.createElement('canvas');canvas.width=1200;canvas.height=Math.round(image.naturalHeight*h*1200/(image.naturalWidth*w));const ctx=canvas.getContext('2d');ctx.drawImage(image,image.naturalWidth*x,image.naturalHeight*y,image.naturalWidth*w,image.naturalHeight*h,0,0,canvas.width,canvas.height);const pixels=ctx.getImageData(0,0,canvas.width,canvas.height),d=pixels.data;for(let i=0;i<d.length;i+=4){const lum=.299*d[i]+.587*d[i+1]+.114*d[i+2],v=(white?lum>(verify?170:190):lum<(verify?145:115))?0:255;d[i]=d[i+1]=d[i+2]=v;}ctx.putImageData(pixels,0,0);return canvas;};
       await worker.setParameters({tessedit_pageseg_mode:'7'});
       const nameResult=await worker.recognize(crop([.39,.268,.34,.029],true));
       await worker.setParameters({tessedit_char_whitelist:'0123456789'});
       const levelResult=await worker.recognize(crop([.59,.305,.055,.026],false));
       await worker.setParameters({tessedit_char_whitelist:'',tessedit_pageseg_mode:'11'});
       const name=cleanRosterName(nameResult.data.text),level=Number(levelResult.data.text.replace(/[^0-9]/g,''));
-     const hasLeader=name.length>2&&validLevel(level)&&nameResult.data.confidence>=45&&levelResult.data.confidence>=35;
-     if(run===this.ocrRun&&hasLeader)this.setState(s=>({ocrRows:mergeRosterCandidates(s.ocrRows.concat({name,level,source:file.name,include:true})),ocrRaw:s.ocrRaw+'\n--- '+file.name+' / leader ---\n'+nameResult.data.text+'HQ: '+levelResult.data.text}));
+     if(run!==this.ocrRun)break;
+     this.setState({ocrStatus:file.name+' · pass 2 / 2 · verifying leader name and HQ level'});
+     await worker.setParameters({tessedit_pageseg_mode:'7'});
+     const nameCheck=await worker.recognize(crop([.39,.268,.34,.029],true,true));
+     await worker.setParameters({tessedit_char_whitelist:'0123456789'});
+     const levelCheck=await worker.recognize(crop([.59,.305,.055,.026],false,true));
+     await worker.setParameters({tessedit_char_whitelist:'',tessedit_pageseg_mode:'11'});
+     const checkedName=cleanRosterName(nameCheck.data.text),checkedLevel=Number(levelCheck.data.text.replace(/[^0-9]/g,'')),chosen=chooseCardReading({...nameResult.data,text:name},{...nameCheck.data,text:checkedName}),hasLeader=(name.length>2&&validLevel(level)&&nameResult.data.confidence>=45&&levelResult.data.confidence>=35)||(checkedName.length>2&&validLevel(checkedLevel)&&nameCheck.data.confidence>=45&&levelCheck.data.confidence>=35);
+     const leaderLevel=validLevel(level)?level:validLevel(checkedLevel)?checkedLevel:'',leaderWarning=[chosen.warning,chosen.confidence<80?'Low name confidence — check source':'',level!==checkedLevel?'HQ level reads differ: '+(level||'?')+' / '+(checkedLevel||'?'):'',!validLevel(level)||!validLevel(checkedLevel)||Math.min(levelResult.data.confidence||0,levelCheck.data.confidence||0)<85?'Check HQ level against source':''].filter(Boolean).join(' · ');
+     if(run===this.ocrRun&&hasLeader)this.setState(s=>({ocrRows:mergeRosterCandidates(s.ocrRows.concat({name:chosen.name,level:leaderLevel,source:file.name,warning:leaderWarning,include:!leaderWarning})),ocrRaw:s.ocrRaw+'\n--- '+file.name+' / leader cross-check ---\nPass 1: '+name+' | HQ '+level+'\nPass 2: '+checkedName+' | HQ '+checkedLevel}));
      if(run===this.ocrRun)await this.readMemberCards(worker,image,file.name,run);
     }catch(error){if(run===this.ocrRun)this.setState(s=>({ocrErrors:s.ocrErrors.concat(file.name+': '+error.message)}));}
    }
-   if(run===this.ocrRun)this.setState(s=>({ocrBusy:false,ocrStatus:s.ocrRows.length+' unique players detected. Check spelling and levels against your screenshots. Add any missing player below.'}));
+   if(run===this.ocrRun)this.setState(s=>({ocrBusy:false,ocrStatus:s.ocrRows.length+' unique players detected with two-pass name and HQ-level checks. Check spelling and levels against your screenshots. Add any missing player below.'}));
   }catch(error){if(run===this.ocrRun)this.setState({ocrBusy:false,ocrStatus:'Screenshot reading failed. You can retry or add players manually.',ocrErrors:[error.message]});}
   finally{if(worker)await worker.terminate().catch(()=>{});if(this.ocrWorker===worker)this.ocrWorker=null;}
  }
@@ -912,11 +920,11 @@ class Planner extends React.Component{
   const full=document.createElement('canvas');full.width=image.naturalWidth;full.height=image.naturalHeight;const context=full.getContext('2d',{willReadFrequently:true});context.drawImage(image,0,0);
   const pixels=context.getImageData(0,0,full.width,full.height),cards=detectMemberCards(pixels.data,full.width,full.height);full.width=full.height=1;
   if(!cards.length)throw Error('No complete member cards detected. Use an uncropped two-column member-list screenshot.');
-  const crop=box=>{const canvas=document.createElement('canvas'),scale=96/box.height;canvas.width=Math.round(box.width*scale);canvas.height=96;canvas.getContext('2d').drawImage(image,box.left,box.top,box.width,box.height,0,0,canvas.width,canvas.height);return canvas;};
+  const crop=(box,verify=false)=>{const canvas=document.createElement('canvas'),height=verify?120:96,scale=height/box.height;canvas.width=Math.round(box.width*scale);canvas.height=height;const context=canvas.getContext('2d');context.drawImage(image,box.left,box.top,box.width,box.height,0,0,canvas.width,canvas.height);if(verify){const pixels=context.getImageData(0,0,canvas.width,canvas.height),d=pixels.data;for(let i=0;i<d.length;i+=4){const lum=.299*d[i]+.587*d[i+1]+.114*d[i+2],v=lum<145?0:255;d[i]=d[i+1]=d[i+2]=v;}context.putImageData(pixels,0,0);}return canvas;};
   const drafts=[];
   await worker.reinitialize('eng',1);await worker.setParameters({tessedit_pageseg_mode:'7',tessedit_char_whitelist:'',preserve_interword_spaces:'1'});
   for(let i=0;i<cards.length;i++){
-   if(run!==this.ocrRun)return;this.setState({ocrStatus:source+' · reading member '+(i+1)+' / '+cards.length,ocrProgress:0});
+   if(run!==this.ocrRun)return;this.setState({ocrStatus:source+' · pass 1 / 2 · reading member '+(i+1)+' / '+cards.length,ocrProgress:0});
    const card=cards[i],nameCrop=crop(card.name),levelCrop=crop(card.level),namePreview=nameCrop.toDataURL('image/jpeg',.94),levelPreview=levelCrop.toDataURL('image/jpeg',.94);
    const nameResult=await worker.recognize(nameCrop);
    await worker.setParameters({tessedit_char_whitelist:'0123456789'});const levelResult=await worker.recognize(levelCrop);await worker.setParameters({tessedit_char_whitelist:''});
@@ -925,11 +933,11 @@ class Planner extends React.Component{
   if(run!==this.ocrRun)return;await worker.reinitialize('spa',1);await worker.setParameters({tessedit_pageseg_mode:'7',tessedit_char_whitelist:'',preserve_interword_spaces:'1'});
   const results=[];
   for(let i=0;i<drafts.length;i++){
-   if(run!==this.ocrRun)return;this.setState({ocrStatus:source+' · verifying name '+(i+1)+' / '+drafts.length,ocrProgress:0});const draft=drafts[i],canvas=crop(draft.card.name),spanish=await worker.recognize(canvas);canvas.width=1;
-   const chosen=chooseCardReading(draft.english,spanish.data),level=validLevel(draft.level)?draft.level:'',warning=[chosen.warning,chosen.confidence<80?'Low name confidence — check source':'',!level||draft.levelConfidence<85?'Check HQ level against source':''].filter(Boolean).join(' · ');
+   if(run!==this.ocrRun)return;this.setState({ocrStatus:source+' · pass 2 / 2 · verifying name and level '+(i+1)+' / '+drafts.length,ocrProgress:0});const draft=drafts[i],canvas=crop(draft.card.name,true),spanish=await worker.recognize(canvas);canvas.width=1;if(run!==this.ocrRun)return;const levelCanvas=crop(draft.card.level,true);await worker.setParameters({tessedit_char_whitelist:'0123456789'});const levelCheck=await worker.recognize(levelCanvas);await worker.setParameters({tessedit_char_whitelist:''});levelCanvas.width=1;draft.levelCheck=Number(levelCheck.data.text.replace(/\D/g,''));draft.levelCheckConfidence=levelCheck.data.confidence;
+   const chosen=chooseCardReading(draft.english,spanish.data),level=validLevel(draft.level)?draft.level:'',warning=[chosen.warning,chosen.confidence<80?'Low name confidence — check source':'',draft.level!==draft.levelCheck?'HQ level reads differ: '+(draft.level||'?')+' / '+(draft.levelCheck||'?'):'',!level||!validLevel(draft.levelCheck)||Math.min(draft.levelConfidence||0,draft.levelCheckConfidence||0)<85?'Check HQ level against source':''].filter(Boolean).join(' · ');
    results.push({name:chosen.name,level,include:!!chosen.name&&!!level&&!warning,source,warning,namePreview:draft.namePreview,levelPreview:draft.levelPreview});
   }
-  if(run===this.ocrRun)this.setState(s=>({ocrRows:mergeRosterCandidates(s.ocrRows.concat(results)),ocrRaw:s.ocrRaw+'\n--- '+source+' / individual member cards ---\n'+results.map((r,i)=>'English: '+drafts[i].english.text.trim()+' | Selected: '+r.name+' | HQ '+r.level+(r.warning?' | '+r.warning:'')).join('\n')}));
+  if(run===this.ocrRun)this.setState(s=>({ocrRows:mergeRosterCandidates(s.ocrRows.concat(results)),ocrRaw:s.ocrRaw+'\n--- '+source+' / individual member cards ---\n'+results.map((r,i)=>'English: '+drafts[i].english.text.trim()+' | Selected: '+r.name+' | HQ pass 1: '+drafts[i].level+' / pass 2: '+drafts[i].levelCheck+(r.warning?' | '+r.warning:'')).join('\n')}));
   if(run===this.ocrRun){await worker.reinitialize('eng',1);await worker.setParameters({tessedit_pageseg_mode:'11',tessedit_char_whitelist:''});}
  }
 
@@ -944,7 +952,7 @@ class Planner extends React.Component{
  }
  renderScreenshotImport(){const s=this.state;if(!s.screenshotImport)return null;const count=s.ocrRows.filter(r=>r.include).length;
  return h('div',{className:'ocr-shade'},h('section',{className:'ocr-dialog',ref:el=>{this.ocrDialog=el;},role:'dialog','aria-modal':true,'aria-label':'Import headquarters from screenshots',onKeyDown:e=>{if(e.key==='Escape'){e.stopPropagation();this.closeScreenshotImport();}if(e.key==='Tab'){const focusable=Array.from(e.currentTarget.querySelectorAll('button:not(:disabled),input:not(:disabled),textarea,summary')).filter(el=>el.getClientRects().length),first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}},
- h('div',{className:'ocr-head'},h('div',null,h('h2',null,s.ocrBusy?'Reading screenshots':s.ocrRows.length?'Review players':'Import screenshots'),h('p',{className:'hint'},s.aiImportMode==='luna'?'1 Upload → 2 Review AI readings → 3 Add to roster. Luna reads names and HQ levels; it can still make mistakes.':'1 Upload → 2 Review names and levels → 3 Add to roster. Local OCR keeps screenshots on this device.')),btn(s.ocrBusy?'Cancel reading':'Close',()=>this.closeScreenshotImport(),'smallbutton')),
+ h('div',{className:'ocr-head'},h('div',null,h('h2',null,s.ocrBusy?'Reading screenshots':s.ocrRows.length?'Review players':'Import screenshots'),h('p',{className:'hint'},s.aiImportMode==='luna'?'1 Upload → 2 Review AI readings → 3 Add to roster. Luna reads names and HQ levels; it can still make mistakes.':'1 Upload → 2 Review names and levels → 3 Add to roster. Local OCR cross-checks names and HQ levels in two passes. Disagreements need review; screenshots stay on this device.')),btn(s.ocrBusy?'Cancel reading':'Close',()=>this.closeScreenshotImport(),'smallbutton')),
  h('div',{className:'ai-import-options'},h('label',{className:'field-label'},'Screenshot reader',h('select',{className:'field',value:s.aiImportMode||'local',disabled:s.ocrBusy,onChange:e=>this.setState({aiImportMode:e.target.value,ocrErrors:[]})},h('option',{value:'local'},'Local OCR · on this device'),h('option',{value:'luna'},'Luna AI · experimental'))),s.aiImportMode==='luna'?h('div',null,h('p',{className:'hint'},'Selected screenshots are sent to OpenAI through the protected planner service. Results must be reviewed. AI reading uses the server’s API quota.'),h('label',{className:'field-label'},'AI testing passcode',h('input',{className:'field',type:'password',inputMode:'numeric',autoComplete:'off',value:s.aiImportPasscode||'',disabled:s.ocrBusy,onChange:e=>this.setState({aiImportPasscode:e.target.value})})),h('p',{className:'hint'},'Any number of screenshots: automatically split into balanced batches of up to 10 (11 becomes 6 + 5). The passcode is kept only while this import dialog is open.')):null),h('label',{className:'ocr-upload'+(s.ocrDragOver?' drag-over':''),onDragOver:e=>{e.preventDefault();if(!s.ocrBusy)this.setState({ocrDragOver:true});},onDragLeave:e=>{if(!e.currentTarget.contains(e.relatedTarget))this.setState({ocrDragOver:false});},onDrop:e=>{e.preventDefault();this.setState({ocrDragOver:false});this.uploadRosterScreenshots(e.dataTransfer.files);}},'Drop screenshots here or choose files (PNG, JPG, WebP)',h('input',{type:'file',accept:'image/png,image/jpeg,image/webp',multiple:true,disabled:s.ocrBusy,onChange:e=>{this.state.aiImportMode==='luna'?this.readScreenshotsAI(e.target.files):this.readScreenshots(e.target.files);e.target.value='';}})),
  h('p',{role:'status','aria-live':'polite',className:'hint'},s.ocrStatus+(s.ocrBusy?' · '+(s.ocrProgress||0)+'%':'')),s.ocrErrors.map((err,i)=>h('p',{key:i,className:'badge-error'},err)),
  h('div',{className:'ocr-table'},h('div',{className:'ocr-row ocr-heading'},h('span',null,'Use'),h('span',null,'Player name'),h('span',null,'HQ level')),

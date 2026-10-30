@@ -1,0 +1,2691 @@
+openapi: 3.1.0
+info:
+  title: Last Z Planner shared-service observed contract
+  version: baseline-11235f4
+  description: Source-established at 2026-10-31. Evidence snapshot, not a replacement
+    backend or guarantee of every malformed-input outcome. Optional metadata remains
+    permissive. No actual credentials/examples of real user data.
+servers:
+- url: https://acm1-shared-rooms.duskyfield128.chatgpt.site
+paths:
+  /api/health:
+    get:
+      operationId: observed1
+      summary: service probes
+      description: Read-only service identity. Route currently responds regardless
+        of method, GET is documented usage.
+      security: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: service probes
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: &id005
+                    type: boolean
+                  service: &id002
+                    type: string
+                  version: &id001
+                    type: integer
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/maintenance/weekly:
+    post:
+      operationId: observed2
+      summary: scheduled / external maintenance
+      description: Unauthenticated dispatch; rolls eligible open weekly rooms. Lazy
+        rollover also occurs on room access.
+      security: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: scheduled / external maintenance
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rolledOver: *id001
+                additionalProperties: true
+        '500':
+          description: Rejected request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+              additionalProperties: true
+  /api/rooms:
+    post:
+      operationId: observed3
+      summary: planner.createSharedRoom
+      description: Creates room/current instance and coordinator/viewer capabilities;
+        25 create attempts per IP UTC day.
+      security: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.createSharedRoom
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: *id002
+                  viewerCode: *id002
+                  state:
+                    $ref: '#/components/schemas/RoomState'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body/plan too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Quota/rate/budget exhausted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: *id002
+                features:
+                  $ref: '#/components/schemas/Features'
+                plan:
+                  $ref: '#/components/schemas/Plan'
+              additionalProperties: true
+              required:
+              - plan
+  /api/join:
+    post:
+      operationId: observed4
+      summary: planner.joinSharedRoom / syncRosterSource
+      description: Body code authenticates capability. 120 join attempts/minute per
+        IP. May lazily roll room week; does not itself change plan editing state.
+      security: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.joinSharedRoom / syncRosterSource
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Quota/rate/budget exhausted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code: *id002
+              additionalProperties: true
+              required:
+              - code
+  /api/registration/join:
+    post:
+      operationId: observed5
+      summary: registration.boot
+      description: Requires registration and appropriate member/officer/coordinator
+        code. Scoped roster and derived deployment snapshots.
+      security: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: registration.boot
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Quota/rate/budget exhausted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code: *id002
+              additionalProperties: true
+              required:
+              - code
+  /api/import-ai/budget:
+    get:
+      operationId: observed6
+      summary: planner screenshot import
+      description: Passcode checked; initializes permanent ledger if absent. No provider
+        call.
+      security:
+      - passcode: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner screenshot import
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Budget'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Missing configuration or unavailable accounting
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/import-ai:
+    post:
+      operationId: observed7
+      summary: planner.readScreenshotsAI
+      description: Legacy single image or 1–10 data images; 20M-character server body
+        limit; quota then credentials/payload/budget/provider. Client has stricter
+        split threshold.
+      security:
+      - passcode: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.readScreenshotsAI
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  budget:
+                    $ref: '#/components/schemas/Budget'
+                  model: *id002
+                  players:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name: *id002
+                        level:
+                          type:
+                          - integer
+                          - 'null'
+                        warning: *id002
+                      additionalProperties: true
+                  imageCount: *id001
+                  elapsedMs: *id001
+                  responseId:
+                    type:
+                    - string
+                    - 'null'
+                  usage:
+                    type:
+                    - object
+                    - 'null'
+                    properties:
+                      inputTokens: *id001
+                      outputTokens: *id001
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body/plan too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Quota/rate/budget exhausted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '502':
+          description: Invalid/failed provider response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Missing configuration or unavailable accounting
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '504':
+          description: Provider timeout
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image: *id002
+                images:
+                  type: array
+                  items: *id002
+              additionalProperties: true
+  /api/state:
+    get:
+      operationId: observed8
+      summary: planner.pollSharedRoom / roomRequest
+      description: Optional week selects archive. Returns full plan; registration
+        filtering by capability, viewer notes stripped.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.pollSharedRoom / roomRequest
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: week
+        in: query
+        schema: &id003
+          type: string
+          pattern: ^\d{4}-\d{2}-\d{2}$
+  /api/plan:
+    patch:
+      operationId: observed9
+      summary: planner.flushRoomChanges
+      description: Coordinator/officer; <=1200 changes; before/presence field guards
+        and foreign ordering check. Four DB optimistic attempts. May publish direct
+        deployments after plan persistence.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.flushRoomChanges
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body/plan too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                week: *id003
+                changes:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Change'
+                actor: *id002
+              additionalProperties: true
+              required:
+              - week
+              - changes
+  /api/register:
+    put:
+      operationId: observed10
+      summary: registration.saveRow / planner.saveRoomRegistration
+      description: Member/officer own alliance or coordinator. Version 0 means no
+        response. Numeric windows are hours relative to event Saturday midnight APOC;
+        max12, end>start, range -24..72. Invalid status/placement/role fall back to
+        defaults.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: registration.saveRow / planner.saveRoomRegistration
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Registration'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationWrite'
+  /api/reconcile:
+    post:
+      operationId: observed11
+      summary: planner.previewRoomRoster / applyRoomRoster
+      description: Officer own alliance/coordinator; 1–1000 unique names. Preview
+        diff; apply checks instance version. mode replace removes missing members;
+        other mode adds/updates without departure removal.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.previewRoomRoster / applyRoomRoster
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: object
+                  properties:
+                    added:
+                      type: array
+                      items: &id004
+                        type: object
+                        properties: {}
+                        additionalProperties: true
+                    missing:
+                      type: array
+                      items: *id004
+                    matched:
+                      type: array
+                      items: *id004
+                    version: *id001
+                  additionalProperties: true
+                - $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                alliance: *id002
+                members:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name: *id002
+                      level:
+                        type:
+                        - integer
+                        - 'null'
+                    additionalProperties: true
+                mode: *id002
+                apply: *id005
+                version: *id001
+                actor: *id002
+              additionalProperties: true
+              required:
+              - alliance
+              - members
+  /api/history:
+    get:
+      operationId: observed12
+      summary: planner.loadRoomHistory / member history
+      description: Optional week/memberId. Viewer denied; noncoordinator member lookup
+        scoped. Member history last20, aggregate last60; noncoordinator result restricted
+        to registration edits.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.loadRoomHistory / member history
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  edits:
+                    type: array
+                    items: *id004
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: week
+        in: query
+        schema: *id002
+      - name: memberId
+        in: query
+        schema: *id002
+  /api/restore:
+    post:
+      operationId: observed13
+      summary: planner.restoreRoomEdit
+      description: Coordinator inverse current-week plan/roster/restore edits; writes
+        a new edit and applies normal conflict checks.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.restoreRoomEdit
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id: *id002
+                actor: *id002
+              additionalProperties: true
+              required:
+              - id
+  /api/archives:
+    get:
+      operationId: observed14
+      summary: planner.loadRoomArchives
+      description: Lists week/version/created/archive metadata. Does not delete or
+        restore archive.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.loadRoomArchives
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  instances:
+                    type: array
+                    items: *id004
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/settings:
+    patch:
+      operationId: observed15
+      summary: planner.updateRoomSettings
+      description: Coordinator replaces feature booleans; missing flags become false.
+        Preserves lifecycle metadata. Enabling weekly can create new current instance
+        without ordinary reset path.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.updateRoomSettings
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: *id002
+                features:
+                  $ref: '#/components/schemas/Features'
+              additionalProperties: true
+  /api/codes:
+    get:
+      operationId: observed16
+      summary: planner.loadRoomCodes
+      description: Coordinator only; includes plaintext code for sharing. Never log
+        raw response to public docs.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.loadRoomCodes
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  codes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Capability'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      operationId: observed17
+      summary: planner.createRoomCode
+      description: Coordinator issues viewer/officer/member; scoped roles require
+        allianceAccess; member requires registration. Friendly member label becomes
+        code.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.createRoomCode
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    $ref: '#/components/schemas/Capability'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CodeIssue'
+  /api/codes/revoke:
+    post:
+      operationId: observed18
+      summary: planner.revokeRoomCode
+      description: Coordinator; cannot revoke current coordinator via room route;
+        SQL excludes coordinator targets. Nonexistent target still ok.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.revokeRoomCode
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: *id005
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id: *id002
+              additionalProperties: true
+              required:
+              - id
+  /api/registration/state:
+    get:
+      operationId: observed19
+      summary: registration.refreshRegistrationLive
+      description: Member access gates, current roster/responses/deployment maps.
+        Read can initialize derived deployment records.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: registration.refreshRegistrationLive
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/registration/members:
+    post:
+      operationId: observed20
+      summary: registration missing-member form
+      description: Scoped alliance from code or coordinator body; duplicate returns
+        existing. New entry pending; max200 pending/alliance; enrollment 30 attempts/minute/IP.
+        Separate response write follows enrollment.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: registration missing-member form
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  memberId: *id002
+                  existing: *id005
+                  state:
+                    $ref: '#/components/schemas/MemberState'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Quota/rate/budget exhausted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                week: *id003
+                name: *id002
+                level: *id001
+                alliance: *id002
+                actor: *id002
+              additionalProperties: true
+              required:
+              - week
+              - name
+              - level
+  /api/registration/review:
+    post:
+      operationId: observed21
+      summary: planner.performPendingReview
+      description: Officer/coordinator reviews pending own-alliance member. Merge
+        requires approved same-alliance target; both responses existing conflicts;
+        transfer response/history guarded.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.performPendingReview
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomState'
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                week: *id003
+                memberId: *id002
+                action:
+                  type: string
+                  enum:
+                  - approve
+                  - reject
+                  - merge
+                targetId: *id002
+                actor: *id002
+              additionalProperties: true
+              required:
+              - week
+              - memberId
+              - action
+  /api/deployment:
+    get:
+      operationId: observed22
+      summary: planner.enableDeploymentPublishing
+      description: Capability read scope; roomDeployments can derive initial/current
+        map. Publishing client verifies expected source room ID.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.enableDeploymentPublishing
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roomId: *id002
+                  week: *id003
+                  maps:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DeploymentMap'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      operationId: observed23
+      summary: planner.publishLinkedDeployment
+      description: Officer own alliance/coordinator; source roster IDs and coordinate
+        structure validated, version required. Does not modify registration bodies
+        or source plan. No server physical placement validation.
+      security:
+      - room: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner.publishLinkedDeployment
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  map:
+                    $ref: '#/components/schemas/DeploymentMap'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeploymentWrite'
+  /api/admin/rooms:
+    get:
+      operationId: observed24
+      summary: admin inventory
+      description: Separate site admin key. Pagination offset, batches100, max10000.
+        Raw codes redacted.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin inventory
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rooms:
+                    type: array
+                    items: *id004
+                  nextOffset:
+                    type:
+                    - integer
+                    - 'null'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Missing configuration or unavailable accounting
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: offset
+        in: query
+        schema: *id001
+  /api/admin/rooms/{id}:
+    get:
+      operationId: observed25
+      summary: admin room detail
+      description: Room metadata, code summaries, archives and recent admin history;
+        not raw secret reveal.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin room detail
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema: *id004
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing/invalid/revoked authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Missing configuration or unavailable accounting
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/status:
+    patch:
+      operationId: observed26
+      summary: admin close/reopen
+      description: Update lifecycle with audit; close retains data and permits read
+        access through valid codes.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin close/reopen
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema: *id004
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum:
+                  - open
+                  - closed
+              additionalProperties: true
+              required:
+              - status
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/codes:
+    get:
+      operationId: observed27
+      summary: admin reveal code
+      description: codeId query selects explicit capability reveal including revoked.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin reveal code
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    $ref: '#/components/schemas/Capability'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+      - name: codeId
+        in: query
+        required: true
+        schema: *id002
+    post:
+      operationId: observed28
+      summary: admin issue code
+      description: Can issue coordinator in addition to room-route roles. Scoped code
+        rules and unique labels apply.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin issue code
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: object
+                    properties:
+                      id: *id002
+                      label: *id002
+                      role: *id002
+                    additionalProperties: true
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CodeIssue'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+    patch:
+      operationId: observed29
+      summary: admin change code
+      description: Atomic replacement/revocation retains role/alliance/history. Optional
+        code triggers generated replacement where allowed; friendly uniqueness includes
+        revoked.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin change code
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema: *id004
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codeId: *id002
+                code: *id002
+              additionalProperties: true
+              required:
+              - codeId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/revoke:
+    post:
+      operationId: observed30
+      summary: admin revoke
+      description: Single or all revocation; data persists; repeated revocation no-op
+        as implemented.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin revoke
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: *id005
+                  revoked: *id001
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codeId: *id002
+                all: *id005
+              additionalProperties: true
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/planner:
+    get:
+      operationId: observed31
+      summary: admin open planner
+      description: Uses active coordinator code; none returns409.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin open planner
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url: *id002
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/registration:
+    get:
+      operationId: observed32
+      summary: admin open registration
+      description: Registration and alliance access enabled; list active member links.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin open registration
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  codes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: *id002
+                        label: *id002
+                        alliance: *id002
+                        url: *id002
+                      additionalProperties: true
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/duplicate:
+    post:
+      operationId: observed33
+      summary: admin duplicate
+      description: New room/current week copies plan, issues fresh capabilities, excludes
+        old responses/archives.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: admin duplicate
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: *id002
+                  name: *id002
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: *id002
+              additionalProperties: true
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+  /api/admin/rooms/{id}/deployment:
+    get:
+      operationId: observed34
+      summary: planner publisher with admin key
+      description: Site-admin alternate publishing authorization; source room ID explicit.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner publisher with admin key
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roomId: *id002
+                  week: *id003
+                  maps:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DeploymentMap'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Role, feature, alliance or lifecycle denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+    post:
+      operationId: observed35
+      summary: planner publisher with admin key
+      description: Admin publishing uses same version/roster/geometry checks, rejects
+        closed room.
+      security:
+      - admin: []
+      x-evidence:
+        source: evidence/shared-service/worker/index.js
+        symbols:
+        - route
+        - roomAdminRoute
+        baseline: 11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc
+        verification: source-inspected; test mapping in feature-registry.json
+      x-caller: planner publisher with admin key
+      responses:
+        '200':
+          description: Successful JSON result. Open metadata remains permissive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  map:
+                    $ref: '#/components/schemas/DeploymentMap'
+                additionalProperties: true
+        '500':
+          description: Unhandled server failure; does not guarantee no preceding write.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission, origin or closed-room rejection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Record or route unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Version/week/duplicate/state conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid or missing authority
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeploymentWrite'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema: *id002
+components:
+  securitySchemes:
+    room:
+      type: http
+      scheme: bearer
+      description: Normalized room capability; role/alliance enforced per operation.
+    admin:
+      type: http
+      scheme: bearer
+      description: Separate site admin key checked against ROOM_ADMIN_TOKEN_HASH.
+    passcode:
+      type: apiKey
+      in: header
+      name: X-Import-Passcode
+  schemas:
+    Error:
+      type: object
+      properties:
+        error: *id002
+        latest:
+          $ref: '#/components/schemas/RoomState'
+        weekChanged: *id005
+        registration:
+          type:
+          - object
+          - 'null'
+        deploymentVersion: *id001
+      additionalProperties: true
+      required:
+      - error
+    Features:
+      type: object
+      properties:
+        registration: *id005
+        weekly: *id005
+        allianceAccess: *id005
+      additionalProperties: true
+    Point:
+      type: object
+      properties:
+        x: &id006
+          type: number
+        y: *id006
+      additionalProperties: true
+      required:
+      - x
+      - y
+    Entity:
+      type: object
+      properties:
+        id:
+          type: string
+          maxLength: 160
+        name:
+          type: string
+          maxLength: 160
+        alliance:
+          type: string
+          maxLength: 120
+        level:
+          type:
+          - integer
+          - 'null'
+        colour: *id002
+        x: *id001
+        y: *id001
+        locked: *id005
+        hasMoved: *id005
+        rosterStatus: *id002
+        rosterSourceRoomId:
+          type: string
+        rosterSourceMemberId:
+          type: string
+      additionalProperties: true
+      required:
+      - id
+      - name
+    Region:
+      type: object
+      properties:
+        id: *id002
+        name: *id002
+        points:
+          type: array
+          items:
+            $ref: '#/components/schemas/Point'
+        parts:
+          type: array
+          items:
+            type: array
+            items:
+              type: array
+              items:
+                type: array
+                items: *id006
+        layout: *id004
+        ownerAlliance: *id002
+        colour: *id002
+        opacity: *id006
+      additionalProperties: true
+      required:
+      - id
+      - name
+      - points
+    Plan:
+      type: object
+      properties:
+        homes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        pool:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+        outer:
+          type: array
+          items:
+            type: array
+            items: *id006
+        inner:
+          type: array
+          items:
+            type: array
+            items: *id006
+        excludedCells:
+          type: array
+          items:
+            $ref: '#/components/schemas/Point'
+        anchorId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: true
+      required:
+      - homes
+      - pool
+      - regions
+      - outer
+      - inner
+    RoomState:
+      type: object
+      properties:
+        room:
+          type: object
+          properties:
+            id: *id002
+            name: *id002
+            features:
+              $ref: '#/components/schemas/Features'
+            currentWeek: *id003
+            closed: *id005
+          additionalProperties: true
+        access:
+          type: object
+          properties:
+            id: *id002
+            role:
+              type: string
+              enum:
+              - coordinator
+              - officer
+              - member
+              - viewer
+            alliance:
+              type:
+              - string
+              - 'null'
+            label: *id002
+          additionalProperties: true
+        instance:
+          type: object
+          properties:
+            week: *id003
+            version: *id001
+            archived: *id005
+            closed: *id005
+            createdAt: *id002
+            schedule:
+              $ref: '#/components/schemas/Schedule'
+          additionalProperties: true
+        plan:
+          $ref: '#/components/schemas/Plan'
+        registrations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Registration'
+      additionalProperties: true
+    Schedule:
+      type: object
+      properties:
+        week: *id003
+        opens: *id002
+        event: *id002
+        scoring: *id002
+        ends: *id002
+        timezone: *id002
+      additionalProperties: true
+    Window:
+      type: object
+      properties:
+        start:
+          type: number
+          minimum: -24
+        end:
+          type: number
+          maximum: 72
+      additionalProperties: true
+      required:
+      - start
+      - end
+    Registration:
+      type: object
+      properties:
+        memberId: *id002
+        status:
+          type: string
+          enum:
+          - available
+          - unavailable
+          - unsure
+          - unanswered
+        placement:
+          type: string
+          enum:
+          - grass
+          - mud
+          - either
+          - discuss
+        role:
+          type: string
+          enum:
+          - flexible
+          - fighter
+          - rally-lead
+          - reinforcement
+          - support
+          - scout
+        windows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Window'
+        notes:
+          type: string
+          maxLength: 1500
+        updatedBy: *id002
+        updatedAt: *id002
+        version: *id001
+      additionalProperties: true
+    RegistrationWrite:
+      type: object
+      properties:
+        week: *id003
+        memberId: *id002
+        version: *id001
+        status: *id002
+        placement: *id002
+        role: *id002
+        windows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Window'
+        notes: *id002
+        actor: *id002
+      additionalProperties: true
+      required:
+      - week
+      - memberId
+    MemberState:
+      type: object
+      properties:
+        room: *id004
+        access: *id004
+        instance: *id004
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        registrations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Registration'
+        deploymentMaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeploymentMap'
+      additionalProperties: true
+    Change:
+      type: object
+      properties:
+        op:
+          type: string
+          enum:
+          - setting
+          - order
+          - add
+          - remove
+          - patch
+        collection:
+          type: string
+          enum:
+          - homes
+          - pool
+          - regions
+        id: *id002
+        key:
+          type: string
+          enum:
+          - outer
+          - inner
+          - excludedCells
+          - anchorId
+        before: {}
+        value: {}
+        entity: *id004
+        fields: *id004
+        beforePresent:
+          type: object
+          properties: {}
+          additionalProperties: true
+        removeFields:
+          type: array
+          items: *id002
+        beforeIds:
+          type: array
+          items: *id002
+        ids:
+          type: array
+          items: *id002
+      additionalProperties: true
+      required:
+      - op
+    DeploymentWrite:
+      type: object
+      properties:
+        week: *id003
+        alliance: *id002
+        version: *id001
+        homes:
+          type: array
+          items:
+            type: object
+            properties:
+              memberId: *id002
+              x: *id001
+              y: *id001
+            additionalProperties: true
+            required:
+            - memberId
+            - x
+            - y
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+        outer:
+          type: array
+          items:
+            type: array
+            items: *id006
+        inner:
+          type: array
+          items:
+            type: array
+            items: *id006
+        excludedCells:
+          type: array
+          items:
+            $ref: '#/components/schemas/Point'
+      additionalProperties: true
+      required:
+      - week
+      - alliance
+      - version
+      - homes
+    DeploymentMap:
+      type: object
+      properties:
+        alliance: *id002
+        origin: *id002
+        planVersion: *id001
+        version: *id001
+        updatedAt: *id002
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+        outer:
+          type: array
+          items:
+            type: array
+            items: *id006
+        inner:
+          type: array
+          items:
+            type: array
+            items: *id006
+        excludedCells:
+          type: array
+          items:
+            $ref: '#/components/schemas/Point'
+        assignments:
+          type: array
+          items:
+            type: object
+            properties:
+              memberId: *id002
+              name: *id002
+              level:
+                type:
+                - integer
+                - 'null'
+              alliance: *id002
+              colour: *id002
+              x:
+                type:
+                - integer
+                - 'null'
+              y:
+                type:
+                - integer
+                - 'null'
+              lastX:
+                type:
+                - integer
+                - 'null'
+              lastY:
+                type:
+                - integer
+                - 'null'
+              status:
+                type: string
+                enum:
+                - not-deployed
+                - deployed
+                - updated
+            additionalProperties: true
+      additionalProperties: true
+    Budget:
+      type: object
+      properties:
+        limitUsd: *id006
+        accountedUsd: *id006
+        remainingUsd: *id006
+        includesHistoricalAllowanceUsd: *id006
+        canImport: *id005
+      additionalProperties: true
+    CodeIssue:
+      type: object
+      properties:
+        role: *id002
+        alliance: *id002
+        label: *id002
+      additionalProperties: true
+      required:
+      - role
+    Capability:
+      type: object
+      properties:
+        id: *id002
+        role: *id002
+        alliance:
+          type:
+          - string
+          - 'null'
+        label: *id002
+        code: *id002
+        revoked: *id001
+        created_at: *id002
+      additionalProperties: true

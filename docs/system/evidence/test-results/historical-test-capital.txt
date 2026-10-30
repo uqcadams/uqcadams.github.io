@@ -1,0 +1,1 @@
+Capital inclusive tiles, outside-centre footprint overlap, exact perimeter edges, manual exclusions, disabled legacy toggle and saved data passed. Tiles: 919 outer edges: 210

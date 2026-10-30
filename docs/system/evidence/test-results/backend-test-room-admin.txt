@@ -1,0 +1,2 @@
+Admin room actions: direct registration links, atomic code replacement/revocation, reused-code rejection, closed-room duplication with fresh scoped codes, preserved source roster/responses and independent duplicate responses passed.
+Room admin: isolated global authentication, all-room summaries, secret redaction, close/read-only/reopen, preserved data, code revocation/replacement, access-revoked status and retained audit/archive records passed.

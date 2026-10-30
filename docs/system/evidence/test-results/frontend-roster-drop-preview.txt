@@ -1,0 +1,1 @@
+Roster drag preview: actual drag cell coordinates, player/HQ label, valid and blocked footprint states, drag-end/leave cleanup and position-lock guards passed.

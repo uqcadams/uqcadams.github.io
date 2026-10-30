@@ -1,0 +1,1 @@
+Linked deployment publisher: explicit editor authentication, matching source room, stable source IDs, revision-aware position updates/recall, unchanged suppression and pause passed.

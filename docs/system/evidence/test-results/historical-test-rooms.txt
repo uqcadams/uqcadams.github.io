@@ -1,0 +1,5 @@
+UI model: independent statuses; pool deployment undo/redo; block undo; collision enforcement; move confirmation reset; deletion/anchor restoration; storage compatibility; filters; all tool panels passed.
+Restored controls: All XY auto-zoom/toggle; locked drag protection; real touch drag/move/undo; Plan actions; reset cancellation, confirmation and undo passed.
+Strategic polygons: unsnapped world geometry, invalid crossings, pan/zoom stability, edit/redraw/delete history, reload IDs, independent placement rules, direct add colours and both roster delete menus passed.
+JSON region round-trip, old-backup compatibility, import undo, unsnapped touch points and pan-without-new-corners passed.
+Optional rooms: standalone storage isolation, field-level merge/conflict detection, viewer/member/officer/coordinator client guards, immutable archives, room/registration UI and scoring-window coverage passed.

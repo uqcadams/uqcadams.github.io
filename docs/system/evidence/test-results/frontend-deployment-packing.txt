@@ -1,0 +1,3 @@
+compact-hex: 94 fit vs 57 standard; apply and recall passed.
+compact-rows: 88 fit vs 57 standard; apply and recall passed.
+Packing: footprint non-overlap, terrain and boundary constraints, capacity improvement, shared recall guards and mud/grass sorting passed.

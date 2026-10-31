@@ -1,0 +1,1 @@
+Roster sync: read-only source, scoped imports, stable identity, no source placements, preserved layout/local positions, persistence, refresh/removal, stale week guard, registration-aware terrain and disconnect passed.

@@ -1,0 +1,1 @@
+Standalone scoped roster, code access, pending self-enrollment, duplicate prevention, roles, officer approval, registration-preserving merge and history passed.

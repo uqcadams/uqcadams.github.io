@@ -1,0 +1,1 @@
+Import review: name variants, source evidence, invalid edited level stays unchecked, partial ready import, explicit merge, conflicting levels, keep separate, duplicates, no-ready feedback, discard, waiting roster and persistence passed.

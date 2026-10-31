@@ -1,0 +1,45 @@
+TAP version 13
+# Subtest: local auto-save suppressed during shared session; source link is part of local saved state
+ok 1 - local auto-save suppressed during shared session; source link is part of local saved state
+  ---
+  duration_ms: 17.097208
+  ...
+# Subtest: plan history boundary excludes connection/display/response state
+ok 2 - plan history boundary excludes connection/display/response state
+  ---
+  duration_ms: 4.443458
+  ...
+# Subtest: JSON restore drops mapping and rebuilds pool IDs; null level currently becomes zero
+ok 3 - JSON restore drops mapping and rebuilds pool IDs; null level currently becomes zero
+  ---
+  duration_ms: 4.392459
+  ...
+# Subtest: AI batch partitions preserve order and max ten without a ten-upload cap
+ok 4 - AI batch partitions preserve order and max ten without a ten-upload cap
+  ---
+  duration_ms: 10.114
+  ...
+# Subtest: legacy and main planner share the same persistence key
+ok 5 - legacy and main planner share the same persistence key
+  ---
+  duration_ms: 1.662792
+  ...
+# Subtest: reset removes roster link but preserves independent terrain preference
+ok 6 - reset removes roster link but preserves independent terrain preference
+  ---
+  duration_ms: 3.908833
+  ...
+# Subtest: backend schedule uses Sunday02 UTC, Saturday02 event and Saturday14–18 UTC scoring
+ok 7 - backend schedule uses Sunday02 UTC, Saturday02 event and Saturday14–18 UTC scoring
+  ---
+  duration_ms: 20.5145
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 73.193667

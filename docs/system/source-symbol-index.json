@@ -1,0 +1,7282 @@
+[
+  {
+    "surface": "planner",
+    "symbol": "y",
+    "path": "acm1-planner/index.html",
+    "line": 189,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "n",
+    "path": "acm1-planner/index.html",
+    "line": 189,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "z",
+    "path": "acm1-planner/index.html",
+    "line": 189,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "r",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "C",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "D",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "E",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "v",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "R",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "K",
+    "path": "acm1-planner/index.html",
+    "line": 190,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 191,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "u",
+    "path": "acm1-planner/index.html",
+    "line": 191,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "F",
+    "path": "acm1-planner/index.html",
+    "line": 192,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "T",
+    "path": "acm1-planner/index.html",
+    "line": 192,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "U",
+    "path": "acm1-planner/index.html",
+    "line": 192,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "G",
+    "path": "acm1-planner/index.html",
+    "line": 193,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 193,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "x",
+    "path": "acm1-planner/index.html",
+    "line": 196,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "G",
+    "path": "acm1-planner/index.html",
+    "line": 200,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 200,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "G",
+    "path": "acm1-planner/index.html",
+    "line": 200,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Nb",
+    "path": "acm1-planner/index.html",
+    "line": 212,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Me",
+    "path": "acm1-planner/index.html",
+    "line": 212,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "$a",
+    "path": "acm1-planner/index.html",
+    "line": 212,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Pb",
+    "path": "acm1-planner/index.html",
+    "line": 212,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Tc",
+    "path": "acm1-planner/index.html",
+    "line": 212,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ab",
+    "path": "acm1-planner/index.html",
+    "line": 212,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Uc",
+    "path": "acm1-planner/index.html",
+    "line": 213,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Qb",
+    "path": "acm1-planner/index.html",
+    "line": 213,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Wc",
+    "path": "acm1-planner/index.html",
+    "line": 213,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Xc",
+    "path": "acm1-planner/index.html",
+    "line": 214,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Yc",
+    "path": "acm1-planner/index.html",
+    "line": 214,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "$c",
+    "path": "acm1-planner/index.html",
+    "line": 214,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Pe",
+    "path": "acm1-planner/index.html",
+    "line": 214,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "p",
+    "path": "acm1-planner/index.html",
+    "line": 215,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "N",
+    "path": "acm1-planner/index.html",
+    "line": 216,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "bd",
+    "path": "acm1-planner/index.html",
+    "line": 216,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "O",
+    "path": "acm1-planner/index.html",
+    "line": 217,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "b",
+    "path": "acm1-planner/index.html",
+    "line": 218,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "f",
+    "path": "acm1-planner/index.html",
+    "line": 219,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "g",
+    "path": "acm1-planner/index.html",
+    "line": 220,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "h",
+    "path": "acm1-planner/index.html",
+    "line": 220,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "e",
+    "path": "acm1-planner/index.html",
+    "line": 221,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "eb",
+    "path": "acm1-planner/index.html",
+    "line": 224,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "fb",
+    "path": "acm1-planner/index.html",
+    "line": 224,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ed",
+    "path": "acm1-planner/index.html",
+    "line": 224,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "l",
+    "path": "acm1-planner/index.html",
+    "line": 225,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Z",
+    "path": "acm1-planner/index.html",
+    "line": 226,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cd",
+    "path": "acm1-planner/index.html",
+    "line": 227,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ve",
+    "path": "acm1-planner/index.html",
+    "line": 228,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "c",
+    "path": "acm1-planner/index.html",
+    "line": 228,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "d",
+    "path": "acm1-planner/index.html",
+    "line": 228,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "b",
+    "path": "acm1-planner/index.html",
+    "line": 230,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "K",
+    "path": "acm1-planner/index.html",
+    "line": 232,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 232,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ye",
+    "path": "acm1-planner/index.html",
+    "line": 232,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "d",
+    "path": "acm1-planner/index.html",
+    "line": 232,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "e",
+    "path": "acm1-planner/index.html",
+    "line": 232,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "f",
+    "path": "acm1-planner/index.html",
+    "line": 233,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Z",
+    "path": "acm1-planner/index.html",
+    "line": 234,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "g",
+    "path": "acm1-planner/index.html",
+    "line": 234,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "m",
+    "path": "acm1-planner/index.html",
+    "line": 235,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "t",
+    "path": "acm1-planner/index.html",
+    "line": 237,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "T",
+    "path": "acm1-planner/index.html",
+    "line": 238,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "gd",
+    "path": "acm1-planner/index.html",
+    "line": 239,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "hd",
+    "path": "acm1-planner/index.html",
+    "line": 240,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Xe",
+    "path": "acm1-planner/index.html",
+    "line": 240,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "K",
+    "path": "acm1-planner/index.html",
+    "line": 241,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "q",
+    "path": "acm1-planner/index.html",
+    "line": 243,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "We",
+    "path": "acm1-planner/index.html",
+    "line": 244,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "g",
+    "path": "acm1-planner/index.html",
+    "line": 244,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "h",
+    "path": "acm1-planner/index.html",
+    "line": 244,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "k",
+    "path": "acm1-planner/index.html",
+    "line": 245,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "H",
+    "path": "acm1-planner/index.html",
+    "line": 245,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "f",
+    "path": "acm1-planner/index.html",
+    "line": 251,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "K",
+    "path": "acm1-planner/index.html",
+    "line": 252,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 253,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 253,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "hb",
+    "path": "acm1-planner/index.html",
+    "line": 253,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "b",
+    "path": "acm1-planner/index.html",
+    "line": 254,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "hb",
+    "path": "acm1-planner/index.html",
+    "line": 254,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "bc",
+    "path": "acm1-planner/index.html",
+    "line": 258,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cc",
+    "path": "acm1-planner/index.html",
+    "line": 259,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "dc",
+    "path": "acm1-planner/index.html",
+    "line": 259,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ec",
+    "path": "acm1-planner/index.html",
+    "line": 259,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "md",
+    "path": "acm1-planner/index.html",
+    "line": 259,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "fc",
+    "path": "acm1-planner/index.html",
+    "line": 260,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ad",
+    "path": "acm1-planner/index.html",
+    "line": 260,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "dd",
+    "path": "acm1-planner/index.html",
+    "line": 261,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Da",
+    "path": "acm1-planner/index.html",
+    "line": 261,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ca",
+    "path": "acm1-planner/index.html",
+    "line": 262,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "L",
+    "path": "acm1-planner/index.html",
+    "line": 262,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "K",
+    "path": "acm1-planner/index.html",
+    "line": 262,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ac",
+    "path": "acm1-planner/index.html",
+    "line": 262,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ic",
+    "path": "acm1-planner/index.html",
+    "line": 264,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ib",
+    "path": "acm1-planner/index.html",
+    "line": 265,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "df",
+    "path": "acm1-planner/index.html",
+    "line": 265,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ef",
+    "path": "acm1-planner/index.html",
+    "line": 266,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rd",
+    "path": "acm1-planner/index.html",
+    "line": 266,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ha",
+    "path": "acm1-planner/index.html",
+    "line": 266,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "sa",
+    "path": "acm1-planner/index.html",
+    "line": 266,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "jb",
+    "path": "acm1-planner/index.html",
+    "line": 266,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "sd",
+    "path": "acm1-planner/index.html",
+    "line": 267,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "kc",
+    "path": "acm1-planner/index.html",
+    "line": 267,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ff",
+    "path": "acm1-planner/index.html",
+    "line": 267,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "td",
+    "path": "acm1-planner/index.html",
+    "line": 267,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ba",
+    "path": "acm1-planner/index.html",
+    "line": 267,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "m",
+    "path": "acm1-planner/index.html",
+    "line": 268,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Sc",
+    "path": "acm1-planner/index.html",
+    "line": 268,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ud",
+    "path": "acm1-planner/index.html",
+    "line": 269,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "vd",
+    "path": "acm1-planner/index.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "lb",
+    "path": "acm1-planner/index.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ua",
+    "path": "acm1-planner/index.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "wd",
+    "path": "acm1-planner/index.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "xd",
+    "path": "acm1-planner/index.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "lc",
+    "path": "acm1-planner/index.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "m",
+    "path": "acm1-planner/index.html",
+    "line": 271,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mb",
+    "path": "acm1-planner/index.html",
+    "line": 272,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mc",
+    "path": "acm1-planner/index.html",
+    "line": 272,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Bd",
+    "path": "acm1-planner/index.html",
+    "line": 273,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Dd",
+    "path": "acm1-planner/index.html",
+    "line": 274,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ed",
+    "path": "acm1-planner/index.html",
+    "line": 274,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "hf",
+    "path": "acm1-planner/index.html",
+    "line": 274,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ob",
+    "path": "acm1-planner/index.html",
+    "line": 276,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Gd",
+    "path": "acm1-planner/index.html",
+    "line": 276,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "kf",
+    "path": "acm1-planner/index.html",
+    "line": 276,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mf",
+    "path": "acm1-planner/index.html",
+    "line": 276,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "va",
+    "path": "acm1-planner/index.html",
+    "line": 277,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ld",
+    "path": "acm1-planner/index.html",
+    "line": 277,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "nf",
+    "path": "acm1-planner/index.html",
+    "line": 278,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "R",
+    "path": "acm1-planner/index.html",
+    "line": 279,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "gc",
+    "path": "acm1-planner/index.html",
+    "line": 279,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Md",
+    "path": "acm1-planner/index.html",
+    "line": 279,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "oc",
+    "path": "acm1-planner/index.html",
+    "line": 279,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Nd",
+    "path": "acm1-planner/index.html",
+    "line": 279,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "hb",
+    "path": "acm1-planner/index.html",
+    "line": 280,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "oc",
+    "path": "acm1-planner/index.html",
+    "line": 281,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ea",
+    "path": "acm1-planner/index.html",
+    "line": 281,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "kd",
+    "path": "acm1-planner/index.html",
+    "line": 281,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ia",
+    "path": "acm1-planner/index.html",
+    "line": 282,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ja",
+    "path": "acm1-planner/index.html",
+    "line": 282,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "qb",
+    "path": "acm1-planner/index.html",
+    "line": 283,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rc",
+    "path": "acm1-planner/index.html",
+    "line": 284,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "d",
+    "path": "acm1-planner/index.html",
+    "line": 284,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "f",
+    "path": "acm1-planner/index.html",
+    "line": 284,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "g",
+    "path": "acm1-planner/index.html",
+    "line": 285,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "k",
+    "path": "acm1-planner/index.html",
+    "line": 285,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "l",
+    "path": "acm1-planner/index.html",
+    "line": 285,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "r",
+    "path": "acm1-planner/index.html",
+    "line": 286,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "q",
+    "path": "acm1-planner/index.html",
+    "line": 286,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "t",
+    "path": "acm1-planner/index.html",
+    "line": 286,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cc",
+    "path": "acm1-planner/index.html",
+    "line": 287,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "z",
+    "path": "acm1-planner/index.html",
+    "line": 287,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "x",
+    "path": "acm1-planner/index.html",
+    "line": 291,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cc",
+    "path": "acm1-planner/index.html",
+    "line": 295,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ld",
+    "path": "acm1-planner/index.html",
+    "line": 295,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Pd",
+    "path": "acm1-planner/index.html",
+    "line": 296,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "sc",
+    "path": "acm1-planner/index.html",
+    "line": 296,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Zc",
+    "path": "acm1-planner/index.html",
+    "line": 296,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Qd",
+    "path": "acm1-planner/index.html",
+    "line": 296,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "C",
+    "path": "acm1-planner/index.html",
+    "line": 296,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Sd",
+    "path": "acm1-planner/index.html",
+    "line": 297,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "pf",
+    "path": "acm1-planner/index.html",
+    "line": 297,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "qf",
+    "path": "acm1-planner/index.html",
+    "line": 298,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ud",
+    "path": "acm1-planner/index.html",
+    "line": 298,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rf",
+    "path": "acm1-planner/index.html",
+    "line": 298,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ka",
+    "path": "acm1-planner/index.html",
+    "line": 298,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "tf",
+    "path": "acm1-planner/index.html",
+    "line": 299,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Vd",
+    "path": "acm1-planner/index.html",
+    "line": 300,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Wd",
+    "path": "acm1-planner/index.html",
+    "line": 300,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Xd",
+    "path": "acm1-planner/index.html",
+    "line": 300,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "uf",
+    "path": "acm1-planner/index.html",
+    "line": 300,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Yd",
+    "path": "acm1-planner/index.html",
+    "line": 300,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Zd",
+    "path": "acm1-planner/index.html",
+    "line": 301,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "wf",
+    "path": "acm1-planner/index.html",
+    "line": 301,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "xf",
+    "path": "acm1-planner/index.html",
+    "line": 301,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "yf",
+    "path": "acm1-planner/index.html",
+    "line": 302,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "zb",
+    "path": "acm1-planner/index.html",
+    "line": 302,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ee",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "fe",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Af",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Bf",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Cf",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Df",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ge",
+    "path": "acm1-planner/index.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ne",
+    "path": "acm1-planner/index.html",
+    "line": 304,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "he",
+    "path": "acm1-planner/index.html",
+    "line": 304,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ie",
+    "path": "acm1-planner/index.html",
+    "line": 304,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ke",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "le",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "me",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ne",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "oe",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "pe",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "qe",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "re",
+    "path": "acm1-planner/index.html",
+    "line": 305,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "xc",
+    "path": "acm1-planner/index.html",
+    "line": 306,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Ff",
+    "path": "acm1-planner/index.html",
+    "line": 306,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Bb",
+    "path": "acm1-planner/index.html",
+    "line": 306,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "se",
+    "path": "acm1-planner/index.html",
+    "line": 307,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "xc",
+    "path": "acm1-planner/index.html",
+    "line": 307,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "m",
+    "path": "acm1-planner/index.html",
+    "line": 308,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mc",
+    "path": "acm1-planner/index.html",
+    "line": 317,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "m",
+    "path": "acm1-planner/index.html",
+    "line": 319,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Dd",
+    "path": "acm1-planner/index.html",
+    "line": 322,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "jb",
+    "path": "acm1-planner/index.html",
+    "line": 324,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ic",
+    "path": "acm1-planner/index.html",
+    "line": 356,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Qb",
+    "path": "acm1-planner/index.html",
+    "line": 369,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "q",
+    "path": "acm1-planner/index.html",
+    "line": 373,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Mb",
+    "path": "acm1-planner/index.html",
+    "line": 400,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "lg",
+    "path": "acm1-planner/index.html",
+    "line": 401,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "Mb",
+    "path": "acm1-planner/index.html",
+    "line": 402,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ring",
+    "path": "acm1-planner/index.html",
+    "line": 429,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "disk",
+    "path": "acm1-planner/index.html",
+    "line": 430,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "pointInPoly",
+    "path": "acm1-planner/index.html",
+    "line": 431,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "inTurret",
+    "path": "acm1-planner/index.html",
+    "line": 438,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "turretConflicts",
+    "path": "acm1-planner/index.html",
+    "line": 450,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "capitalCells",
+    "path": "acm1-planner/index.html",
+    "line": 452,
+    "capabilities": [
+      "CAP-005",
+      "CAP-007"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "hexOuterEdges",
+    "path": "acm1-planner/index.html",
+    "line": 459,
+    "capabilities": [
+      "CAP-005"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "exclusionEdges",
+    "path": "acm1-planner/index.html",
+    "line": 467,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "exclusionConflicts",
+    "path": "acm1-planner/index.html",
+    "line": 468,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "canShield",
+    "path": "acm1-planner/index.html",
+    "line": 473,
+    "capabilities": [
+      "CAP-007"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "mudEdges",
+    "path": "acm1-planner/index.html",
+    "line": 474,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cellKey",
+    "path": "acm1-planner/index.html",
+    "line": 475,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "toCSV",
+    "path": "acm1-planner/index.html",
+    "line": 476,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "download",
+    "path": "acm1-planner/index.html",
+    "line": 477,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "formatGameCoordinate",
+    "path": "acm1-planner/index.html",
+    "line": 479,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "gameCoordinateList",
+    "path": "acm1-planner/index.html",
+    "line": 485,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "geomStatus",
+    "path": "acm1-planner/index.html",
+    "line": 487,
+    "capabilities": [
+      "CAP-005",
+      "CAP-006",
+      "CAP-010"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "cleanRosterName",
+    "path": "acm1-planner/index.html",
+    "line": 501,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "parseRosterOCR",
+    "path": "acm1-planner/index.html",
+    "line": 502,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mergeRosterCandidates",
+    "path": "acm1-planner/index.html",
+    "line": 522,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "detectMemberCards",
+    "path": "acm1-planner/index.html",
+    "line": 523,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cardName",
+    "path": "acm1-planner/index.html",
+    "line": 548,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "chooseCardReading",
+    "path": "acm1-planner/index.html",
+    "line": 549,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "loadRosterOCR",
+    "path": "acm1-planner/index.html",
+    "line": 551,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "screenshotImage",
+    "path": "acm1-planner/index.html",
+    "line": 552,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterCrop",
+    "path": "acm1-planner/index.html",
+    "line": 553,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionProblem",
+    "path": "acm1-planner/index.html",
+    "line": 556,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "normaliseRegions",
+    "path": "acm1-planner/index.html",
+    "line": 557,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionArea",
+    "path": "acm1-planner/index.html",
+    "line": 559,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "layoutDomainProblem",
+    "path": "acm1-planner/index.html",
+    "line": 560,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "sectorPolygon",
+    "path": "acm1-planner/index.html",
+    "line": 561,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "allocationPolygons",
+    "path": "acm1-planner/index.html",
+    "line": 563,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cleanLayout",
+    "path": "acm1-planner/index.html",
+    "line": 564,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomDiff",
+    "path": "acm1-planner/index.html",
+    "line": 571,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomApply",
+    "path": "acm1-planner/index.html",
+    "line": 572,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomOwn",
+    "path": "acm1-planner/index.html",
+    "line": 573,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomCanChange",
+    "path": "acm1-planner/index.html",
+    "line": 574,
+    "capabilities": [
+      "CAP-074"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomHour",
+    "path": "acm1-planner/index.html",
+    "line": 575,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomCovers",
+    "path": "acm1-planner/index.html",
+    "line": 576,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomWindowLabel",
+    "path": "acm1-planner/index.html",
+    "line": 577,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "l",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "n",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "r",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "s",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "s",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "h",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "u",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "f",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "round",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "reset",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "round",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "E",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "A",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "constructor",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "link",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "checkForConsuming",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getAvailableLinkedEvents",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getLeftmostComparator",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "return",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "bbox",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "vector",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "isAnEndpoint",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "comparePoint",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "swapEvents",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "prevInResult",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "beforeState",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "afterState",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "isInResult",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getSweepEvents",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getSweepEvents",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getSweepEvents",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "constructor",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "enclosingRing",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "_calcEnclosingRing",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "addInterior",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getGeom",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "getGeom",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "_composePolys",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "process",
+    "path": "acm1-planner/index.html",
+    "line": 615,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "polyRing",
+    "path": "acm1-planner/index.html",
+    "line": 617,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionPolys",
+    "path": "acm1-planner/index.html",
+    "line": 618,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "polyAreaMulti",
+    "path": "acm1-planner/index.html",
+    "line": 619,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "polySubtract",
+    "path": "acm1-planner/index.html",
+    "line": 620,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "availableSlices",
+    "path": "acm1-planner/index.html",
+    "line": 621,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mergeRosterSource",
+    "path": "acm1-planner/index.html",
+    "line": 623,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterHasRegistration",
+    "path": "acm1-planner/index.html",
+    "line": 626,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterResponse",
+    "path": "acm1-planner/index.html",
+    "line": 627,
+    "capabilities": [
+      "CAP-023"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterResponseMatches",
+    "path": "acm1-planner/index.html",
+    "line": 628,
+    "capabilities": [
+      "CAP-023"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRosterResponseFilter",
+    "path": "acm1-planner/index.html",
+    "line": 629,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRosterResponse",
+    "path": "acm1-planner/index.html",
+    "line": 630,
+    "capabilities": [
+      "CAP-023"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "persistRosterLink",
+    "path": "acm1-planner/index.html",
+    "line": 632,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentPublishAuth",
+    "path": "acm1-planner/index.html",
+    "line": 633,
+    "capabilities": [
+      "CAP-080"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentPublishRequest",
+    "path": "acm1-planner/index.html",
+    "line": 634,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "enableDeploymentPublishing",
+    "path": "acm1-planner/index.html",
+    "line": 635,
+    "capabilities": [
+      "CAP-080"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "queueDeploymentPublish",
+    "path": "acm1-planner/index.html",
+    "line": 636,
+    "capabilities": [
+      "CAP-081"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentPublishGroups",
+    "path": "acm1-planner/index.html",
+    "line": 637,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "publishLinkedDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 638,
+    "capabilities": [
+      "CAP-081"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderDeploymentPublishing",
+    "path": "acm1-planner/index.html",
+    "line": 639,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterSourceData",
+    "path": "acm1-planner/index.html",
+    "line": 641,
+    "capabilities": [
+      "CAP-078"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "openRosterSync",
+    "path": "acm1-planner/index.html",
+    "line": 642,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "parseRosterCode",
+    "path": "acm1-planner/index.html",
+    "line": 643,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "syncRosterSource",
+    "path": "acm1-planner/index.html",
+    "line": 644,
+    "capabilities": [
+      "CAP-078",
+      "CAP-079"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "disconnectRosterSource",
+    "path": "acm1-planner/index.html",
+    "line": 645,
+    "capabilities": [
+      "CAP-079"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRosterSync",
+    "path": "acm1-planner/index.html",
+    "line": 646,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "setState",
+    "path": "acm1-planner/index.html",
+    "line": 648,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomBoot",
+    "path": "acm1-planner/index.html",
+    "line": 649,
+    "capabilities": [
+      "CAP-067"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomRequest",
+    "path": "acm1-planner/index.html",
+    "line": 650,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openSharedRooms",
+    "path": "acm1-planner/index.html",
+    "line": 651,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "createSharedRoom",
+    "path": "acm1-planner/index.html",
+    "line": 652,
+    "capabilities": [
+      "CAP-068"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "joinSharedRoom",
+    "path": "acm1-planner/index.html",
+    "line": 653,
+    "capabilities": [
+      "CAP-069"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "applyRoomState",
+    "path": "acm1-planner/index.html",
+    "line": 654,
+    "capabilities": [
+      "CAP-069"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "stashRoomDraft",
+    "path": "acm1-planner/index.html",
+    "line": 655,
+    "capabilities": [
+      "CAP-067"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "queueRoomSave",
+    "path": "acm1-planner/index.html",
+    "line": 656,
+    "capabilities": [
+      "CAP-072"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "flushRoomChanges",
+    "path": "acm1-planner/index.html",
+    "line": 657,
+    "capabilities": [
+      "CAP-071"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "mergeRoomHistory",
+    "path": "acm1-planner/index.html",
+    "line": 658,
+    "capabilities": [
+      "CAP-073"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "pollSharedRoom",
+    "path": "acm1-planner/index.html",
+    "line": 659,
+    "capabilities": [
+      "CAP-072"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "resolveRoomConflict",
+    "path": "acm1-planner/index.html",
+    "line": 660,
+    "capabilities": [
+      "CAP-073"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "restoreRoomDraft",
+    "path": "acm1-planner/index.html",
+    "line": 661,
+    "capabilities": [
+      "CAP-067"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "leaveSharedRoom",
+    "path": "acm1-planner/index.html",
+    "line": 662,
+    "capabilities": [
+      "CAP-070"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "roomShareURL",
+    "path": "acm1-planner/index.html",
+    "line": 663,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "loadRoomCodes",
+    "path": "acm1-planner/index.html",
+    "line": 664,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "createRoomCode",
+    "path": "acm1-planner/index.html",
+    "line": 665,
+    "capabilities": [
+      "CAP-074"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "revokeRoomCode",
+    "path": "acm1-planner/index.html",
+    "line": 666,
+    "capabilities": [
+      "CAP-074"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "updateRoomSettings",
+    "path": "acm1-planner/index.html",
+    "line": 667,
+    "capabilities": [
+      "CAP-075"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "loadRoomArchives",
+    "path": "acm1-planner/index.html",
+    "line": 668,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openRoomArchive",
+    "path": "acm1-planner/index.html",
+    "line": 669,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "loadRoomHistory",
+    "path": "acm1-planner/index.html",
+    "line": 670,
+    "capabilities": [
+      "CAP-077"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "restoreRoomEdit",
+    "path": "acm1-planner/index.html",
+    "line": 671,
+    "capabilities": [
+      "CAP-077"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "selectRoomRegistration",
+    "path": "acm1-planner/index.html",
+    "line": 672,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "updateRoomRegistration",
+    "path": "acm1-planner/index.html",
+    "line": 673,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "saveRoomRegistration",
+    "path": "acm1-planner/index.html",
+    "line": 674,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "useScreenshotRoster",
+    "path": "acm1-planner/index.html",
+    "line": 675,
+    "capabilities": [
+      "CAP-055"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "parseRoomRoster",
+    "path": "acm1-planner/index.html",
+    "line": 676,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "previewRoomRoster",
+    "path": "acm1-planner/index.html",
+    "line": 677,
+    "capabilities": [
+      "CAP-055"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "applyRoomRoster",
+    "path": "acm1-planner/index.html",
+    "line": 678,
+    "capabilities": [
+      "CAP-055"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomBadge",
+    "path": "acm1-planner/index.html",
+    "line": 679,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomModules",
+    "path": "acm1-planner/index.html",
+    "line": 680,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomPanel",
+    "path": "acm1-planner/index.html",
+    "line": 681,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomConflict",
+    "path": "acm1-planner/index.html",
+    "line": 682,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomSharing",
+    "path": "acm1-planner/index.html",
+    "line": 683,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomRoster",
+    "path": "acm1-planner/index.html",
+    "line": 684,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRoomRegistration",
+    "path": "acm1-planner/index.html",
+    "line": 685,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRegistrationWindow",
+    "path": "acm1-planner/index.html",
+    "line": 686,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "constructor",
+    "path": "acm1-planner/index.html",
+    "line": 688,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "load",
+    "path": "acm1-planner/index.html",
+    "line": 705,
+    "capabilities": [
+      "CAP-066"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "save",
+    "path": "acm1-planner/index.html",
+    "line": 706,
+    "capabilities": [
+      "CAP-066"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "componentDidMount",
+    "path": "acm1-planner/index.html",
+    "line": 707,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "componentDidUpdate",
+    "path": "acm1-planner/index.html",
+    "line": 708,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "componentWillUnmount",
+    "path": "acm1-planner/index.html",
+    "line": 709,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "onResize",
+    "path": "acm1-planner/index.html",
+    "line": 710,
+    "capabilities": [
+      "CAP-065"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "paintSoon",
+    "path": "acm1-planner/index.html",
+    "line": 711,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "coordToPx",
+    "path": "acm1-planner/index.html",
+    "line": 712,
+    "capabilities": [
+      "CAP-001"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "pxToCoord",
+    "path": "acm1-planner/index.html",
+    "line": 713,
+    "capabilities": [
+      "CAP-001"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "mouseLocal",
+    "path": "acm1-planner/index.html",
+    "line": 714,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mouseDown",
+    "path": "acm1-planner/index.html",
+    "line": 715,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mouseMove",
+    "path": "acm1-planner/index.html",
+    "line": 717,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionAtPixel",
+    "path": "acm1-planner/index.html",
+    "line": 718,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openRegionAtPixel",
+    "path": "acm1-planner/index.html",
+    "line": 720,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "applyCellTap",
+    "path": "acm1-planner/index.html",
+    "line": 722,
+    "capabilities": [
+      "CAP-013"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "mouseUp",
+    "path": "acm1-planner/index.html",
+    "line": 723,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "touchPoint",
+    "path": "acm1-planner/index.html",
+    "line": 724,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "touchStart",
+    "path": "acm1-planner/index.html",
+    "line": 725,
+    "capabilities": [
+      "CAP-065"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "touchMove",
+    "path": "acm1-planner/index.html",
+    "line": 738,
+    "capabilities": [
+      "CAP-002"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "touchEnd",
+    "path": "acm1-planner/index.html",
+    "line": 756,
+    "capabilities": [
+      "CAP-065"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "touchCancel",
+    "path": "acm1-planner/index.html",
+    "line": 764,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "wheel",
+    "path": "acm1-planner/index.html",
+    "line": 765,
+    "capabilities": [
+      "CAP-002"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "zoom",
+    "path": "acm1-planner/index.html",
+    "line": 766,
+    "capabilities": [
+      "CAP-002"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "fit",
+    "path": "acm1-planner/index.html",
+    "line": 767,
+    "capabilities": [
+      "CAP-002"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "anchorHQ",
+    "path": "acm1-planner/index.html",
+    "line": 768,
+    "capabilities": [
+      "CAP-019"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "setAnchor",
+    "path": "acm1-planner/index.html",
+    "line": 769,
+    "capabilities": [
+      "CAP-019"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "focusHQ",
+    "path": "acm1-planner/index.html",
+    "line": 770,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "requestConfirmation",
+    "path": "acm1-planner/index.html",
+    "line": 773,
+    "capabilities": [
+      "CAP-061"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "resolveConfirmation",
+    "path": "acm1-planner/index.html",
+    "line": 774,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderConfirmation",
+    "path": "acm1-planner/index.html",
+    "line": 775,
+    "capabilities": [
+      "CAP-061"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "resetAll",
+    "path": "acm1-planner/index.html",
+    "line": 776,
+    "capabilities": [
+      "CAP-062"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "toggleAllCoords",
+    "path": "acm1-planner/index.html",
+    "line": 787,
+    "capabilities": [
+      "CAP-003"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "keyDown",
+    "path": "acm1-planner/index.html",
+    "line": 788,
+    "capabilities": [
+      "CAP-064"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "addHQ",
+    "path": "acm1-planner/index.html",
+    "line": 789,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "toggleExcluded",
+    "path": "acm1-planner/index.html",
+    "line": 790,
+    "capabilities": [
+      "CAP-008"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "updateHQ",
+    "path": "acm1-planner/index.html",
+    "line": 791,
+    "capabilities": [
+      "CAP-015",
+      "CAP-016"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "clearExcluded",
+    "path": "acm1-planner/index.html",
+    "line": 792,
+    "capabilities": [
+      "CAP-008"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "remove",
+    "path": "acm1-planner/index.html",
+    "line": 794,
+    "capabilities": [
+      "CAP-018"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "generate",
+    "path": "acm1-planner/index.html",
+    "line": 795,
+    "capabilities": [
+      "CAP-020"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "setVertex",
+    "path": "acm1-planner/index.html",
+    "line": 802,
+    "capabilities": [
+      "CAP-009"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "resetZones",
+    "path": "acm1-planner/index.html",
+    "line": 803,
+    "capabilities": [
+      "CAP-009"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "coordinateHomes",
+    "path": "acm1-planner/index.html",
+    "line": 805,
+    "capabilities": [
+      "CAP-058"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "copyGameText",
+    "path": "acm1-planner/index.html",
+    "line": 811,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "copyGameCoordinates",
+    "path": "acm1-planner/index.html",
+    "line": 815,
+    "capabilities": [
+      "CAP-058"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "downloadGameCoordinates",
+    "path": "acm1-planner/index.html",
+    "line": 816,
+    "capabilities": [
+      "CAP-058"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "singleGameFilename",
+    "path": "acm1-planner/index.html",
+    "line": 819,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "tabGameExport",
+    "path": "acm1-planner/index.html",
+    "line": 820,
+    "capabilities": [
+      "CAP-056"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "export",
+    "path": "acm1-planner/index.html",
+    "line": 835,
+    "capabilities": [
+      "CAP-056",
+      "CAP-059"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "importJSON",
+    "path": "acm1-planner/index.html",
+    "line": 838,
+    "capabilities": [
+      "CAP-057"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "draw",
+    "path": "acm1-planner/index.html",
+    "line": 839,
+    "capabilities": [
+      "CAP-003",
+      "CAP-004"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "hexpath",
+    "path": "acm1-planner/index.html",
+    "line": 846,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openHQMenu",
+    "path": "acm1-planner/index.html",
+    "line": 882,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "closeHQMenu",
+    "path": "acm1-planner/index.html",
+    "line": 883,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mapContextMenu",
+    "path": "acm1-planner/index.html",
+    "line": 884,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openCellMenu",
+    "path": "acm1-planner/index.html",
+    "line": 885,
+    "capabilities": [
+      "CAP-012"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "quickDeploy",
+    "path": "acm1-planner/index.html",
+    "line": 886,
+    "capabilities": [
+      "CAP-012"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderCellMenu",
+    "path": "acm1-planner/index.html",
+    "line": 887,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "selectHQToMove",
+    "path": "acm1-planner/index.html",
+    "line": 895,
+    "capabilities": [
+      "CAP-013"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "menuKeyDown",
+    "path": "acm1-planner/index.html",
+    "line": 896,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderHQMenu",
+    "path": "acm1-planner/index.html",
+    "line": 897,
+    "capabilities": [
+      "CAP-015",
+      "CAP-016",
+      "CAP-017",
+      "CAP-018"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "uploadRosterScreenshots",
+    "path": "acm1-planner/index.html",
+    "line": 908,
+    "capabilities": [
+      "CAP-048"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "balancedScreenshotBatches",
+    "path": "acm1-planner/index.html",
+    "line": 909,
+    "capabilities": [
+      "CAP-049"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "readScreenshotsAI",
+    "path": "acm1-planner/index.html",
+    "line": 910,
+    "capabilities": [
+      "CAP-049"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "openWelcome",
+    "path": "acm1-planner/index.html",
+    "line": 937,
+    "capabilities": [
+      "CAP-060"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "closeWelcome",
+    "path": "acm1-planner/index.html",
+    "line": 938,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "setSkipTutorials",
+    "path": "acm1-planner/index.html",
+    "line": 939,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "chooseWelcomeTask",
+    "path": "acm1-planner/index.html",
+    "line": 940,
+    "capabilities": [
+      "CAP-060"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "launchWelcomeTask",
+    "path": "acm1-planner/index.html",
+    "line": 941,
+    "capabilities": [
+      "CAP-060"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderWelcome",
+    "path": "acm1-planner/index.html",
+    "line": 942,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openScreenshotImport",
+    "path": "acm1-planner/index.html",
+    "line": 944,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "closeScreenshotImport",
+    "path": "acm1-planner/index.html",
+    "line": 945,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "cancelRosterOCR",
+    "path": "acm1-planner/index.html",
+    "line": 946,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "readScreenshots",
+    "path": "acm1-planner/index.html",
+    "line": 947,
+    "capabilities": [
+      "CAP-052"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "readMemberCards",
+    "path": "acm1-planner/index.html",
+    "line": 980,
+    "capabilities": [
+      "CAP-052"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "ocrNameMatches",
+    "path": "acm1-planner/index.html",
+    "line": 1005,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "ocrReviewReasons",
+    "path": "acm1-planner/index.html",
+    "line": 1006,
+    "capabilities": [
+      "CAP-053"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "ocrReady",
+    "path": "acm1-planner/index.html",
+    "line": 1007,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "editOCRRow",
+    "path": "acm1-planner/index.html",
+    "line": 1008,
+    "capabilities": [
+      "CAP-053"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "confirmOCRRow",
+    "path": "acm1-planner/index.html",
+    "line": 1009,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mergeOCRRows",
+    "path": "acm1-planner/index.html",
+    "line": 1010,
+    "capabilities": [
+      "CAP-054"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "discardOCRRow",
+    "path": "acm1-planner/index.html",
+    "line": 1011,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "importRosterPool",
+    "path": "acm1-planner/index.html",
+    "line": 1012,
+    "capabilities": [
+      "CAP-054"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderOCRReview",
+    "path": "acm1-planner/index.html",
+    "line": 1013,
+    "capabilities": [
+      "CAP-053"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "deployPoolAt",
+    "path": "acm1-planner/index.html",
+    "line": 1015,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderScreenshotImport",
+    "path": "acm1-planner/index.html",
+    "line": 1018,
+    "capabilities": [
+      "CAP-048"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "selected",
+    "path": "acm1-planner/index.html",
+    "line": 1030,
+    "capabilities": [
+      "CAP-021"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "tabExclusions",
+    "path": "acm1-planner/index.html",
+    "line": 1031,
+    "capabilities": [
+      "CAP-008"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "check",
+    "path": "acm1-planner/index.html",
+    "line": 1034,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "tabGeometry",
+    "path": "acm1-planner/index.html",
+    "line": 1035,
+    "capabilities": [
+      "CAP-009"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "tabValidation",
+    "path": "acm1-planner/index.html",
+    "line": 1036,
+    "capabilities": [
+      "CAP-010"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "allianceLists",
+    "path": "acm1-planner/index.html",
+    "line": 1037,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "setAllianceList",
+    "path": "acm1-planner/index.html",
+    "line": 1038,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "syncAllianceLists",
+    "path": "acm1-planner/index.html",
+    "line": 1039,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "snapshotCurrentView",
+    "path": "acm1-planner/index.html",
+    "line": 1040,
+    "capabilities": [
+      "CAP-059"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "dragRegionStart",
+    "path": "acm1-planner/index.html",
+    "line": 1041,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "dragRegionOver",
+    "path": "acm1-planner/index.html",
+    "line": 1042,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "dropRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1043,
+    "capabilities": [
+      "CAP-037"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "endRegionDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1044,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionDropSlot",
+    "path": "acm1-planner/index.html",
+    "line": 1045,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mapRegionDragOver",
+    "path": "acm1-planner/index.html",
+    "line": 1046,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mapRegionDrop",
+    "path": "acm1-planner/index.html",
+    "line": 1047,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionPointerDown",
+    "path": "acm1-planner/index.html",
+    "line": 1048,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionPointerMove",
+    "path": "acm1-planner/index.html",
+    "line": 1049,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "regionPointerUp",
+    "path": "acm1-planner/index.html",
+    "line": 1050,
+    "capabilities": [
+      "CAP-037"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "startRegionDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1051,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRegionDragHandle",
+    "path": "acm1-planner/index.html",
+    "line": 1052,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "setLiveRotation",
+    "path": "acm1-planner/index.html",
+    "line": 1054,
+    "capabilities": [
+      "CAP-033"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "weightedLayoutShares",
+    "path": "acm1-planner/index.html",
+    "line": 1055,
+    "capabilities": [
+      "CAP-034"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "setRegionTier",
+    "path": "acm1-planner/index.html",
+    "line": 1056,
+    "capabilities": [
+      "CAP-034"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "reorderRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1057,
+    "capabilities": [
+      "CAP-037"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRegionOrder",
+    "path": "acm1-planner/index.html",
+    "line": 1058,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderLayoutSizing",
+    "path": "acm1-planner/index.html",
+    "line": 1059,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "layoutEditorState",
+    "path": "acm1-planner/index.html",
+    "line": 1060,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "appliedLayout",
+    "path": "acm1-planner/index.html",
+    "line": 1061,
+    "capabilities": [
+      "CAP-032"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "selectLayout",
+    "path": "acm1-planner/index.html",
+    "line": 1062,
+    "capabilities": [
+      "CAP-032"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "additionalLayout",
+    "path": "acm1-planner/index.html",
+    "line": 1063,
+    "capabilities": [
+      "CAP-032"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "updateRegionLive",
+    "path": "acm1-planner/index.html",
+    "line": 1064,
+    "capabilities": [
+      "CAP-035"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "toggleRegionShareLock",
+    "path": "acm1-planner/index.html",
+    "line": 1066,
+    "capabilities": [
+      "CAP-036"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "unassignedRoster",
+    "path": "acm1-planner/index.html",
+    "line": 1068,
+    "capabilities": [
+      "CAP-024"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "assignUnassignedRoster",
+    "path": "acm1-planner/index.html",
+    "line": 1069,
+    "capabilities": [
+      "CAP-024"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "registrationDeploymentEnabled",
+    "path": "acm1-planner/index.html",
+    "line": 1071,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentRegistration",
+    "path": "acm1-planner/index.html",
+    "line": 1072,
+    "capabilities": [
+      "CAP-041"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentExclusion",
+    "path": "acm1-planner/index.html",
+    "line": 1073,
+    "capabilities": [
+      "CAP-040"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentTerrain",
+    "path": "acm1-planner/index.html",
+    "line": 1074,
+    "capabilities": [
+      "CAP-041"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRegistrationDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1075,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "reviewPendingMember",
+    "path": "acm1-planner/index.html",
+    "line": 1076,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "performPendingReview",
+    "path": "acm1-planner/index.html",
+    "line": 1077,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderPendingRegistrationReview",
+    "path": "acm1-planner/index.html",
+    "line": 1078,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "registrationShareURL",
+    "path": "acm1-planner/index.html",
+    "line": 1079,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "deploymentGap",
+    "path": "acm1-planner/index.html",
+    "line": 1081,
+    "capabilities": [
+      "CAP-043"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterTerrainOrder",
+    "path": "acm1-planner/index.html",
+    "line": 1082,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "recallDeployments",
+    "path": "acm1-planner/index.html",
+    "line": 1083,
+    "capabilities": [
+      "CAP-047"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderDeploymentPacking",
+    "path": "acm1-planner/index.html",
+    "line": 1084,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "buildQuickDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1085,
+    "capabilities": [
+      "CAP-043"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "previewPlayerLabel",
+    "path": "acm1-planner/index.html",
+    "line": 1087,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "drawDeploymentPreviewLabels",
+    "path": "acm1-planner/index.html",
+    "line": 1088,
+    "capabilities": [
+      "CAP-045"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderDeploymentPreviewPlayers",
+    "path": "acm1-planner/index.html",
+    "line": 1089,
+    "capabilities": [
+      "CAP-045"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "quickDeployRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1091,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "quickDeployRoster",
+    "path": "acm1-planner/index.html",
+    "line": 1092,
+    "capabilities": [
+      "CAP-040"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "quickDeploySignature",
+    "path": "acm1-planner/index.html",
+    "line": 1093,
+    "capabilities": [
+      "CAP-046"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "quickDeployFootprint",
+    "path": "acm1-planner/index.html",
+    "line": 1094,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "quickDeployFits",
+    "path": "acm1-planner/index.html",
+    "line": 1095,
+    "capabilities": [
+      "CAP-042",
+      "CAP-044"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "buildStandardDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1096,
+    "capabilities": [
+      "CAP-042"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "cancelQuickDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1097,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "previewQuickDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1098,
+    "capabilities": [
+      "CAP-045"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "applyQuickDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1099,
+    "capabilities": [
+      "CAP-046"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderQuickDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1100,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "drawQuickDeployment",
+    "path": "acm1-planner/index.html",
+    "line": 1101,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "focusRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1103,
+    "capabilities": [
+      "CAP-039"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "allianceFocusCounts",
+    "path": "acm1-planner/index.html",
+    "line": 1104,
+    "capabilities": [
+      "CAP-039"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderAllianceFocus",
+    "path": "acm1-planner/index.html",
+    "line": 1105,
+    "capabilities": [
+      "CAP-039"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "canRosterDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1106,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterDropTarget",
+    "path": "acm1-planner/index.html",
+    "line": 1107,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRosterDropPreview",
+    "path": "acm1-planner/index.html",
+    "line": 1108,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "startRosterDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1110,
+    "capabilities": [
+      "CAP-014"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "endRosterDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1111,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "mapDragOver",
+    "path": "acm1-planner/index.html",
+    "line": 1112,
+    "capabilities": [
+      "CAP-014"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "mapDrop",
+    "path": "acm1-planner/index.html",
+    "line": 1113,
+    "capabilities": [
+      "CAP-014"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderInlineRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1115,
+    "capabilities": [
+      "CAP-035"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "layoutGroups",
+    "path": "acm1-planner/index.html",
+    "line": 1117,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "inferLayoutOffset",
+    "path": "acm1-planner/index.html",
+    "line": 1118,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "updateLayoutGroup",
+    "path": "acm1-planner/index.html",
+    "line": 1119,
+    "capabilities": [
+      "CAP-033"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "deleteLayoutGroup",
+    "path": "acm1-planner/index.html",
+    "line": 1120,
+    "capabilities": [
+      "CAP-038"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderLayoutGroups",
+    "path": "acm1-planner/index.html",
+    "line": 1122,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "anchorCapitalCentre",
+    "path": "acm1-planner/index.html",
+    "line": 1123,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "findCapitalCentre",
+    "path": "acm1-planner/index.html",
+    "line": 1124,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "layoutFootprint",
+    "path": "acm1-planner/index.html",
+    "line": 1125,
+    "capabilities": [
+      "CAP-031"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "generateAllianceLayout",
+    "path": "acm1-planner/index.html",
+    "line": 1126,
+    "capabilities": [
+      "CAP-031"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "resizeRegionShare",
+    "path": "acm1-planner/index.html",
+    "line": 1128,
+    "capabilities": [
+      "CAP-036"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderLayoutGenerator",
+    "path": "acm1-planner/index.html",
+    "line": 1130,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "openAddPlayer",
+    "path": "acm1-planner/index.html",
+    "line": 1132,
+    "capabilities": [
+      "CAP-011"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "placeAtHighlightedCell",
+    "path": "acm1-planner/index.html",
+    "line": 1133,
+    "capabilities": [
+      "CAP-011"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "updatePool",
+    "path": "acm1-planner/index.html",
+    "line": 1135,
+    "capabilities": [
+      "CAP-016"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "openPoolMenu",
+    "path": "acm1-planner/index.html",
+    "line": 1136,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderPoolMenu",
+    "path": "acm1-planner/index.html",
+    "line": 1137,
+    "capabilities": [
+      "CAP-018"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "worldPoint",
+    "path": "acm1-planner/index.html",
+    "line": 1138,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "worldPixel",
+    "path": "acm1-planner/index.html",
+    "line": 1139,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "simplifyBoundary",
+    "path": "acm1-planner/index.html",
+    "line": 1141,
+    "capabilities": [
+      "CAP-029"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "commitBoundaryDraft",
+    "path": "acm1-planner/index.html",
+    "line": 1142,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "beginNodeDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1143,
+    "capabilities": [
+      "CAP-029"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "moveBoundaryNode",
+    "path": "acm1-planner/index.html",
+    "line": 1144,
+    "capabilities": [
+      "CAP-029"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "endBoundaryNode",
+    "path": "acm1-planner/index.html",
+    "line": 1145,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "adjustRegionNodes",
+    "path": "acm1-planner/index.html",
+    "line": 1146,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "unusedLayoutColour",
+    "path": "acm1-planner/index.html",
+    "line": 1148,
+    "capabilities": [
+      "CAP-028"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "nextBoundaryColour",
+    "path": "acm1-planner/index.html",
+    "line": 1149,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "reflowReservedRegions",
+    "path": "acm1-planner/index.html",
+    "line": 1150,
+    "capabilities": [
+      "CAP-030"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "setManualGrass",
+    "path": "acm1-planner/index.html",
+    "line": 1151,
+    "capabilities": [
+      "CAP-030"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "beginRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1152,
+    "capabilities": [
+      "CAP-026"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "undoRegionPoint",
+    "path": "acm1-planner/index.html",
+    "line": 1153,
+    "capabilities": [
+      "CAP-027"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "redoRegionPoint",
+    "path": "acm1-planner/index.html",
+    "line": 1154,
+    "capabilities": [
+      "CAP-027"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "addRegionPoint",
+    "path": "acm1-planner/index.html",
+    "line": 1155,
+    "capabilities": [
+      "CAP-026"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "finishRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1156,
+    "capabilities": [
+      "CAP-028"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderBoundaryDetails",
+    "path": "acm1-planner/index.html",
+    "line": 1157,
+    "capabilities": [
+      "CAP-028"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "editRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1158,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "saveRegionAppearance",
+    "path": "acm1-planner/index.html",
+    "line": 1159,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "removeRegion",
+    "path": "acm1-planner/index.html",
+    "line": 1160,
+    "capabilities": [
+      "CAP-038"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderLayoutRotation",
+    "path": "acm1-planner/index.html",
+    "line": 1162,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRegionTools",
+    "path": "acm1-planner/index.html",
+    "line": 1163,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRegionTask",
+    "path": "acm1-planner/index.html",
+    "line": 1165,
+    "capabilities": [
+      "CAP-025"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "displayRegions",
+    "path": "acm1-planner/index.html",
+    "line": 1166,
+    "capabilities": [
+      "CAP-025"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "drawRegions",
+    "path": "acm1-planner/index.html",
+    "line": 1168,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "planSnapshot",
+    "path": "acm1-planner/index.html",
+    "line": 1172,
+    "capabilities": [
+      "CAP-063"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "recordHistory",
+    "path": "acm1-planner/index.html",
+    "line": 1173,
+    "capabilities": [
+      "CAP-063"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "travelHistory",
+    "path": "acm1-planner/index.html",
+    "line": 1181,
+    "capabilities": [
+      "CAP-063"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "cancelTask",
+    "path": "acm1-planner/index.html",
+    "line": 1182,
+    "capabilities": [
+      "CAP-027",
+      "CAP-064"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "openTools",
+    "path": "acm1-planner/index.html",
+    "line": 1183,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "choosePlayer",
+    "path": "acm1-planner/index.html",
+    "line": 1184,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "centreOn",
+    "path": "acm1-planner/index.html",
+    "line": 1185,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "startPool",
+    "path": "acm1-planner/index.html",
+    "line": 1186,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "startHQDrag",
+    "path": "acm1-planner/index.html",
+    "line": 1187,
+    "capabilities": [
+      "CAP-013"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderPlanMenu",
+    "path": "acm1-planner/index.html",
+    "line": 1188,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "fn",
+    "path": "acm1-planner/index.html",
+    "line": 1188,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "taskInfo",
+    "path": "acm1-planner/index.html",
+    "line": 1189,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "allianceMode",
+    "path": "acm1-planner/index.html",
+    "line": 1190,
+    "capabilities": [
+      "CAP-025"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderAllianceList",
+    "path": "acm1-planner/index.html",
+    "line": 1191,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterAllianceKey",
+    "path": "acm1-planner/index.html",
+    "line": 1192,
+    "capabilities": [
+      "CAP-022"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterAllianceOptions",
+    "path": "acm1-planner/index.html",
+    "line": 1193,
+    "capabilities": [
+      "CAP-022"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "rosterAllianceMatches",
+    "path": "acm1-planner/index.html",
+    "line": 1194,
+    "capabilities": [
+      "CAP-022"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderRosterAllianceFilter",
+    "path": "acm1-planner/index.html",
+    "line": 1195,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "sectionLeft",
+    "path": "acm1-planner/index.html",
+    "line": 1197,
+    "capabilities": [
+      "CAP-021"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderAddForm",
+    "path": "acm1-planner/index.html",
+    "line": 1201,
+    "capabilities": [
+      "CAP-011"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderFormation",
+    "path": "acm1-planner/index.html",
+    "line": 1202,
+    "capabilities": [
+      "CAP-020"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderTools",
+    "path": "acm1-planner/index.html",
+    "line": 1203,
+    "capabilities": [
+      "CAP-004"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "renderPlayerDetails",
+    "path": "acm1-planner/index.html",
+    "line": 1204,
+    "capabilities": [
+      "CAP-017"
+    ]
+  },
+  {
+    "surface": "planner",
+    "symbol": "sectionRight",
+    "path": "acm1-planner/index.html",
+    "line": 1207,
+    "capabilities": []
+  },
+  {
+    "surface": "planner",
+    "symbol": "render",
+    "path": "acm1-planner/index.html",
+    "line": 1208,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "baseRegistration",
+    "path": "acm1-planner/register/index.html",
+    "line": 9,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "registrationBody",
+    "path": "acm1-planner/register/index.html",
+    "line": 10,
+    "capabilities": [
+      "CAP-084",
+      "CAP-085",
+      "CAP-086",
+      "CAP-088"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "terrainLabel",
+    "path": "acm1-planner/register/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "nextTerrain",
+    "path": "acm1-planner/register/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "storedCode",
+    "path": "acm1-planner/register/index.html",
+    "line": 12,
+    "capabilities": [
+      "CAP-082"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "rememberCode",
+    "path": "acm1-planner/register/index.html",
+    "line": 12,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "api",
+    "path": "acm1-planner/register/index.html",
+    "line": 13,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "readOnly",
+    "path": "acm1-planner/register/index.html",
+    "line": 14,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "message",
+    "path": "acm1-planner/register/index.html",
+    "line": 14,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "localTime",
+    "path": "acm1-planner/register/index.html",
+    "line": 14,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "covers",
+    "path": "acm1-planner/register/index.html",
+    "line": 16,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "availability",
+    "path": "acm1-planner/register/index.html",
+    "line": 17,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "availabilityPatch",
+    "path": "acm1-planner/register/index.html",
+    "line": 18,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "statusMarkup",
+    "path": "acm1-planner/register/index.html",
+    "line": 19,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "controls",
+    "path": "acm1-planner/register/index.html",
+    "line": 20,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "memberDeployment",
+    "path": "acm1-planner/register/index.html",
+    "line": 21,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "deploymentMarkup",
+    "path": "acm1-planner/register/index.html",
+    "line": 22,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "deploymentCoordinate",
+    "path": "acm1-planner/register/index.html",
+    "line": 23,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "bindDeploymentCopies",
+    "path": "acm1-planner/register/index.html",
+    "line": 24,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "deploymentMapSVG",
+    "path": "acm1-planner/register/index.html",
+    "line": 25,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "inspectorKey",
+    "path": "acm1-planner/register/index.html",
+    "line": 27,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "mapGestureActive",
+    "path": "acm1-planner/register/index.html",
+    "line": 28,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "inspectorClamp",
+    "path": "acm1-planner/register/index.html",
+    "line": 29,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "inspectorZoom",
+    "path": "acm1-planner/register/index.html",
+    "line": 30,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "inspectorDetail",
+    "path": "acm1-planner/register/index.html",
+    "line": 31,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "inspectorShell",
+    "path": "acm1-planner/register/index.html",
+    "line": 32,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "bindMapInspectors",
+    "path": "acm1-planner/register/index.html",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "inspectorZoom",
+    "path": "acm1-planner/register/index.html",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "select",
+    "path": "acm1-planner/register/index.html",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "zoom",
+    "path": "acm1-planner/register/index.html",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "zoom",
+    "path": "acm1-planner/register/index.html",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "draw",
+    "path": "acm1-planner/register/index.html",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "deploymentMapMarkup",
+    "path": "acm1-planner/register/index.html",
+    "line": 35,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "refreshRegistrationLive",
+    "path": "acm1-planner/register/index.html",
+    "line": 36,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "render",
+    "path": "acm1-planner/register/index.html",
+    "line": 36,
+    "capabilities": [
+      "CAP-083",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "rows",
+    "path": "acm1-planner/register/index.html",
+    "line": 39,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "bindControls",
+    "path": "acm1-planner/register/index.html",
+    "line": 40,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "render",
+    "path": "acm1-planner/register/index.html",
+    "line": 40,
+    "capabilities": [
+      "CAP-083",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "saveRow",
+    "path": "acm1-planner/register/index.html",
+    "line": 42,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "render",
+    "path": "acm1-planner/register/index.html",
+    "line": 43,
+    "capabilities": [
+      "CAP-083",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "render",
+    "path": "acm1-planner/register/index.html",
+    "line": 43,
+    "capabilities": [
+      "CAP-083",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "bindMapInspectors",
+    "path": "acm1-planner/register/index.html",
+    "line": 46,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "render",
+    "path": "acm1-planner/register/index.html",
+    "line": 46,
+    "capabilities": [
+      "CAP-083",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "register",
+    "symbol": "close",
+    "path": "acm1-planner/register/index.html",
+    "line": 47,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "boot",
+    "path": "acm1-planner/register/index.html",
+    "line": 48,
+    "capabilities": []
+  },
+  {
+    "surface": "register",
+    "symbol": "render",
+    "path": "acm1-planner/register/index.html",
+    "line": 48,
+    "capabilities": [
+      "CAP-083",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "admin",
+    "symbol": "remember",
+    "path": "acm1-planner/admin/index.html",
+    "line": 4,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "api",
+    "path": "acm1-planner/admin/index.html",
+    "line": 4,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "load",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "feedback",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "ask",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "codeURL",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "copy",
+    "path": "acm1-planner/admin/index.html",
+    "line": 5,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "detail",
+    "path": "acm1-planner/admin/index.html",
+    "line": 6,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "roomCards",
+    "path": "acm1-planner/admin/index.html",
+    "line": 7,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "rosterMapURL",
+    "path": "acm1-planner/admin/index.html",
+    "line": 8,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "editorMarkup",
+    "path": "acm1-planner/admin/index.html",
+    "line": 9,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "bindEditor",
+    "path": "acm1-planner/admin/index.html",
+    "line": 10,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 10,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "bindActions",
+    "path": "acm1-planner/admin/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 11,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 12,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 12,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "bindActions",
+    "path": "acm1-planner/admin/index.html",
+    "line": 13,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "boot",
+    "path": "acm1-planner/admin/index.html",
+    "line": 14,
+    "capabilities": []
+  },
+  {
+    "surface": "admin",
+    "symbol": "render",
+    "path": "acm1-planner/admin/index.html",
+    "line": 14,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "hash",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 12,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "makeCode",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 13,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "weekKey",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 14,
+    "capabilities": [
+      "CAP-076"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "schedule",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 15,
+    "capabilities": [
+      "CAP-076"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "cleanPlan",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 16,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "config",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 17,
+    "capabilities": [
+      "CAP-075"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "ownEntity",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 18,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "applyChanges",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 19,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "limit",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 20,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "friendlyMemberCode",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 21,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "issue",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 22,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "auth",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 23,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "roomById",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 24,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "instance",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 25,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "rollover",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 26,
+    "capabilities": [
+      "CAP-076"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "currentRoom",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 27,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "state",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 28,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "commitPlan",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 29,
+    "capabilities": [
+      "CAP-071"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "rosterDiff",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 30,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "registration",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 31,
+    "capabilities": [
+      "CAP-088"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "reconcile",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 32,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "reverseChanges",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 33,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "aiQuota",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 35,
+    "capabilities": [
+      "CAP-099"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "aiBudgetStatus",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 40,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "reserveAIBudget",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 41,
+    "capabilities": [
+      "CAP-051"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "settleAIBudget",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 42,
+    "capabilities": [
+      "CAP-051"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "readAIBudget",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 43,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "aiImport",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 45,
+    "capabilities": [
+      "CAP-050",
+      "CAP-099"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "memberAccess",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 66,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "deploymentSchema",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 67,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "deploymentRow",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 68,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "deploymentGeometry",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 69,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "writeDeployment",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 70,
+    "capabilities": [
+      "CAP-081",
+      "CAP-089"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "roomDeployments",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 71,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "publishDirectRoomDeployment",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 72,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "memberState",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 74,
+    "capabilities": [
+      "CAP-083",
+      "CAP-089",
+      "CAP-091"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "enrollmentMutation",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 75,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "selfEnroll",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 76,
+    "capabilities": [
+      "CAP-087"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "reviewEnrollment",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 77,
+    "capabilities": [
+      "CAP-087"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "isRoomClosed",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 82,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "requireSiteAdmin",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 83,
+    "capabilities": [
+      "CAP-092"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "adminEvent",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 84,
+    "capabilities": []
+  },
+  {
+    "surface": "worker",
+    "symbol": "adminRooms",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 85,
+    "capabilities": [
+      "CAP-092"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "registrationURL",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 86,
+    "capabilities": [
+      "CAP-095"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "adminReplaceCode",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 87,
+    "capabilities": [
+      "CAP-096"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "adminDuplicateRoom",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 88,
+    "capabilities": [
+      "CAP-096"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "roomAdminRoute",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 90,
+    "capabilities": [
+      "CAP-093",
+      "CAP-094",
+      "CAP-095"
+    ]
+  },
+  {
+    "surface": "worker",
+    "symbol": "route",
+    "path": "docs/system/evidence/shared-service/worker/index.js",
+    "line": 102,
+    "capabilities": [
+      "CAP-100"
+    ]
+  },
+  {
+    "surface": "legacy",
+    "symbol": "y",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 90,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "n",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 90,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "z",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 90,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "r",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "C",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "D",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "E",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "v",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "R",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "K",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 91,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 92,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "u",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 92,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "F",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 93,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "T",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 93,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "U",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 93,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "G",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 94,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 94,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "x",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 97,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "G",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 101,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 101,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "G",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 101,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Nb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 113,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Me",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 113,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "$a",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 113,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Pb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 113,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Tc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 113,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ab",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 113,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Uc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 114,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Qb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 114,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Wc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 114,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Xc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 115,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Yc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 115,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "$c",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 115,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Pe",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 115,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "p",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 116,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "N",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 117,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "bd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 117,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "O",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 118,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "b",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 119,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "f",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 120,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "g",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 121,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "h",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 121,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "e",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 122,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "eb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 125,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "fb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 125,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ed",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 125,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "l",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 126,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Z",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 127,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "cd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 128,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ve",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 129,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "c",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 129,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "d",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 129,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "b",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 131,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "K",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 133,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 133,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ye",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 133,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "d",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 133,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "e",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 133,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "f",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 134,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Z",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 135,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "g",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 135,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "m",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 136,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "t",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 138,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "T",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 139,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "gd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 140,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "hd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 141,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Xe",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 141,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "K",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 142,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "q",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 144,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "We",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 145,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "g",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 145,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "h",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 145,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "k",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 146,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "H",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 146,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "f",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 152,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "K",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 153,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 154,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 154,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "hb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 154,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "b",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 155,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "hb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 155,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "bc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 159,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "cc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 160,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "dc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 160,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ec",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 160,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "md",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 160,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "fc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 161,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ad",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 161,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "dd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 162,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Da",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 162,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ca",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 163,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "L",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 163,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "K",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 163,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ac",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 163,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ic",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 165,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ib",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 166,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "df",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 166,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ef",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 167,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "rd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 167,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ha",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 167,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "sa",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 167,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "jb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 167,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "sd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 168,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "kc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 168,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ff",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 168,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "td",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 168,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ba",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 168,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "m",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 169,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Sc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 169,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ud",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 170,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "vd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 171,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "lb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 171,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ua",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 171,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "wd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 171,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "xd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 171,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "lc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 171,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "m",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 172,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 173,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 173,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Bd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 174,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Dd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 175,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ed",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 175,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "hf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 175,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ob",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 177,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Gd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 177,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "kf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 177,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 177,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "va",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 178,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ld",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 178,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "nf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 179,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "R",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 180,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "gc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 180,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Md",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 180,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "oc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 180,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Nd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 180,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "hb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 181,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "oc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 182,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ea",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 182,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "kd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 182,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ia",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 183,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ja",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 183,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "qb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 184,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "rc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 185,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "d",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 185,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "f",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 185,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "g",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 186,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "k",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 186,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "l",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 186,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "r",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 187,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "q",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 187,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "t",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 187,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "cc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 188,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "z",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 188,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "x",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 192,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "cc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 196,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ld",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 196,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Pd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 197,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "sc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 197,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Zc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 197,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Qd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 197,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "C",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 197,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Sd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 198,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "pf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 198,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "qf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 199,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ud",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 199,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "rf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 199,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ka",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 199,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "tf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 200,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Vd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 201,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Wd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 201,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Xd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 201,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "uf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 201,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Yd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 201,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Zd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 202,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "wf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 202,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "xf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 202,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "yf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 203,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "zb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 203,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ee",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "fe",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Af",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Bf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Cf",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Df",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ge",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 204,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ne",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 205,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "he",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 205,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ie",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 205,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ke",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "le",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "me",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ne",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "oe",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "pe",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "qe",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "re",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 206,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "xc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 207,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Ff",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 207,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Bb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 207,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "se",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 208,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "xc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 208,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "m",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 209,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mc",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 218,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "m",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 220,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Dd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 223,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "jb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 225,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ic",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 257,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Qb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 270,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "q",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 274,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Mb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 301,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "lg",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 302,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "Mb",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 303,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "ring",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 330,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "disk",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 331,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "pointInPoly",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 332,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "cellKey",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 333,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "toCSV",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 334,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "download",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 335,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "formatGameCoordinate",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 337,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "gameCoordinateList",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 343,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "geomStatus",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 345,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "constructor",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 358,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "load",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 371,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "save",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 372,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "componentDidMount",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 373,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "componentDidUpdate",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 374,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "componentWillUnmount",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 375,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "onResize",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 376,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "paintSoon",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 377,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "coordToPx",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 378,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "pxToCoord",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 379,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mouseLocal",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 380,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mouseDown",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 381,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mouseMove",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 383,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "applyCellTap",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 385,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "mouseUp",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 386,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "touchPoint",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 387,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "touchStart",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 388,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "touchMove",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 401,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "touchEnd",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 419,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "touchCancel",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 427,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "wheel",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 428,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "zoom",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 429,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "fit",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 430,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "anchorHQ",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 431,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "setAnchor",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 432,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "focusHQ",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 433,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "startBlankBattle",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 435,
+    "capabilities": [
+      "CAP-097"
+    ]
+  },
+  {
+    "surface": "legacy",
+    "symbol": "keyDown",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 437,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "addHQ",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 438,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "toggleExcluded",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 439,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "updateHQ",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 440,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "clearExcluded",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 441,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "remove",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 443,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "generate",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 444,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "setVertex",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 451,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "resetZones",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 452,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "coordinateHomes",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 454,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "copyGameText",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 460,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "copyGameCoordinates",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 464,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "downloadGameCoordinates",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 465,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "singleGameFilename",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 468,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "tabGameExport",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 469,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "export",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 484,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "importJSON",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 487,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "draw",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 488,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "hexpath",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 495,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "selected",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 512,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "unitRow",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 513,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "sectionLeft",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 514,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "tabExclusions",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 522,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "tabPlacement",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 525,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "h",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 526,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "check",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 533,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "tabGeometry",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 534,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "tabValidation",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 535,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "sectionRight",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 536,
+    "capabilities": []
+  },
+  {
+    "surface": "legacy",
+    "symbol": "render",
+    "path": "acm1-planner/anchor-test.html",
+    "line": 538,
+    "capabilities": []
+  }
+]

@@ -1,0 +1,1 @@
+Welcome: all task guides/routes, skip persistence, direct shortcuts when skipped, reopening/re-enabling, dismissal and plan data preservation passed.

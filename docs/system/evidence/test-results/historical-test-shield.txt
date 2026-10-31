@@ -1,0 +1,1 @@
+Mud centre cannot shield; outside centre can shield despite footprint overlap; placement valid on both sides even with legacy limitOuter=true; red exclusions still blocked.

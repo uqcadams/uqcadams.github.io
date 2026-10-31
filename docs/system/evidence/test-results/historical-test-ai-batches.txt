@@ -1,0 +1,1 @@
+Balanced partitions, file order, 11 images in two real API calls, batch progress, accumulated results, quota stop across batches and cancellation passed.

@@ -1,0 +1,27 @@
+UI model: independent statuses; pool deployment undo/redo; block undo; collision enforcement; move confirmation reset; deletion/anchor restoration; storage compatibility; filters; all tool panels passed.
+Restored controls: All XY auto-zoom/toggle; locked drag protection; real touch drag/move/undo; Plan actions; reset cancellation, confirmation and undo passed.
+Strategic polygons: unsnapped world geometry, invalid crossings, pan/zoom stability, edit/redraw/delete history, reload IDs, independent placement rules, direct add colours and both roster delete menus passed.
+JSON region round-trip, old-backup compatibility, import undo, unsnapped touch points and pan-without-new-corners passed.
+node:assert:408
+    throw err;
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(tree.some(n=>n.type==='input'&&n.props['aria-label']==='Minor alliance: ASAS'))
+
+    at Object.<anonymous> (<repository>/docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs:44:367)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1426:10)
+    at Module.load (node:internal/modules/cjs/loader:1205:32)
+    at Module._load (node:internal/modules/cjs/loader:1021:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)
+    at node:internal/main/run_main_module:28:49 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+
+Node.js v21.7.2

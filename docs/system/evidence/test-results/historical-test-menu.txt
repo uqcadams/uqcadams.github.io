@@ -1,0 +1,2 @@
+Menu actions, persistent confirmation/lock, move selection, invalid destination rejection, confirmation reset, Unicode coordinate format and Escape passed
+Empty-cell quick deploy, exclusion rejection and rename select-all passed

@@ -48,7 +48,7 @@ Audit execution used **v21.7.2**, Python 3.12.7. Existing tests were not modifie
 6. Reset disconnecting roster source while retaining independent terrain preference.
 7. APOC week/event/scoring schedule offsets.
 
-[Characterisation TAP log](evidence/test-results/new-preservation.txt). A passing quirk test records current behaviour; it is not an endorsement of that behaviour forever. Future intentional changes should update the contract explicitly.
+[Characterisation TAP log](evidence/test-results/new-preservation.txt). A passing quirk test records current behaviour; it is not an endorsement of that behaviour forever. Future intentional changes should update the contract explicitly. The detailed coverage and discrepancy assessment is in [QA coverage assessment](qa/coverage-gap-assessment.md).
 
 ## Historical workspace tests
 
@@ -74,7 +74,7 @@ These were outside both pinned Git repositories. Exact copied source/hash/fixtur
 | test-ui.cjs | failed-current-source | [log](evidence/test-results/historical-test-ui.txt) |
 | test-welcome.cjs | passed-current-source | [log](evidence/test-results/historical-test-welcome.txt) |
 
-Five historical scripts stop at the same old Export-menu button aria-label assertion at line21; `test-topbar-alliance` proceeds further then stops at a missing inline Minor checkbox assertion at line44. Their later assertions are not exercised. Exact evidence remains in logs; several scripts duplicate earlier test sections, so script totals are not independent test-case totals. They are **not silently adapted** or counted as established current defects without investigation. `test-card-reader` needs OCR dependencies/crops; `test-pool` needs local sample text. `prepare-card-test.cjs` is a historical fixture-preparation script, not an assertion test, and was not run.
+Five failing historical scripts stop at the same old Export-menu button aria-label assertion at line 21; `test-topbar-alliance` proceeds further then stops at a missing inline Minor checkbox assertion at line 44. Their later assertions are not exercised. Exact evidence remains in logs; several scripts duplicate earlier test sections, so script totals are not independent test-case totals. They are **not silently adapted** or counted as established current defects without investigation. The inventory is 9 passing-current-source, 6 failing-current-source and 2 inspected-not-run. `test-card-reader` needs OCR dependencies/crops; `test-pool` needs local sample text. `prepare-card-test.cjs` is a historical fixture-preparation script, not an assertion test, and was not run.
 
 ## Coverage interpretation
 

@@ -20,6 +20,9 @@ Audit: **31 October 2026**. This is a technical specification of the inspected i
 8. [Test inventory and results](09-test-coverage.md) / [traceability matrix](traceability-matrix.csv)
 9. [Refactoring risks](10-refactoring-risk-register.md) and [defects/unknowns](11-known-defects-and-unknowns.md)
 
+[Calibration review](qa/calibration.md) records ten evidence-backed registry examples and is the approval gate before correcting the remaining capability records.
+[Coverage gaps and discrepancy assessment](qa/coverage-gap-assessment.md), [backend evidence publication assessment](qa/backend-evidence-publication.md), and [refactoring readiness](qa/refactoring-readiness.md) record the follow-on QA decisions.
+
 [Source symbol inventory](source-symbol-index.json) is a lexical navigation aid, including embedded dependencies; it is not a proven call graph. [Backend evidence](evidence/shared-service/) is an immutable audit copy, **not a second production source tree**. [Existing recovered-workflow documentation](../RECOVERED-WORKFLOWS.md) remains unchanged; its historical claims require the qualifications below.
 
 ## Evidence language

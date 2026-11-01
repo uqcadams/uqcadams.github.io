@@ -20,7 +20,7 @@ Audit: **31 October 2026**. This is a technical specification of the inspected i
 8. [Test inventory and results](09-test-coverage.md) / [traceability matrix](traceability-matrix.csv)
 9. [Refactoring risks](10-refactoring-risk-register.md) and [defects/unknowns](11-known-defects-and-unknowns.md)
 
-[Calibration review](qa/calibration.md) records ten evidence-backed registry examples and is the approval gate before correcting the remaining capability records.
+[Calibration review](qa/calibration.md) records ten evidence-backed registry examples; the Map batch (CAP-002 through CAP-010) is the first staged non-calibration correction.
 [Coverage gaps and discrepancy assessment](qa/coverage-gap-assessment.md), [backend evidence publication assessment](qa/backend-evidence-publication.md), and [refactoring readiness](qa/refactoring-readiness.md) record the follow-on QA decisions.
 
 [Source symbol inventory](source-symbol-index.json) is a lexical navigation aid, including embedded dependencies; it is not a proven call graph. [Backend evidence](evidence/shared-service/) is an immutable audit copy, **not a second production source tree**. [Existing recovered-workflow documentation](../RECOVERED-WORKFLOWS.md) remains unchanged; its historical claims require the qualifications below.
@@ -40,9 +40,11 @@ Identify affected CAP IDs, follow their source/test references, inspect related 
 Run safe baseline checks from repository root:
 
 ```sh
+python3 docs/system/tests/validate-baseline.py
+python3 docs/system/tests/validate-docs.py
+python3 docs/system/tests/detect-source-drift.py
 python3 docs/system/tests/run-baseline.py
 node docs/system/tests/preservation.cjs
-python3 docs/system/tests/validate-docs.py
 ```
 
 The baseline suite intentionally excludes the paid `test-ai-live.mjs`. It currently contains one pre-existing frontend failure; details are preserved rather than repaired. Only documentation, evidence copies and non-invasive tests are added in this branch; production source and existing tests are unchanged.

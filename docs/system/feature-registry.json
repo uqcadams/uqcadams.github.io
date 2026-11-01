@@ -119,7 +119,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-002",
@@ -130,7 +140,9 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Use the wheel or +/- controls to zoom around the pointer",
+        "Drag the map to pan, use Fit to reframe it, or use touch pinch/drag navigation",
+        "Resize the viewport and observe the recalculated canvas"
       ],
       "triggering_events": {
         "actions": [
@@ -141,7 +153,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The canvas has dimensions and pointer/touch coordinates; no higher-priority placement, region-node or modal task is consuming the gesture. Browser/device gesture fidelity is unverified.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Wheel and +/- zoom; Fit frames map. Pointer drag pans; touch navigation has separate pinch/drag state. Resizing recalculates canvas dimensions. These native event paths lack browser regression coverage."
@@ -163,10 +175,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Wheel and +/- zoom; Fit frames map.",
-        "Preserve the implemented contract: Pointer drag pans; touch navigation has separate pinch/drag state.",
-        "Preserve the implemented contract: Resizing recalculates canvas dimensions.",
-        "Preserve the implemented contract: These native event paths lack browser regression coverage."
+        "Wheel and button zoom change radius/pan without changing plan geometry.",
+        "Pointer drag and touch navigation maintain separate gesture state; a touch pinch must not be interpreted as a placement tap.",
+        "Fit and resize recompute the view framing only; they do not mutate homes, regions or exclusions."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -232,10 +243,9 @@
         "source-inspected"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Changing zoom anchoring or Fit can move the apparent target while leaving the stored integer cell unchanged.",
+        "Merging touch and pointer state can turn a pan/pinch into a cell action or leave a stale drag active.",
+        "VM tests do not exercise native wheel, pointer, pinch or resize dispatch, so browser regressions can remain invisible."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -248,7 +258,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-003",
@@ -259,7 +279,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Toggle grid, sparse/all coordinates, labels or zone visibility in the map tools",
+        "Zoom after enabling coordinate display and inspect whether labels remain readable"
       ],
       "triggering_events": {
         "actions": [
@@ -268,7 +289,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The map is rendered and the display-tool controls are available; the requested layer is presentation state, not an active placement or exclusion task.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Grid, sparse/all coordinates, labels and zone visibility are display settings. All XY remains subject to zoom readability; toggles do not alter placement validity."
@@ -290,8 +311,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Grid, sparse/all coordinates, labels and zone visibility are display settings.",
-        "Preserve the implemented contract: All XY remains subject to zoom readability; toggles do not alter placement validity."
+        "Grid, coordinate density, labels and zones affect drawing only and never change placement validity.",
+        "Enabling all coordinates raises the view radius to at least 14 when needed for readability, changing navigation state but not plan state.",
+        "A display toggle must not add, remove or retag cells, homes, regions or alliances."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -343,10 +365,8 @@
         "source-inspected"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Accidentally persisting a display toggle in the plan snapshot can make reset/import/history semantics change.",
+        "Using display-layer hit testing for placement can make labels or hidden zones alter the selected cell."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -359,7 +379,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-004",
@@ -370,7 +400,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Switch between classic and terrain map styles",
+        "Save or reload the planner and compare the selected style with the plan payload"
       ],
       "triggering_events": {
         "actions": [
@@ -379,7 +410,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The map renderer and terrain-style control are available; terrain data is the planner’s derived display classification, not a new exclusion geometry.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Classic and terrain views recolour mud brown and grass green. Map style persists separately from plan JSON. Terrain rendering must not change classification or geometry."
@@ -401,9 +432,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Classic and terrain views recolour mud brown and grass green.",
-        "Preserve the implemented contract: Map style persists separately from plan JSON.",
-        "Preserve the implemented contract: Terrain rendering must not change classification or geometry."
+        "Classic and terrain styles recolour the same cells; style selection does not alter outer/inner polygons or HQ validity.",
+        "Terrain preference is stored independently from the seven-field plan history snapshot and must survive the documented reset boundary.",
+        "Mud/grass classification remains governed by the existing centre rule, not by the selected palette."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -455,10 +486,8 @@
         "source-inspected"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Moving terrainStyle into planSnapshot changes undo/import/reset boundaries.",
+        "Coupling palette rendering to canShield or geomStatus can turn a visual style change into a placement rule change."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -471,7 +500,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-005",
@@ -482,7 +521,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Edit or inspect the inner capital exclusion and attempt a placement whose radius-one footprint crosses its boundary",
+        "Review the rendered red outline around adjacent excluded cells"
       ],
       "triggering_events": {
         "actions": [
@@ -492,7 +532,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The inner boundary is a valid polygon and HQ placement invokes geomStatus with the current homes and exclusions.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Inclusive excluded cell centres produce a shared-edge-cancelled outer outline. Every HQ footprint cell is checked; crossing the red boundary is invalid even when the centre is clear."
@@ -514,8 +554,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Inclusive excluded cell centres produce a shared-edge-cancelled outer outline.",
-        "Preserve the implemented contract: Every HQ footprint cell is checked; crossing the red boundary is invalid even when the centre is clear."
+        "capitalCells includes every integer cell centre inside the inner polygon, and hexOuterEdges cancels shared edges to render one outer outline.",
+        "Placement checks every radius-one footprint cell, so a clear HQ centre is insufficient when any footprint cell crosses the capital exclusion.",
+        "The rendered outline and placement validator must use the same excluded-cell set."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -578,10 +619,9 @@
         "automated-test-mapped; see test-results.json for execution"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Replacing full-footprint checks with centre-only checks permits invalid HQ overlaps.",
+        "Changing integer corner/parity arithmetic can leave internal shared edges or move the visible red boundary without changing stored vertices.",
+        "The quick-deployment test currently stops at its capacity assertion, so later geometry assertions are not all executed."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -594,7 +634,20 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "partial",
+        "evidence_tests": [
+          "tests/quick-deployment.cjs",
+          "tests/roster-drop-preview.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+      }
     },
     {
       "id": "CAP-006",
@@ -605,7 +658,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Attempt to place or preview an HQ over each labelled turret exclusion",
+        "Inspect the turret labels and blocked result in the geometry status"
       ],
       "triggering_events": {
         "actions": [
@@ -614,7 +668,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The fixed TURRETS polygons are loaded and the candidate HQ has an integer centre for radius-one footprint calculation.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Three fixed filled labelled polygons block all intersecting footprint cells. They remain exclusions regardless of strategic alliance allocation."
@@ -636,8 +690,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Three fixed filled labelled polygons block all intersecting footprint cells.",
-        "Preserve the implemented contract: They remain exclusions regardless of strategic alliance allocation."
+        "Each turret polygon is rasterized into fixed cell keys before placement checks.",
+        "Any overlap between the candidate footprint and a turret key rejects placement, regardless of alliance region ownership or display mode.",
+        "Turret exclusions are separate from editable inner geometry and manual excludedCells."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -692,10 +747,9 @@
         "automated-test-mapped; see test-results.json for execution"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Making turret cells editable or alliance-owned removes a physical exclusion that must remain global.",
+        "Changing polygon rasterization or footprint radius can permit edge-touching placements that current geomStatus rejects.",
+        "The mapped quick-deployment script fails before its turret/geometry assertions complete, so its evidence is partial."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -708,7 +762,19 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "partial",
+        "evidence_tests": [
+          "tests/quick-deployment.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+      }
     },
     {
       "id": "CAP-007",
@@ -719,7 +785,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Place or preview HQ centres on both sides of the outer perimeter",
+        "Compare shielding status when a radius-one footprint spills across the perimeter"
       ],
       "triggering_events": {
         "actions": [
@@ -728,7 +795,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The outer boundary is available and canShield receives an integer HQ centre; placement otherwise passes geomStatus.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Outer green perimeter follows cell edges. Centre inside mud cannot shield; centre outside can shield even if radius-one footprint enters mud. Both terrains permit placement when other checks pass."
@@ -750,9 +817,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Outer green perimeter follows cell edges.",
-        "Preserve the implemented contract: Centre inside mud cannot shield; centre outside can shield even if radius-one footprint enters mud.",
-        "Preserve the implemented contract: Both terrains permit placement when other checks pass."
+        "canShield tests only the HQ centre against outer capitalCells, not every footprint cell.",
+        "An HQ centre inside mud cannot shield even when its footprint extends outward; a centre outside can shield when its footprint reaches inward.",
+        "Mud/grass classification and full-footprint exclusion are separate checks and both terrains remain placeable when other checks pass."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -807,10 +874,8 @@
         "automated-test-mapped; see test-results.json for execution"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Applying full-footprint logic to canShield changes the documented centre-only terrain rule.",
+        "Using the inner exclusion for shielding or changing outer polygon rasterization changes deployment eligibility without changing the HQ centre."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -823,7 +888,19 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/registration-deployment.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-008",
@@ -834,7 +911,9 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Enter exclusion mode and click a cell to add or remove its x,y key",
+        "Choose Clear blocked cells and accept or cancel the confirmation",
+        "Export or undo a plan after changing manual exclusions"
       ],
       "triggering_events": {
         "actions": [
@@ -844,7 +923,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The exclusions tool is active for an editable planner; the clicked coordinates are integer cells and confirmation is available for destructive clearing.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Exclude mode toggles clicked cell keys. Clear requires confirmation. Exclusions affect movement, generated positions and quick deployment; included in plan history and exports."
@@ -866,9 +945,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Exclude mode toggles clicked cell keys.",
-        "Preserve the implemented contract: Clear requires confirmation.",
-        "Preserve the implemented contract: Exclusions affect movement, generated positions and quick deployment; included in plan history and exports."
+        "toggleExcluded adds or removes exactly one integer cell key and leaves fixed capital/turret exclusions untouched.",
+        "clearExcluded requires confirmation before replacing the manual list with an empty array.",
+        "Manual exclusions participate in geomStatus, generated positions, quick deployment, plan history and export state."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -927,10 +1006,9 @@
         "source-inspected"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Mutating the array in place can bypass state/history redraw and leave stale exclusion caches.",
+        "Clearing all exclusions without the confirmation boundary can silently change placement validity.",
+        "Dropping excludedCells from snapshots or exports makes a restored plan place players in blocked cells."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -943,7 +1021,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-009",
@@ -954,7 +1042,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Edit an outer or inner vertex in the Geometry panel",
+        "Reset the zone vertices and inspect validation and rendered outlines after the replacement"
       ],
       "triggering_events": {
         "actions": [
@@ -964,7 +1053,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The Geometry panel is active and the selected vertex/value is numeric; derived geometry may be cached by array identity.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Outer/inner vertex controls and reset affect all derived geometry. Arrays are cache keys; replace arrays rather than mutate in place. Default geometry is provisional."
@@ -986,9 +1075,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Outer/inner vertex controls and reset affect all derived geometry.",
-        "Preserve the implemented contract: Arrays are cache keys; replace arrays rather than mutate in place.",
-        "Preserve the implemented contract: Default geometry is provisional."
+        "setVertex replaces the selected nested coordinate while preserving the other vertices.",
+        "resetZones restores the captured OUTER and INNER defaults and causes all derived geometry to be recomputed.",
+        "Geometry arrays are replaced rather than mutated in place because capital/exclusion caches use array identity."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -1049,10 +1138,9 @@
         "source-inspected"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "In-place vertex mutation can retain stale capitalCells/outline caches and display a boundary different from validation.",
+        "Resetting only the visible polygon while retaining derived caches can leave existing placements incorrectly valid or invalid.",
+        "Default coordinates are provisional and must not be documented as verified game geometry."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -1065,7 +1153,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-010",
@@ -1076,7 +1174,8 @@
         "Map canvas or Layers / geometry tools"
       ],
       "user_actions": [
-        "Use the map controls or pointer interaction to inspect or change map geometry; observe the resulting validation/display state."
+        "Open the Validation panel after importing or editing boundaries",
+        "Inspect invalid-placement reasons without moving or deleting the affected HQ automatically"
       ],
       "triggering_events": {
         "actions": [
@@ -1085,7 +1184,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map canvas and relevant geometry state are mounted; browser/device input fidelity and live game geometry may be unverified.",
+      "preconditions": "The planner contains existing homes and a current geometry state; validation is requested after geomStatus can evaluate each stored centre and footprint.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Validation reports invalid existing placements; it does not silently repair them. Imported/previous positions may become invalid after boundary changes."
@@ -1107,8 +1206,9 @@
         "terrainStyle"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Validation reports invalid existing placements; it does not silently repair them.",
-        "Preserve the implemented contract: Imported/previous positions may become invalid after boundary changes."
+        "Validation reports current invalid reasons from the same geometry checks used for placement.",
+        "Changing boundaries may make an existing HQ invalid, but the validator does not silently repair, move or remove it.",
+        "A displayed invalid state is diagnostic; it does not prove that the server enforces the same physical geometry rules."
       ],
       "side_effects": [
         "Geometry/layer edit persists through normal state update; display-only changes do not change physical exclusions."
@@ -1160,10 +1260,9 @@
         "source-inspected"
       ],
       "regression_risks": [
-        "Centre-only and full-footprint geometry rules differ; changing one can invalidate placement behaviour.",
-        "VM tests stub native lifecycle and script position; browser/gesture behaviour can escape coverage.",
-        "The server validates structure but not all physical map rules; alternate clients can submit invalid geometry.",
-        "Desktop native drag/pointer and mobile touch paths differ and need real-device verification."
+        "Auto-repair during validation would destroy user placement intent and make imported plans non-reversible.",
+        "Using a different centre/footprint rule in the panel than in geomStatus gives contradictory placement guidance.",
+        "The backend cleanPlan path validates structure rather than all physical map rules, so UI validation cannot be treated as server enforcement."
       ],
       "new_characterisation_tests": [],
       "risk_register_ids": [
@@ -1176,7 +1275,17 @@
         "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
         "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-011",
@@ -1296,7 +1405,18 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-tag-matching.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-012",
@@ -1405,7 +1525,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-013",
@@ -1526,7 +1655,18 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-focus-roster-drag.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-014",
@@ -1647,7 +1787,19 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-focus-roster-drag.cjs",
+          "tests/roster-drop-preview.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-015",
@@ -1759,7 +1911,18 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-focus-roster-drag.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-016",
@@ -1876,7 +2039,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-017",
@@ -1985,7 +2157,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-018",
@@ -2102,7 +2283,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-019",
@@ -2211,7 +2401,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-020",
@@ -2320,7 +2519,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-021",
@@ -2419,7 +2627,18 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-roster-filter.cjs",
+          "tests/deployment-packing.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-022",
@@ -2526,7 +2745,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-roster-filter.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-023",
@@ -2632,7 +2861,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/roster-sync.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-024",
@@ -2730,7 +2969,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-tag-matching.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-025",
@@ -2854,7 +3103,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/recovered-alliance-workflows.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-026",
@@ -2967,7 +3229,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-027",
@@ -3087,7 +3360,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-028",
@@ -3208,7 +3492,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-029",
@@ -3328,7 +3623,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-030",
@@ -3444,7 +3750,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/recovered-alliance-workflows.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-031",
@@ -3560,7 +3879,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/recovered-alliance-workflows.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-032",
@@ -3680,7 +4012,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-033",
@@ -3793,7 +4136,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-034",
@@ -3908,7 +4262,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/recovered-alliance-workflows.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-035",
@@ -4023,7 +4390,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-focus-roster-drag.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-036",
@@ -4135,7 +4515,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-037",
@@ -4258,7 +4649,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/recovered-alliance-workflows.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-038",
@@ -4370,7 +4774,18 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-039",
@@ -4494,7 +4909,20 @@
         "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
         "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-focus-roster-drag.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-040",
@@ -4599,7 +5027,16 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-tag-matching.cjs",
+          "tests/registration-deployment.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-041",
@@ -4702,7 +5139,15 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/registration-deployment.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-042",
@@ -4806,7 +5251,15 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "partial",
+        "evidence_tests": [
+          "tests/quick-deployment.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+      }
     },
     {
       "id": "CAP-043",
@@ -4909,7 +5362,15 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/deployment-packing.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-044",
@@ -5004,7 +5465,15 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/preview-territory.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-045",
@@ -5116,7 +5585,16 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "partial",
+        "evidence_tests": [
+          "tests/preview-territory.cjs",
+          "tests/quick-deployment.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+      }
     },
     {
       "id": "CAP-046",
@@ -5221,7 +5699,16 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "partial",
+        "evidence_tests": [
+          "tests/quick-deployment.cjs",
+          "tests/deployment-packing.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+      }
     },
     {
       "id": "CAP-047",
@@ -5316,7 +5803,15 @@
         "R15",
         "R18"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/deployment-packing.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-048",
@@ -5422,7 +5917,18 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-049",
@@ -5532,7 +6038,20 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-050",
@@ -5633,7 +6152,20 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-ai-import.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-051",
@@ -5745,7 +6277,20 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-052",
@@ -5851,7 +6396,18 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-053",
@@ -5965,7 +6521,18 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-054",
@@ -6074,7 +6641,20 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/alliance-tag-matching.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-055",
@@ -6191,7 +6771,20 @@
         "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
         "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/roster-sync.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-056",
@@ -6285,7 +6878,13 @@
         "R03",
         "R09"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "absent",
+        "evidence_tests": [],
+        "historical_evidence": [],
+        "assertion_basis": "No current or new characterisation assertion is mapped; source inspection and documented gaps remain."
+      }
     },
     {
       "id": "CAP-057",
@@ -6376,7 +6975,15 @@
         "R03",
         "R09"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-058",
@@ -6478,7 +7085,13 @@
         "R03",
         "R09"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "absent",
+        "evidence_tests": [],
+        "historical_evidence": [],
+        "assertion_basis": "No current or new characterisation assertion is mapped; source inspection and documented gaps remain."
+      }
     },
     {
       "id": "CAP-059",
@@ -6573,7 +7186,13 @@
         "R03",
         "R09"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "absent",
+        "evidence_tests": [],
+        "historical_evidence": [],
+        "assertion_basis": "No current or new characterisation assertion is mapped; source inspection and documented gaps remain."
+      }
     },
     {
       "id": "CAP-060",
@@ -6686,7 +7305,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-061",
@@ -6792,7 +7420,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-062",
@@ -6892,7 +7529,18 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-063",
@@ -7013,7 +7661,20 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "partial",
+        "evidence_tests": [
+          "tests/quick-deployment.cjs",
+          "tests/alliance-tag-matching.cjs",
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
+        ],
+        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+      }
     },
     {
       "id": "CAP-064",
@@ -7118,7 +7779,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-065",
@@ -7234,7 +7904,16 @@
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
+          "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-066",
@@ -7333,7 +8012,15 @@
         "R16",
         "R20"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-067",
@@ -7439,7 +8126,15 @@
         "R16",
         "R20"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/roster-sync.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-068",
@@ -7549,7 +8244,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-069",
@@ -7672,7 +8377,18 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/roster-sync.cjs",
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-070",
@@ -7783,7 +8499,15 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-071",
@@ -7905,7 +8629,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-072",
@@ -8026,7 +8760,15 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "indirect",
+        "evidence_tests": [],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+      }
     },
     {
       "id": "CAP-073",
@@ -8148,7 +8890,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-074",
@@ -8279,7 +9031,18 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs",
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-075",
@@ -8397,7 +9160,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-076",
@@ -8530,7 +9303,18 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs",
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-077",
@@ -8652,7 +9436,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-078",
@@ -8774,7 +9568,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/roster-sync.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-079",
@@ -8897,7 +9701,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/roster-sync.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-080",
@@ -9015,7 +9829,17 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/deployment-publisher.cjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-081",
@@ -9146,7 +9970,18 @@
       ],
       "historical_supplementary_tests": [
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
-      ]
+      ],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/deployment-publisher.cjs",
+          "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs"
+        ],
+        "historical_evidence": [
+          "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
+        ],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-082",
@@ -9257,7 +10092,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/quick-registration.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-083",
@@ -9367,7 +10210,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-member-registration.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-084",
@@ -9478,7 +10329,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/quick-registration.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-085",
@@ -9582,7 +10441,16 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/quick-registration.cjs",
+          "tests/registration-deployment.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-086",
@@ -9685,7 +10553,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/quick-registration.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-087",
@@ -9796,7 +10672,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-member-registration.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-088",
@@ -9908,7 +10792,16 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/quick-registration.cjs",
+          "docs/system/evidence/shared-service/scripts/test-member-registration.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-089",
@@ -10019,7 +10912,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-090",
@@ -10122,7 +11023,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "tests/registration-inspector.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-091",
@@ -10234,7 +11143,15 @@
         "R21",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-092",
@@ -10340,7 +11257,15 @@
         "R13",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-093",
@@ -10436,7 +11361,15 @@
         "R13",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-094",
@@ -10532,7 +11465,15 @@
         "R13",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-095",
@@ -10636,7 +11577,15 @@
         "R13",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-096",
@@ -10740,7 +11689,15 @@
         "R13",
         "R23"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-097",
@@ -10816,7 +11773,15 @@
       "risk_register_ids": [
         "R04"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/tests/preservation.cjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-098",
@@ -10907,7 +11872,15 @@
         "R19",
         "R22"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-099",
@@ -11006,7 +11979,16 @@
         "R19",
         "R22"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-ai-import.mjs",
+          "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     },
     {
       "id": "CAP-100",
@@ -11098,7 +12080,15 @@
         "R19",
         "R22"
       ],
-      "historical_supplementary_tests": []
+      "historical_supplementary_tests": [],
+      "coverage": {
+        "classification": "direct",
+        "evidence_tests": [
+          "docs/system/evidence/shared-service/scripts/test-server.mjs"
+        ],
+        "historical_evidence": [],
+        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+      }
     }
   ]
 }

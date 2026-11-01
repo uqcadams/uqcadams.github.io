@@ -1,6 +1,6 @@
 # Capability contract calibration
 
-Status: **calibration review required before bulk registry correction**
+Status: **calibration checkpoint completed; subsequent corrections remain staged by subsystem**
 Baseline: frontend `5f6f7af6aba82d7e585d10098ad2e1b4fa98e7dd`; backend `11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc`
 
 This report calibrates the proposed contract standard on ten capabilities before the remaining 90 registry entries are changed. It compares the original registry fields with the revised fields in `feature-registry.json`, then ties each revision to implementation behaviour, state/validation conditions and actual evidence. Text uniqueness is not treated as semantic proof.
@@ -97,4 +97,4 @@ This report calibrates the proposed contract standard on ten capabilities before
 
 ## Calibration status
 
-The ten records retain their original CAP IDs, source references, baselines, test mappings and risk-register IDs. The revised fields are now evidence-specific, but this report is a **review checkpoint**, not a claim that the remaining 90 entries meet the same standard. Bulk correction must wait for semantic approval of these examples.
+The ten records retain their original CAP IDs, source references, baselines, test mappings and risk-register IDs. The revised fields established the standard for subsequent work. The Map batch (CAP-002 through CAP-010) is the first non-calibration correction; the other subsystem records remain staged and must not be treated as corrected by this report.

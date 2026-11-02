@@ -1,0 +1,201 @@
+{
+  "audit_date": "2026-10-31",
+  "results": [
+    {
+      "group": "frontend",
+      "file": "tests/alliance-focus-roster-drag.cjs",
+      "command": "node tests/alliance-focus-roster-drag.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.176,
+      "log": "evidence/test-results/frontend-alliance-focus-roster-drag.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/alliance-roster-filter.cjs",
+      "command": "node tests/alliance-roster-filter.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.178,
+      "log": "evidence/test-results/frontend-alliance-roster-filter.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/alliance-tag-matching.cjs",
+      "command": "node tests/alliance-tag-matching.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.127,
+      "log": "evidence/test-results/frontend-alliance-tag-matching.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/deployment-packing.cjs",
+      "command": "node tests/deployment-packing.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.827,
+      "log": "evidence/test-results/frontend-deployment-packing.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/deployment-publisher.cjs",
+      "command": "node tests/deployment-publisher.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.134,
+      "log": "evidence/test-results/frontend-deployment-publisher.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/preview-territory.cjs",
+      "command": "node tests/preview-territory.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.178,
+      "log": "evidence/test-results/frontend-preview-territory.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/quick-deployment.cjs",
+      "command": "node tests/quick-deployment.cjs",
+      "cwd": ".",
+      "exit_code": 1,
+      "status": "failed",
+      "seconds": 0.378,
+      "log": "evidence/test-results/frontend-quick-deployment.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/quick-registration.cjs",
+      "command": "node tests/quick-registration.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.161,
+      "log": "evidence/test-results/frontend-quick-registration.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/recovered-alliance-workflows.cjs",
+      "command": "node tests/recovered-alliance-workflows.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.244,
+      "log": "evidence/test-results/frontend-recovered-alliance-workflows.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/registration-deployment.cjs",
+      "command": "node tests/registration-deployment.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.202,
+      "log": "evidence/test-results/frontend-registration-deployment.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/registration-inspector.cjs",
+      "command": "node tests/registration-inspector.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.115,
+      "log": "evidence/test-results/frontend-registration-inspector.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/roster-drop-preview.cjs",
+      "command": "node tests/roster-drop-preview.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.155,
+      "log": "evidence/test-results/frontend-roster-drop-preview.txt"
+    },
+    {
+      "group": "frontend",
+      "file": "tests/roster-sync.cjs",
+      "command": "node tests/roster-sync.cjs",
+      "cwd": ".",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.135,
+      "log": "evidence/test-results/frontend-roster-sync.txt"
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs",
+      "command": "node scripts/test-ai-budget.mjs",
+      "cwd": "docs/system/evidence/shared-service",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 2.79,
+      "log": "evidence/test-results/backend-test-ai-budget.txt"
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-ai-import.mjs",
+      "command": "node scripts/test-ai-import.mjs",
+      "cwd": "docs/system/evidence/shared-service",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 0.172,
+      "log": "evidence/test-results/backend-test-ai-import.txt"
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-ai-live.mjs",
+      "status": "skipped",
+      "reason": "Paid external provider call, credential and user-image dependency; excluded from safe baseline."
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs",
+      "command": "node scripts/test-live-deployment.mjs",
+      "cwd": "docs/system/evidence/shared-service",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 3.203,
+      "log": "evidence/test-results/backend-test-live-deployment.txt"
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-member-registration.mjs",
+      "command": "node scripts/test-member-registration.mjs",
+      "cwd": "docs/system/evidence/shared-service",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 3.529,
+      "log": "evidence/test-results/backend-test-member-registration.txt"
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+      "command": "node scripts/test-room-admin.mjs",
+      "cwd": "docs/system/evidence/shared-service",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 4.754,
+      "log": "evidence/test-results/backend-test-room-admin.txt"
+    },
+    {
+      "group": "backend",
+      "file": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+      "command": "node scripts/test-server.mjs",
+      "cwd": "docs/system/evidence/shared-service",
+      "exit_code": 0,
+      "status": "passed",
+      "seconds": 3.299,
+      "log": "evidence/test-results/backend-test-server.txt"
+    }
+  ]
+}

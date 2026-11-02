@@ -1,0 +1,14 @@
+{
+  "frontend": {
+    "repository": "uqcadams/uqcadams.github.io",
+    "commit": "5f6f7af6aba82d7e585d10098ad2e1b4fa98e7dd"
+  },
+  "backend": {
+    "checkout": "acm1-rooms",
+    "commit": "11235f4c7ebd07fd55f7c8d16f0dc1e73bb62bcc",
+    "published_version": 9,
+    "published_version_id": "appgprj_6adf0ee4a03c8191ba97a4f44bac2654~appgver_3712bf1025a08191ba6e5ed63d4c2a86",
+    "verification": "Read-only Sites version metadata, source commit matched local clean checkout during audit. No production request mutations."
+  },
+  "snapshot_scope": "Worker, SQL migration, package metadata, existing operations docs and test scripts only. No environment files, actual access codes, user data, DBs or credentials. Evidence snapshot is not a new deployable source of truth."
+}

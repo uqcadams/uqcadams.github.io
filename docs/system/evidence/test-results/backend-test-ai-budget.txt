@@ -1,0 +1,1 @@
+Lifetime budget: authenticated status, one-time historical allowance, pre-call reserve, settlement, persistence, hard stop, unknown charges held, concurrent atomic enforcement and fail-closed DB errors passed.

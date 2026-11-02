@@ -1,0 +1,3 @@
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+export function sqliteD1(path){const run=payload=>JSON.parse(execFileSync('python3',[fileURLToPath(new URL('./sqlite-d1.py',import.meta.url)),path],{input:JSON.stringify(payload),encoding:'utf8'}));return {schema(sql){return run({schema:sql});},prepare(sql){return {sql,args:[],bind(...args){return Object.assign({},this,{args});},async first(){return run({statements:[this]})[0].results[0]||null;},async all(){return run({statements:[this]})[0];},async run(){return run({statements:[this]})[0];}};},async batch(statements){return run({statements});}};}

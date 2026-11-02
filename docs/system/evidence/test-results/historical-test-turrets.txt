@@ -1,0 +1,25 @@
+Turret 1 37 tiles [
+  [ 491, 512 ],
+  [ 494, 512 ],
+  [ 495, 515 ],
+  [ 494, 518 ],
+  [ 491, 518 ],
+  [ 489, 515 ]
+]
+Turret 2 37 tiles [
+  [ 490, 481 ],
+  [ 493, 481 ],
+  [ 495, 484 ],
+  [ 493, 487 ],
+  [ 490, 487 ],
+  [ 489, 484 ]
+]
+Turret 3 37 tiles [
+  [ 514, 496 ],
+  [ 517, 496 ],
+  [ 518, 499 ],
+  [ 517, 502 ],
+  [ 514, 502 ],
+  [ 512, 499 ]
+]
+Boundary inclusion, footprint overlap, add/move rejection, formation filtering and saved-data preservation passed

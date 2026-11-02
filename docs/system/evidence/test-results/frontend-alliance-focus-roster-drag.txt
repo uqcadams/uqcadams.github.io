@@ -1,0 +1,1 @@
+Alliance Focus counts, holes, live edits, pool deployment, collisions, exclusions, lock and room permissions passed.

@@ -1,0 +1,1 @@
+Registration-aware deployment: complete availability windows, unanswered/unavailable/pending exclusion, grass/mud filtering, strict mud/grass preferences and optional local workflow passed.

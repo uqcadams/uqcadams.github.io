@@ -1,0 +1,1 @@
+Centre-based territory: spill across allocation edges allowed; outside centres, HQ collisions and blocked footprint cells rejected. Unicode player names and HQ levels appear in map preview and list.

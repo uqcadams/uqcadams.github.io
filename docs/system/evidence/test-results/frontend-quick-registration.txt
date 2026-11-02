@@ -1,0 +1,1 @@
+Quick registration: autosave versions, terrain/confirmation, role/hours/notes preservation, scoring defaults, conflict recovery and read-only guards passed.

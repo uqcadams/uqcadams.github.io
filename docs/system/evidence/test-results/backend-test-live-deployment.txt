@@ -1,0 +1,1 @@
+Live deployment: member read-only access, alliance scoping, durable first/changed/recalled status, stable revisions, stale-publisher and week conflict checks, direct planner sync, closed-room protection and registration preservation passed.

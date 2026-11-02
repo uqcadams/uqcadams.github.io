@@ -1,0 +1,1 @@
+Local OCR: leader/member names and levels read twice, agreement selection, name/level mismatch warnings, low second-pass confidence, cancellation and worker cleanup passed.

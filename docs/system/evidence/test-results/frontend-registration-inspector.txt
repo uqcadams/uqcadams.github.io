@@ -1,0 +1,1 @@
+Read-only inspector geometry: cursor-anchored zoom, 1–20x bounds, pan bounds, fit reset and no API writes passed.

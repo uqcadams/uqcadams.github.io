@@ -1,0 +1,24 @@
+UI model: independent statuses; pool deployment undo/redo; block undo; collision enforcement; move confirmation reset; deletion/anchor restoration; storage compatibility; filters; all tool panels passed.
+node:assert:408
+    throw err;
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(menu.some(n=>n.type==='button'&&n.props['aria-label']===label))
+
+    at Object.<anonymous> (<repository>/docs/system/evidence/historical-workspace-tests/test-quick-add.cjs:21:143)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1426:10)
+    at Module.load (node:internal/modules/cjs/loader:1205:32)
+    at Module._load (node:internal/modules/cjs/loader:1021:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)
+    at node:internal/main/run_main_module:28:49 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+
+Node.js v21.7.2

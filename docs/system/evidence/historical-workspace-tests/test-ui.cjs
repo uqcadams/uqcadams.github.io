@@ -1,0 +1,24 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');let Planner,stored;
+class Component{setState(p,cb){const old=this.state,patch=typeof p==='function'?p(old):p;this.state=Object.assign({},old,patch);if(this.mounted)this.componentDidUpdate({},old);if(cb)cb();}}
+const fixture={homes:[{id:'a',name:'Alpha',alliance:'ACM1',level:27,x:480,y:540,hasMoved:true,locked:true}],pool:[{id:'b',name:'Bravo',alliance:'ACM1',level:26,colour:'#68e4b3'}],anchorId:'a',excludedCells:[]};
+const ctx={React:{Component,createElement:(type,props,...children)=>({type,props:props||{},children:children.flat(Infinity)})},ReactDOM:{render:e=>Planner=e.type},document:{getElementById:()=>null},localStorage:{getItem:()=>stored||JSON.stringify(fixture),setItem:(k,v)=>stored=v},window:{confirm:()=>true},console};
+vm.runInNewContext(fs.readFileSync('work/index.html','utf8').split('<script>')[3].split('</script>')[0],ctx);const p=new Planner({});p.paintSoon=()=>{};p.mounted=true;const initial=JSON.stringify(p.planSnapshot());
+p.setState({rosterQuery:'alp',rosterFilter:'arrived'});assert.equal(p.historyPast.length,0);
+p.updateHQ('a',{locked:false});assert.equal(p.historyPast.length,1);p.travelHistory();assert(p.state.homes[0].locked);p.travelHistory(true);assert(!p.state.homes[0].locked);
+p.startPool(p.state.pool[0]);assert(p.taskInfo().title.includes('Bravo'));assert(p.deployPoolAt({x:490,y:540}));assert.equal(p.state.pool.length,0);p.travelHistory();assert.equal(p.state.pool.length,1);assert.equal(p.state.homes.length,1);p.travelHistory(true);assert.equal(p.state.homes.length,2);
+p.toggleExcluded(470,540);assert.equal(p.state.excludedCells.length,1);p.travelHistory();assert.equal(p.state.excludedCells.length,0);
+const count=p.state.homes.length;p.addHQ(480,540,'Overlap');assert.equal(p.state.homes.length,count);assert(p.state.message.includes('Overlaps'));assert.equal(p.updateHQ('b',{x:480,y:540}),false);assert.equal(p.updateHQ('b',{x:500.5,y:540}),false);
+p.updateHQ('a',{x:480,y:544});assert(!p.state.homes[0].hasMoved);p.travelHistory();assert.equal(p.state.homes[0].y,540);assert(p.state.homes[0].hasMoved);
+p.remove('a');assert.equal(p.state.anchorId,null);p.travelHistory();assert.equal(p.state.anchorId,'a');assert(p.state.homes.some(q=>q.id==='a'));
+p.save();const reloaded=new Planner({});assert.equal(JSON.stringify(reloaded.planSnapshot()),JSON.stringify(p.planSnapshot()));assert.equal(reloaded.historyPast.length,0);
+const walk=n=>n&&typeof n==='object'?[n,...(n.children||[]).flatMap(walk)]:[];
+p.setState({rosterQuery:'bra',rosterFilter:'all'});assert.equal(walk(p.sectionLeft()).filter(n=>n.props?.className?.startsWith('roster-row')).length,1);
+for(const toolTab of ['add','formation','cells','geometry','export','help']){p.setState({toolTab});assert(p.renderTools());}
+console.log('UI model: independent statuses; pool deployment undo/redo; block undo; collision enforcement; move confirmation reset; deletion/anchor restoration; storage compatibility; filters; all tool panels passed.');
+p.setState({radius:6,showAllCoords:false});p.toggleAllCoords();assert(p.state.showAllCoords);assert.equal(p.state.radius,14);p.toggleAllCoords();assert(!p.state.showAllCoords);
+p.w=1000;p.h=800;p.canvas={getBoundingClientRect:()=>({left:0,top:0})};p.setState({selectedId:'a',mobileMove:false});p.updateHQ('a',{locked:true});p.startHQDrag(p.selected());assert(!p.state.mobileMove);p.updateHQ('a',{locked:false});p.startHQDrag(p.selected());assert(p.state.mobileMove);assert(p.taskInfo().drag);
+const start=p.coordToPx(p.selected().x,p.selected().y);p.touchStart({cancelable:true,preventDefault(){},touches:[{clientX:start.x,clientY:start.y}]});assert.equal(p.touchSession.kind,'hq');const end=p.coordToPx(476,540);p.touchMove({cancelable:true,preventDefault(){},touches:[{clientX:end.x,clientY:end.y}]});assert.equal(p.selected().x,476);p.touchEnd({cancelable:true,preventDefault(){},touches:[],changedTouches:[]});assert(!p.state.mobileMove);p.travelHistory();assert.equal(p.state.homes.find(q=>q.id==='a').x,480);
+const menu=walk(p.renderPlanMenu());for(const label of ['Download JSON backup','Import JSON plan…','Export coordinates & files','Reset all…'])assert(menu.some(n=>n.type==='button'&&n.props['aria-label']===label));
+const beforeReset=JSON.stringify(p.planSnapshot());let confirmations=0;ctx.window.confirm=()=>{confirmations++;return false};p.resetAll();assert.equal(confirmations,1);assert.equal(JSON.stringify(p.planSnapshot()),beforeReset);
+ctx.window.confirm=()=>true;p.resetAll();assert.equal(p.state.homes.length,0);assert.equal(p.state.pool.length,0);p.travelHistory();assert.equal(JSON.stringify(p.planSnapshot()),beforeReset);
+console.log('Restored controls: All XY auto-zoom/toggle; locked drag protection; real touch drag/move/undo; Plan actions; reset cancellation, confirmation and undo passed.');

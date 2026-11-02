@@ -1,0 +1,291 @@
+[
+  {
+    "file": "work/test-ai-batches.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-ai-batches.cjs",
+    "sha256": "caddb19f6ab012f073faacdd54db5536d70703b61617f04edd67d31cdcc639a6",
+    "literal_assertions": 28,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html",
+      "work/index.html",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 1.085,
+    "log": "evidence/test-results/historical-test-ai-batches.txt"
+  },
+  {
+    "file": "work/test-capital.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-capital.cjs",
+    "sha256": "1fe49d7b0f1c8039ce73afe6afc63ab22a956d51db10973d23cf25213f3a0f0b",
+    "literal_assertions": 15,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.189,
+    "log": "evidence/test-results/historical-test-capital.txt"
+  },
+  {
+    "file": "work/test-card-reader.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-card-reader.cjs",
+    "sha256": "70bfd6d7cb9c690ddf0e3cdf59fa7e8c6c0cbefbdb4eaa0ef09f98607ecf8a69",
+    "literal_assertions": 3,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "./ocr-eval/node_modules/tesseract.js",
+      "work/card-detection.js",
+      "work/ocr-crops/"
+    ],
+    "status": "inspected-not-run",
+    "reason": "Requires original local OCR dependencies/crops or sample-ocr fixture not in pinned repository; no network/paid OCR attempted."
+  },
+  {
+    "file": "work/test-import-review.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-import-review.cjs",
+    "sha256": "70f32aac79e22a7acb370c6e3ec3b5a9e8333c00d782556cc492bbb6d3ee1ffa",
+    "literal_assertions": 28,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.142,
+    "log": "evidence/test-results/historical-test-import-review.txt"
+  },
+  {
+    "file": "work/test-layouts.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-layouts.cjs",
+    "sha256": "94a7882ad0b8f0b3c5d8454de1e4e266aeab6014faedf29a419eeb1eff6ba90e",
+    "literal_assertions": 149,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "failed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 1,
+    "seconds": 0.235,
+    "log": "evidence/test-results/historical-test-layouts.txt"
+  },
+  {
+    "file": "work/test-local-double.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-local-double.cjs",
+    "sha256": "e47b4921f7d177d77e9116c38bf11cff25787a769e8b272595ccbf2f2506f926",
+    "literal_assertions": 15,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.148,
+    "log": "evidence/test-results/historical-test-local-double.txt"
+  },
+  {
+    "file": "work/test-menu.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-menu.cjs",
+    "sha256": "717f699c47f54b102fea78303c903d206966f784c299f60772ba29e9f755c4da",
+    "literal_assertions": 26,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.169,
+    "log": "evidence/test-results/historical-test-menu.txt"
+  },
+  {
+    "file": "work/test-pool.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-pool.cjs",
+    "sha256": "9f130df055715a0eeac1a35e7093aa4ec09726303bcd1ba02c61a933772aecba",
+    "literal_assertions": 21,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html",
+      "work/sample-ocr.txt"
+    ],
+    "status": "inspected-not-run",
+    "reason": "Requires original local OCR dependencies/crops or sample-ocr fixture not in pinned repository; no network/paid OCR attempted."
+  },
+  {
+    "file": "work/test-quick-add.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-quick-add.cjs",
+    "sha256": "58791ddad8572e058f5bfe922a4f4da3c225d0c4066ca3b457c531e8e03b27f0",
+    "literal_assertions": 62,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "failed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 1,
+    "seconds": 0.217,
+    "log": "evidence/test-results/historical-test-quick-add.txt"
+  },
+  {
+    "file": "work/test-region-panel.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-region-panel.cjs",
+    "sha256": "cf08388849b558074b9b1a0942b4008510361c66e2b5b61761876d40ea79dbc2",
+    "literal_assertions": 188,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "failed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 1,
+    "seconds": 0.212,
+    "log": "evidence/test-results/historical-test-region-panel.txt"
+  },
+  {
+    "file": "work/test-rooms.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-rooms.cjs",
+    "sha256": "94810f8af205115d8541403a8562129cd2fb82b9ca6327eed5f75bfde16200ab",
+    "literal_assertions": 120,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.472,
+    "log": "evidence/test-results/historical-test-rooms.txt"
+  },
+  {
+    "file": "work/test-shield.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-shield.cjs",
+    "sha256": "d6e908708cdea892a08546780d8c50b7865dc7dee54bc79c7671af3738871323",
+    "literal_assertions": 10,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.195,
+    "log": "evidence/test-results/historical-test-shield.txt"
+  },
+  {
+    "file": "work/test-strategic.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-strategic.cjs",
+    "sha256": "fb13a93a731a3316fc91fcfdd9879242742654ee23475a53590a6a4403e9f083",
+    "literal_assertions": 82,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "failed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 1,
+    "seconds": 0.217,
+    "log": "evidence/test-results/historical-test-strategic.txt"
+  },
+  {
+    "file": "work/test-topbar-alliance.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-topbar-alliance.cjs",
+    "sha256": "520db3a0ce33a026f077277459982ff4674700a689d94f70c657676434294908",
+    "literal_assertions": 184,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html",
+      "work/index.html"
+    ],
+    "status": "failed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 1,
+    "seconds": 0.554,
+    "log": "evidence/test-results/historical-test-topbar-alliance.txt"
+  },
+  {
+    "file": "work/test-turrets.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-turrets.cjs",
+    "sha256": "5255ec8265f213f0caaff0ac7c6994fbe31f386b250ad06de8a82a434d6505fd",
+    "literal_assertions": 17,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.214,
+    "log": "evidence/test-results/historical-test-turrets.txt"
+  },
+  {
+    "file": "work/test-ui.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-ui.cjs",
+    "sha256": "5c02d2d7b84b45d792d8b6567d83e856622bde1ed1eb37af469b1dfa3e48ca10",
+    "literal_assertions": 42,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "failed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 1,
+    "seconds": 0.226,
+    "log": "evidence/test-results/historical-test-ui.txt"
+  },
+  {
+    "file": "work/test-welcome.cjs",
+    "evidence_copy": "evidence/historical-workspace-tests/test-welcome.cjs",
+    "sha256": "d1f43cebe3fec70d7b8b59ffbf70f16e743ae9d5721e285f872bd389128b5dd6",
+    "literal_assertions": 14,
+    "fixture_references": [
+      "fs",
+      "vm",
+      "assert/strict",
+      "work/index.html"
+    ],
+    "status": "passed-current-source",
+    "reason": "Unmodified historical test run against pinned main HTML in disposable work/index.html; failures retained, not treated as production defects automatically.",
+    "exit_code": 0,
+    "seconds": 0.138,
+    "log": "evidence/test-results/historical-test-welcome.txt"
+  }
+]

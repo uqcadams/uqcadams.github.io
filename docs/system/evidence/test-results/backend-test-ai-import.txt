@@ -1,0 +1,1 @@
+Luna: real multi-image payload, low reasoning/verbosity, prompt, compact JSON, legacy single-image support, Unicode, usage metadata, image-count quota, passcode, invalid input and output guards passed.

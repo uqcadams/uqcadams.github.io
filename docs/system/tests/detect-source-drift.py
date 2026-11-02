@@ -4,9 +4,14 @@ from pathlib import Path
 import hashlib
 import json
 import sys
+import argparse
 
-D = Path(__file__).resolve().parents[1]
-R = D.parents[1]
+parser = argparse.ArgumentParser()
+parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[3])
+parser.add_argument("--docs-root", type=Path, default=Path(__file__).resolve().parents[1])
+args = parser.parse_args()
+D = args.docs_root.resolve()
+R = args.repo_root.resolve()
 manifest = json.loads((D / "source-manifest.json").read_text())
 registry = json.loads((D / "feature-registry.json").read_text())
 drift = []

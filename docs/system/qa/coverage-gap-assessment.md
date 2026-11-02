@@ -8,10 +8,10 @@ The registry was classified from mapped assertion bodies and recorded execution 
 
 - **Direct behavioural coverage:** the mapped test reaches assertions for the capability's core state transition or validation result.
 - **Partial assertion coverage:** the test reaches a related path but stops before all assertions or covers only a subset of the contract.
-- **Indirect coverage:** another workflow exercises a shared helper or state boundary, but not the capability's complete entry path.
-- **No current/new coverage:** the capability is source-inspected or historically supplemented only, with no current/new assertion mapped.
+- **Historical supplementary evidence:** a preserved historical script is linked for context, but it is not current executable coverage.
+- **Source-inspected-only:** the implementation and source references are documented without a mapped current or historical assertion.
 
-The 33 capabilities that had no current or new mapped test at the start of this QA pass are retained as gaps rather than being upgraded by prose. Their highest-priority classes are:
+Current `direct` and `partial` records name the assertion group and recorded execution status. Historical evidence is stored separately and never upgrades current coverage. The 34 capabilities without current assertions remain gaps rather than being upgraded by prose. Their highest-priority classes are:
 
 | Priority | Gap class | Typical capabilities | Required next evidence |
 |---|---|---|---|

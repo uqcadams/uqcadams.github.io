@@ -121,14 +121,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -260,14 +263,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -381,14 +387,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -410,7 +419,7 @@
         ],
         "interaction": "Map canvas or Layers / geometry tools"
       },
-      "preconditions": "The map renderer and terrain-style control are available; terrain data is the planner’s derived display classification, not a new exclusion geometry.",
+      "preconditions": "The map renderer and terrain-style control are available; terrain data is the planner\u2019s derived display classification, not a new exclusion geometry.",
       "inputs": {
         "shape": "Pointer position, integer cell, layer booleans, outer/inner polygons",
         "specific_constraints": "Classic and terrain views recolour mud brown and grass green. Map style persists separately from plan JSON. Terrain rendering must not change classification or geometry."
@@ -502,14 +511,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -636,17 +648,28 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "partial",
-        "evidence_tests": [
-          "tests/quick-deployment.cjs",
-          "tests/roster-drop-preview.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "partial",
+          "assertions": [
+            {
+              "test": "tests/quick-deployment.cjs",
+              "assertion_group": "quick-deployment determinism, capacity, stale preview, apply/history and permission assertions",
+              "status": "failed"
+            },
+            {
+              "test": "tests/roster-drop-preview.cjs",
+              "assertion_group": "pointer-to-cell target, identity/level/coordinates, blocked preview and cleanup assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+        "source_inspected_only": false
       }
     },
     {
@@ -764,16 +787,23 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "partial",
-        "evidence_tests": [
-          "tests/quick-deployment.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "partial",
+          "assertions": [
+            {
+              "test": "tests/quick-deployment.cjs",
+              "assertion_group": "quick-deployment determinism, capacity, stale preview, apply/history and permission assertions",
+              "status": "failed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+        "source_inspected_only": false
       }
     },
     {
@@ -890,16 +920,23 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/registration-deployment.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/registration-deployment.cjs",
+              "assertion_group": "approved eligibility, mud/grass centre constraints and registration-toggle assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -1023,14 +1060,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -1155,14 +1195,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -1277,14 +1320,17 @@
         "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-capital.cjs",
           "docs/system/evidence/historical-workspace-tests/test-turrets.cjs",
           "docs/system/evidence/historical-workspace-tests/test-shield.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -1407,15 +1453,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-tag-matching.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped alliance-tag test does not open, submit or cancel the Add Player drawer; no current executable assertion covers this contract."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -1527,13 +1574,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -1657,15 +1707,22 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-focus-roster-drag.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-focus-roster-drag.cjs",
+              "assertion_group": "focus, matching, drag/drop, collision and role/archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -1789,16 +1846,27 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-focus-roster-drag.cjs",
-          "tests/roster-drop-preview.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-focus-roster-drag.cjs",
+              "assertion_group": "focus, matching, drag/drop, collision and role/archive assertions",
+              "status": "passed"
+            },
+            {
+              "test": "tests/roster-drop-preview.cjs",
+              "assertion_group": "pointer-to-cell target, identity/level/coordinates, blocked preview and cleanup assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -1913,15 +1981,22 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-focus-roster-drag.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-focus-roster-drag.cjs",
+              "assertion_group": "focus, matching, drag/drop, collision and role/archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -2041,13 +2116,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -2159,13 +2237,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -2285,13 +2366,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -2403,13 +2487,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -2521,13 +2608,16 @@
         "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-menu.cjs",
           "docs/system/evidence/historical-workspace-tests/test-quick-add.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -2629,15 +2719,26 @@
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-roster-filter.cjs",
-          "tests/deployment-packing.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-roster-filter.cjs",
+              "assertion_group": "normalized alliance grouping, deployed/waiting counts and combined-filter assertions",
+              "status": "passed"
+            },
+            {
+              "test": "tests/deployment-packing.cjs",
+              "assertion_group": "capacity, spacing, apply/recall, identity retention and permission assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -2747,14 +2848,21 @@
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-roster-filter.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-roster-filter.cjs",
+              "assertion_group": "normalized alliance grouping, deployed/waiting counts and combined-filter assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -2863,14 +2971,21 @@
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/roster-sync.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/roster-sync.cjs",
+              "assertion_group": "read-only join, identity merge, persistence, removals, filters and disconnect assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -2971,14 +3086,21 @@
         "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-tag-matching.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-tag-matching.cjs",
+              "assertion_group": "blank-tag recovery, foreign-tag preservation, assignment undo/redo and focused import assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-pool.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -3105,17 +3227,24 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/recovered-alliance-workflows.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/recovered-alliance-workflows.cjs",
+              "assertion_group": "region modes, navigation, tiers, reorder, sharing and reservation assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -3231,15 +3360,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -3362,15 +3494,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -3494,15 +3629,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -3625,15 +3763,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -3752,24 +3893,31 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/recovered-alliance-workflows.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/recovered-alliance-workflows.cjs",
+              "assertion_group": "region modes, navigation, tiers, reorder, sharing and reservation assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
       "id": "CAP-031",
       "group": "Regions",
       "name": "Equal-area quick layout",
-      "description": "Generate 1–36 weighted equal-area slices over full or half domain; manual reservations are removed first. Area allocation is not simply equal angles. Centre/valid domain preconditions apply.",
+      "description": "Generate 1\u201336 weighted equal-area slices over full or half domain; manual reservations are removed first. Area allocation is not simply equal angles. Centre/valid domain preconditions apply.",
       "entry_points": [
         "Alliance Boundaries controls, map doubleclick / drawing / node drag"
       ],
@@ -3786,7 +3934,7 @@
       "preconditions": "Region editing/allocation authority is available, the domain is valid enough for the selected operation, and geometry constraints apply.",
       "inputs": {
         "shape": "World points, parts/holes, label, colour, opacity, group/share/tier/rotation",
-        "specific_constraints": "Generate 1–36 weighted equal-area slices over full or half domain; manual reservations are removed first. Area allocation is not simply equal angles. Centre/valid domain preconditions apply."
+        "specific_constraints": "Generate 1\u201336 weighted equal-area slices over full or half domain; manual reservations are removed first. Area allocation is not simply equal angles. Centre/valid domain preconditions apply."
       },
       "outputs": {
         "observable": "Saved strategic geometry, selected inspector or draft/error"
@@ -3802,7 +3950,7 @@
         "mode"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Generate 1–36 weighted equal-area slices over full or half domain; manual reservations are removed first.",
+        "Preserve the implemented contract: Generate 1\u201336 weighted equal-area slices over full or half domain; manual reservations are removed first.",
         "Preserve the implemented contract: Area allocation is not simply equal angles.",
         "Preserve the implemented contract: Centre/valid domain preconditions apply."
       ],
@@ -3881,17 +4029,24 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/recovered-alliance-workflows.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/recovered-alliance-workflows.cjs",
+              "assertion_group": "region modes, navigation, tiers, reorder, sharing and reservation assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -4014,15 +4169,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -4138,15 +4296,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -4264,17 +4425,24 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/recovered-alliance-workflows.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/recovered-alliance-workflows.cjs",
+              "assertion_group": "region modes, navigation, tiers, reorder, sharing and reservation assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -4392,17 +4560,24 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-focus-roster-drag.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-focus-roster-drag.cjs",
+              "assertion_group": "focus, matching, drag/drop, collision and role/archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -4517,15 +4692,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -4651,17 +4829,24 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/recovered-alliance-workflows.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/recovered-alliance-workflows.cjs",
+              "assertion_group": "region modes, navigation, tiers, reorder, sharing and reservation assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -4776,15 +4961,18 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -4911,17 +5099,24 @@
         "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-focus-roster-drag.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-focus-roster-drag.cjs",
+              "assertion_group": "focus, matching, drag/drop, collision and role/archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-layouts.cjs",
           "docs/system/evidence/historical-workspace-tests/test-region-panel.cjs",
           "docs/system/evidence/historical-workspace-tests/test-strategic.cjs",
           "docs/system/evidence/historical-workspace-tests/test-topbar-alliance.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -5029,13 +5224,24 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-tag-matching.cjs",
-          "tests/registration-deployment.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-tag-matching.cjs",
+              "assertion_group": "blank-tag recovery, foreign-tag preservation, assignment undo/redo and focused import assertions",
+              "status": "passed"
+            },
+            {
+              "test": "tests/registration-deployment.cjs",
+              "assertion_group": "approved eligibility, mud/grass centre constraints and registration-toggle assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5141,12 +5347,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/registration-deployment.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/registration-deployment.cjs",
+              "assertion_group": "approved eligibility, mud/grass centre constraints and registration-toggle assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5253,12 +5466,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "partial",
-        "evidence_tests": [
-          "tests/quick-deployment.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+        "current": {
+          "classification": "partial",
+          "assertions": [
+            {
+              "test": "tests/quick-deployment.cjs",
+              "assertion_group": "quick-deployment determinism, capacity, stale preview, apply/history and permission assertions",
+              "status": "failed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5364,12 +5584,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/deployment-packing.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/deployment-packing.cjs",
+              "assertion_group": "capacity, spacing, apply/recall, identity retention and permission assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5467,12 +5694,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/preview-territory.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/preview-territory.cjs",
+              "assertion_group": "centre-only allocation, footprint spill, blocked preview and rendered-label assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5587,13 +5821,24 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "partial",
-        "evidence_tests": [
-          "tests/preview-territory.cjs",
-          "tests/quick-deployment.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+        "current": {
+          "classification": "partial",
+          "assertions": [
+            {
+              "test": "tests/preview-territory.cjs",
+              "assertion_group": "centre-only allocation, footprint spill, blocked preview and rendered-label assertions",
+              "status": "passed"
+            },
+            {
+              "test": "tests/quick-deployment.cjs",
+              "assertion_group": "quick-deployment determinism, capacity, stale preview, apply/history and permission assertions",
+              "status": "failed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5701,13 +5946,24 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "partial",
-        "evidence_tests": [
-          "tests/quick-deployment.cjs",
-          "tests/deployment-packing.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+        "current": {
+          "classification": "partial",
+          "assertions": [
+            {
+              "test": "tests/quick-deployment.cjs",
+              "assertion_group": "quick-deployment determinism, capacity, stale preview, apply/history and permission assertions",
+              "status": "failed"
+            },
+            {
+              "test": "tests/deployment-packing.cjs",
+              "assertion_group": "capacity, spacing, apply/recall, identity retention and permission assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5805,12 +6061,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/deployment-packing.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/deployment-packing.cjs",
+              "assertion_group": "capacity, spacing, apply/recall, identity retention and permission assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -5919,15 +6182,18 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -6040,17 +6306,24 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -6154,17 +6427,24 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-ai-import.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-ai-import.mjs",
+              "assertion_group": "mock provider payload, image, model, usage, legacy input and error assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -6279,17 +6559,24 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs",
+              "assertion_group": "ledger initialization, reservation, settlement, concurrency and fail-closed assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -6398,15 +6685,18 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -6523,15 +6813,18 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -6643,17 +6936,24 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/alliance-tag-matching.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/alliance-tag-matching.cjs",
+              "assertion_group": "blank-tag recovery, foreign-tag preservation, assignment undo/redo and focused import assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -6773,17 +7073,24 @@
         "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/roster-sync.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/roster-sync.cjs",
+              "assertion_group": "read-only join, identity merge, persistence, removals, filters and disconnect assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ai-batches.cjs",
           "docs/system/evidence/historical-workspace-tests/test-local-double.cjs",
           "docs/system/evidence/historical-workspace-tests/test-import-review.cjs",
           "docs/system/evidence/historical-workspace-tests/test-card-reader.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -6880,10 +7187,13 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "absent",
-        "evidence_tests": [],
-        "historical_evidence": [],
-        "assertion_basis": "No current or new characterisation assertion is mapped; source inspection and documented gaps remain."
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "No current executable assertion covers this contract; historical evidence is supplementary only."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": true
       }
     },
     {
@@ -6977,19 +7287,26 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
       "id": "CAP-058",
       "group": "Export",
       "name": "CSV and game coordinate output",
-      "description": "Coordinates use Name — [#:759 X:n Y:n]; CSV/game text export include eligible placed HQs. Locked/existing terminology differs from arrived status; clipboard failure needs fallback.",
+      "description": "Coordinates use Name \u2014 [#:759 X:n Y:n]; CSV/game text export include eligible placed HQs. Locked/existing terminology differs from arrived status; clipboard failure needs fallback.",
       "entry_points": [
         "Top Export menu / export and backup tools"
       ],
@@ -7007,7 +7324,7 @@
       "preconditions": "A current planner state or valid import input exists; file, clipboard, browser and recovery semantics may be partially unverified.",
       "inputs": {
         "shape": "Current plan/display, selected coordinate export filter or JSON file",
-        "specific_constraints": "Coordinates use Name — [#:759 X:n Y:n]; CSV/game text export include eligible placed HQs. Locked/existing terminology differs from arrived status; clipboard failure needs fallback."
+        "specific_constraints": "Coordinates use Name \u2014 [#:759 X:n Y:n]; CSV/game text export include eligible placed HQs. Locked/existing terminology differs from arrived status; clipboard failure needs fallback."
       },
       "outputs": {
         "observable": "Downloaded JSON/CSV/text/PNG, clipboard text or imported plan/error"
@@ -7023,7 +7340,7 @@
         "gameExportFilter"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Coordinates use Name — [#:759 X:n Y:n]; CSV/game text export include eligible placed HQs.",
+        "Preserve the implemented contract: Coordinates use Name \u2014 [#:759 X:n Y:n]; CSV/game text export include eligible placed HQs.",
         "Preserve the implemented contract: Locked/existing terminology differs from arrived status; clipboard failure needs fallback."
       ],
       "side_effects": [
@@ -7087,10 +7404,13 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "absent",
-        "evidence_tests": [],
-        "historical_evidence": [],
-        "assertion_basis": "No current or new characterisation assertion is mapped; source inspection and documented gaps remain."
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "No current executable assertion covers this contract; historical evidence is supplementary only."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": true
       }
     },
     {
@@ -7188,10 +7508,13 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "absent",
-        "evidence_tests": [],
-        "historical_evidence": [],
-        "assertion_basis": "No current or new characterisation assertion is mapped; source inspection and documented gaps remain."
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "No current executable assertion covers this contract; historical evidence is supplementary only."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": true
       }
     },
     {
@@ -7307,13 +7630,16 @@
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
           "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -7422,13 +7748,16 @@
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
           "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -7531,15 +7860,22 @@
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
           "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -7663,17 +7999,32 @@
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
       ],
       "coverage": {
-        "classification": "partial",
-        "evidence_tests": [
-          "tests/quick-deployment.cjs",
-          "tests/alliance-tag-matching.cjs",
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "partial",
+          "assertions": [
+            {
+              "test": "tests/quick-deployment.cjs",
+              "assertion_group": "quick-deployment determinism, capacity, stale preview, apply/history and permission assertions",
+              "status": "failed"
+            },
+            {
+              "test": "tests/alliance-tag-matching.cjs",
+              "assertion_group": "blank-tag recovery, foreign-tag preservation, assignment undo/redo and focused import assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
           "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
         ],
-        "assertion_basis": "A mapped test is present but one or more mapped scripts failed before all intended assertions executed."
+        "source_inspected_only": false
       }
     },
     {
@@ -7781,13 +8132,16 @@
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
           "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -7906,13 +8260,16 @@
         "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-ui.cjs",
           "docs/system/evidence/historical-workspace-tests/test-welcome.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -8014,12 +8371,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -8128,12 +8492,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/roster-sync.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/roster-sync.cjs",
+              "assertion_group": "read-only join, identity merge, persistence, removals, filters and disconnect assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -8246,14 +8617,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -8379,15 +8757,26 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/roster-sync.cjs",
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/roster-sync.cjs",
+              "assertion_group": "read-only join, identity merge, persistence, removals, filters and disconnect assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -8501,12 +8890,15 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -8631,14 +9023,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -8762,12 +9161,15 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "indirect",
-        "evidence_tests": [],
-        "historical_evidence": [
+        "current": {
+          "classification": "absent",
+          "assertions": [],
+          "basis": "The mapped historical material is supplementary evidence only and does not establish current executable coverage."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Only historical supplementary evidence is mapped; it does not establish current direct coverage."
+        "source_inspected_only": false
       }
     },
     {
@@ -8892,14 +9294,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9033,15 +9442,26 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs",
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9162,21 +9582,28 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
       "id": "CAP-076",
       "group": "Rooms",
       "name": "Weekly rollover and archive",
-      "description": "Sunday midnight UTC−2 creates new instance lazily/scheduled; old plan archived, roster rolled to waiting, boundaries carried and new responses empty. Closed rooms do not roll over.",
+      "description": "Sunday midnight UTC\u22122 creates new instance lazily/scheduled; old plan archived, roster rolled to waiting, boundaries carried and new responses empty. Closed rooms do not roll over.",
       "entry_points": [
         "Rooms & sharing / roster sync / publishing panels and timers"
       ],
@@ -9194,7 +9621,7 @@
       "preconditions": "A valid room/code/session and the required role are present; remote service/platform transaction behaviour is not fully proven.",
       "inputs": {
         "shape": "Bearer code, room plan/changes/week, roster source and source member IDs",
-        "specific_constraints": "Sunday midnight UTC−2 creates new instance lazily/scheduled; old plan archived, roster rolled to waiting, boundaries carried and new responses empty. Closed rooms do not roll over."
+        "specific_constraints": "Sunday midnight UTC\u22122 creates new instance lazily/scheduled; old plan archived, roster rolled to waiting, boundaries carried and new responses empty. Closed rooms do not roll over."
       },
       "outputs": {
         "observable": "Room/source state, merged changes/conflicts, codes, archives or published map"
@@ -9208,7 +9635,7 @@
         "deploymentPublishVersions"
       ],
       "business_rules": [
-        "Preserve the implemented contract: Sunday midnight UTC−2 creates new instance lazily/scheduled; old plan archived, roster rolled to waiting, boundaries carried and new responses empty.",
+        "Preserve the implemented contract: Sunday midnight UTC\u22122 creates new instance lazily/scheduled; old plan archived, roster rolled to waiting, boundaries carried and new responses empty.",
         "Preserve the implemented contract: Closed rooms do not roll over."
       ],
       "side_effects": [
@@ -9305,15 +9732,26 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs",
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9438,14 +9876,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9570,14 +10015,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/roster-sync.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/roster-sync.cjs",
+              "assertion_group": "read-only join, identity merge, persistence, removals, filters and disconnect assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9703,14 +10155,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/roster-sync.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/roster-sync.cjs",
+              "assertion_group": "read-only join, identity merge, persistence, removals, filters and disconnect assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9831,14 +10290,21 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/deployment-publisher.cjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/deployment-publisher.cjs",
+              "assertion_group": "room authority, source identity, versions, unchanged suppression and move/recall assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -9972,15 +10438,26 @@
         "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
       ],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/deployment-publisher.cjs",
-          "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs"
-        ],
-        "historical_evidence": [
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/deployment-publisher.cjs",
+              "assertion_group": "room authority, source identity, versions, unchanged suppression and move/recall assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs",
+              "assertion_group": "scoped reads, authorized writes, revisions, stale conflicts, closed-room and sync assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [
           "docs/system/evidence/historical-workspace-tests/test-rooms.cjs"
         ],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "source_inspected_only": false
       }
     },
     {
@@ -10094,12 +10571,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/quick-registration.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/quick-registration.cjs",
+              "assertion_group": "availability, custom windows/notes, autosave/conflict and read-only assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10212,12 +10696,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-member-registration.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-member-registration.mjs",
+              "assertion_group": "scoped roster, enrollment, duplicate, pending, review, merge and response assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10331,12 +10822,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/quick-registration.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/quick-registration.cjs",
+              "assertion_group": "availability, custom windows/notes, autosave/conflict and read-only assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10443,13 +10941,24 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/quick-registration.cjs",
-          "tests/registration-deployment.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/quick-registration.cjs",
+              "assertion_group": "availability, custom windows/notes, autosave/conflict and read-only assertions",
+              "status": "passed"
+            },
+            {
+              "test": "tests/registration-deployment.cjs",
+              "assertion_group": "approved eligibility, mud/grass centre constraints and registration-toggle assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10555,12 +11064,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/quick-registration.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/quick-registration.cjs",
+              "assertion_group": "availability, custom windows/notes, autosave/conflict and read-only assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10674,12 +11190,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-member-registration.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-member-registration.mjs",
+              "assertion_group": "scoped roster, enrollment, duplicate, pending, review, merge and response assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10794,13 +11317,24 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/quick-registration.cjs",
-          "docs/system/evidence/shared-service/scripts/test-member-registration.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/quick-registration.cjs",
+              "assertion_group": "availability, custom windows/notes, autosave/conflict and read-only assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-member-registration.mjs",
+              "assertion_group": "scoped roster, enrollment, duplicate, pending, review, merge and response assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -10914,12 +11448,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs",
+              "assertion_group": "scoped reads, authorized writes, revisions, stale conflicts, closed-room and sync assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11025,12 +11566,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "tests/registration-inspector.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "tests/registration-inspector.cjs",
+              "assertion_group": "anchored zoom, clamp and Fit assertions; native gestures are not exercised",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11145,12 +11693,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-live-deployment.mjs",
+              "assertion_group": "scoped reads, authorized writes, revisions, stale conflicts, closed-room and sync assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11259,12 +11814,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11363,12 +11925,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11467,12 +12036,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11579,12 +12155,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11691,12 +12274,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-room-admin.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-room-admin.mjs",
+              "assertion_group": "admin auth, redaction, close/reopen/revoke, replacement, labels and duplicate assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11775,12 +12365,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/tests/preservation.cjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/tests/preservation.cjs",
+              "assertion_group": "seven non-invasive preservation assertions executed as a passing TAP suite",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11874,12 +12471,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -11981,13 +12585,24 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-ai-import.mjs",
-          "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-ai-import.mjs",
+              "assertion_group": "mock provider payload, image, model, usage, legacy input and error assertions",
+              "status": "passed"
+            },
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-ai-budget.mjs",
+              "assertion_group": "ledger initialization, reservation, settlement, concurrency and fail-closed assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     },
     {
@@ -12082,12 +12697,19 @@
       ],
       "historical_supplementary_tests": [],
       "coverage": {
-        "classification": "direct",
-        "evidence_tests": [
-          "docs/system/evidence/shared-service/scripts/test-server.mjs"
-        ],
-        "historical_evidence": [],
-        "assertion_basis": "Mapped current/new test assertions; scope is limited to the named files and their executed assertions."
+        "current": {
+          "classification": "direct",
+          "assertions": [
+            {
+              "test": "docs/system/evidence/shared-service/scripts/test-server.mjs",
+              "assertion_group": "rooms, codes, roles, CORS, conflicts, history, reconcile/restore and archive assertions",
+              "status": "passed"
+            }
+          ],
+          "basis": "Classification is limited to the named assertion groups and their recorded execution status."
+        },
+        "historical_supplementary": [],
+        "source_inspected_only": false
       }
     }
   ]

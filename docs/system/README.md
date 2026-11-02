@@ -43,6 +43,7 @@ Run safe baseline checks from repository root:
 python3 docs/system/tests/validate-baseline.py
 python3 docs/system/tests/validate-docs.py
 python3 docs/system/tests/detect-source-drift.py
+python3 docs/system/tests/test-validation-separation.py
 python3 docs/system/tests/run-baseline.py
 node docs/system/tests/preservation.cjs
 ```

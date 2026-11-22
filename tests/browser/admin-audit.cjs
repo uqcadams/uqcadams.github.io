@@ -1,0 +1,110 @@
+/* Read-only, isolated browser regression. Install Playwright + Chromium or set PLAYWRIGHT_MODULE. */
+const assert = require('node:assert/strict');
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const http = require('node:http');
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const root = path.resolve(__dirname, '../..');
+const mime = {'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.yaml':'application/yaml','.md':'text/plain'};
+const server = http.createServer(async (req, res) => {
+  try {
+    const name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    let file = path.resolve(root, '.' + name);
+    if (!file.startsWith(root + path.sep)) throw Error('Invalid path');
+    if ((await fs.stat(file)).isDirectory()) file = path.join(file, 'index.html');
+    res.setHeader('Content-Type', mime[path.extname(file)] || 'text/plain'); res.end(await fs.readFile(file));
+  } catch { res.writeHead(404); res.end('Not found'); }
+});
+const checks = [];
+(async () => {
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  const origin = 'http://127.0.0.1:' + server.address().port;
+  const registry = JSON.parse(await fs.readFile(path.join(root, 'docs/system/feature-registry.json')));
+  const additions = JSON.parse(await fs.readFile(path.join(root, 'acm1-planner/audit/features.json')));
+  const expected = registry.capabilities.length + additions.capabilities.length;
+  const markdown = await fs.readFile(path.join(root, 'docs/system/07-behavioural-specifications.md'), 'utf8');
+  const workflowCount = (markdown.match(/^## FLOW-\d+/gm) || []).length;
+  const browser = await chromium.launch({headless:true});
+  try {
+    const context = await browser.newContext({viewport:{width:1600,height:1000}});
+    await context.addInitScript(() => {
+      localStorage.setItem('lastz-skip-tutorials', '1');
+      localStorage.setItem('acm1-territory-planner-v1', JSON.stringify({homes:[{id:'fixture-placed',name:'Audit fixture',level:27,alliance:'EXAMPLE',x:460,y:540}],pool:[{id:'fixture-waiting',name:'Waiting fixture',level:26,alliance:'EXAMPLE'}]}));
+    });
+    const unexpected = [], errors = [], requests = [];
+    await context.route('**/*', route => {
+      const url = new URL(route.request().url()); requests.push(url.pathname);
+      if (url.origin !== origin && !['data:','about:','blob:'].includes(url.protocol)) { unexpected.push(url.href); return route.abort(); }
+      return route.continue();
+    });
+    const page = await context.newPage(); page.on('pageerror', error => errors.push(error.message));
+    await page.goto(origin + '/acm1-planner/');
+    const opener = page.getByRole('button', {name:'Admin audit',exact:true}); await opener.waitFor();
+    const order = await opener.evaluate(button => button.previousElementSibling?.className || '');
+    assert(order.includes('plan-menu'), 'Audit follows Export in header DOM');
+    const before = await page.evaluate(() => localStorage.getItem('acm1-territory-planner-v1'));
+    await opener.click();
+    const modal = page.getByRole('dialog', {name:'Admin audit'}); await modal.waitFor();
+    const frame = page.frameLocator('.admin-audit-frame');
+    await frame.locator('#feature-count').filter({hasText:expected + ' of ' + expected}).waitFor();
+    assert.equal(await frame.locator('.feature-card').count(), expected);
+    assert(!requests.some(p => p.endsWith('swagger-ui-bundle.js')), 'Swagger lazily loads');
+    checks.push('Header order, native modal and complete lazy-loaded catalogue');
+    await frame.locator('#feature-area').selectOption('HQ');
+    assert.equal(await frame.locator('.feature-card').count(), registry.capabilities.filter(f=>f.group==='HQ').length);
+    await frame.locator('#feature-search').fill('no-such-feature-zzzzz'); await frame.locator('.empty').waitFor();
+    await frame.getByRole('button', {name:'Clear filters'}).click();
+    await frame.locator('#feature-search').fill('UI-AUDIT');
+    await frame.locator('#feature-UI-AUDIT > summary').click();
+    await frame.getByRole('button', {name:'Swagger UI API reference',exact:true}).click();
+    assert.equal(await frame.locator('#feature-search').inputValue(), 'UI-API-REFERENCE');
+    assert(await frame.locator('#feature-UI-API-REFERENCE').evaluate(el=>el.open));
+    checks.push('Search, area filter, empty state, clear and related-feature navigation');
+    await frame.getByRole('tab', {name:'Workflows',exact:true}).click();
+    await frame.locator('#workflow-status').filter({hasText:workflowCount + ' documented workflows'}).waitFor();
+    assert.equal(await frame.locator('.workflow-card').count(), workflowCount);
+    await frame.locator('.workflow-card > summary').first().click();
+    assert(await frame.locator('.workflow-body').first().isVisible());
+    checks.push('Every canonical workflow with expandable prerequisites and recovery');
+    await frame.getByRole('tab', {name:'API reference',exact:true}).click();
+    const api = frame.frameLocator('#api-frame');
+    await api.locator('#api-status').filter({hasText:'Read-only API reference'}).waitFor({timeout:30000});
+    assert((await api.locator('.opblock').count()) > 0, 'Swagger renders operations');
+    assert.equal(await api.getByRole('button', {name:/try it out|execute|authorize/i}).count(), 0);
+    await api.locator('.opblock-summary').first().click();
+    assert(await api.locator('.opblock-body').first().isVisible());
+    assert(await api.getByText('Responses', {exact:true}).first().isVisible());
+    await api.locator('.operation-filter-input').press('Escape'); await modal.waitFor({state:'hidden'});
+    assert(await opener.evaluate(el=>el===document.activeElement));
+    assert.equal(await page.evaluate(()=>localStorage.getItem('acm1-territory-planner-v1')), before);
+    checks.push('Real Swagger rendering/expansion, no execution, nested Escape, focus restore and unchanged saved plan');
+    await opener.click();
+    await page.getByRole('button', {name:'Close admin audit'}).click(); await modal.waitFor({state:'hidden'});
+    await opener.focus(); await page.keyboard.press('Enter'); await modal.waitFor();
+    await frame.getByRole('tab', {name:'Features',exact:true}).click();
+    await frame.getByRole('tab', {name:'Features',exact:true}).focus();
+    await page.keyboard.press('ArrowRight');
+    assert.equal(await frame.getByRole('tab', {name:'Workflows',exact:true}).getAttribute('aria-selected'), 'true');
+    await page.getByRole('button', {name:'Close admin audit'}).click();
+    checks.push('Close/reopen, keyboard activation and accessible tab navigation');
+    await page.setViewportSize({width:390,height:844}); await opener.click();
+    await frame.getByRole('tab', {name:'Features',exact:true}).click();
+    await frame.getByRole('button', {name:'Clear filters'}).click();
+    assert(await frame.locator('body').evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    const box=await modal.boundingBox(); assert(box.width<=390 && box.height<=844);
+    if(process.env.AUDIT_SCREENSHOT) await page.screenshot({path:process.env.AUDIT_SCREENSHOT,fullPage:true});
+    await frame.locator('#feature-search').press('Escape'); await modal.waitFor({state:'hidden'});
+    checks.push('Phone-width modal, usable filters, no audit horizontal overflow and child Escape');
+    const failure = await context.newPage(); let fail = true;
+    await failure.route('**/feature-registry.json', route => fail ? route.fulfill({status:503,body:'Unavailable'}) : route.continue());
+    await failure.goto(origin + '/acm1-planner/'); await failure.getByRole('button', {name:'Admin audit',exact:true}).click();
+    const failedFrame=failure.frameLocator('.admin-audit-frame'); await failedFrame.locator('#feature-error').waitFor();
+    fail=false;await failedFrame.getByRole('button',{name:'Retry loading',exact:true}).click();
+    await failedFrame.locator('#feature-count').filter({hasText:expected+' of '+expected}).waitFor();
+    checks.push('Documentation load failure and successful retry without a partial catalogue');
+    assert.deepEqual(unexpected, [], 'No external service/CDN/provider requests');
+    assert.deepEqual(errors, [], 'No browser JavaScript errors');
+    console.log(checks.map((s,i)=>`${i+1}. PASS ${s}`).join('\n'));
+    await context.close();
+  } finally { await browser.close(); }
+})().catch(error=>{console.error(error);process.exitCode=1;}).finally(()=>server.close());

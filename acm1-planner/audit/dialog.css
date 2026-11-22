@@ -1,0 +1,11 @@
+.admin-audit-dialog{width:min(1180px,calc(100vw - 32px));height:min(880px,calc(100dvh - 40px));max-width:none;max-height:none;padding:0;border:1px solid #40566d;border-radius:18px;background:#0b1523;color:#e5edf6;box-shadow:0 24px 100px #0009;overflow:hidden}
+.admin-audit-dialog[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
+.admin-audit-dialog::backdrop{background:#020913c4;backdrop-filter:blur(5px)}
+.admin-audit-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;border-bottom:1px solid #293c50;background:#101f30}
+.admin-audit-heading h2{margin:0;font:700 20px/1.3 system-ui,sans-serif;letter-spacing:-.4px}
+.admin-audit-heading p{margin:5px 0 0;font:13px/1.4 system-ui,sans-serif;color:#a9bdd0}
+.admin-audit-close{flex:none;min-height:40px;padding:8px 14px;border:1px solid #40566d;border-radius:9px;background:#1b3045;color:#e5edf6;font:600 14px system-ui,sans-serif;cursor:pointer}
+.admin-audit-close:hover{background:#29425b}.admin-audit-close:focus-visible{outline:3px solid #68e4b3;outline-offset:3px}
+.admin-audit-frame{width:100%;height:100%;min-height:0;border:0;background:#0b1523}
+body.admin-audit-open{overflow:hidden}
+@media(max-width:600px){.admin-audit-dialog{width:100vw;height:100dvh;margin:0;border:0;border-radius:0}.admin-audit-heading{padding:14px 16px}.admin-audit-heading h2{font-size:18px}.admin-audit-heading p{font-size:12px}}

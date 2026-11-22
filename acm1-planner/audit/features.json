@@ -1,0 +1,35 @@
+{
+  "description": "Current audit UI additions, kept separate from the immutable historical capability baseline.",
+  "capabilities": [
+    {
+      "id": "UI-AUDIT",
+      "group": "Audit",
+      "name": "Admin audit feature catalogue",
+      "description": "Open Admin audit to browse and search the planner's documented features, filter by area, follow related functionality and inspect complete workflow descriptions. The guide covers the planner, member registration and room administration.",
+      "entry_points": ["Planner header → Admin audit, immediately after Export"],
+      "user_actions": ["Search by feature name, description, action or identifier", "Filter by area and expand a feature for requirements, rules, effects and evidence", "Open Workflows to read prerequisites, state transitions and recovery paths", "Close with Close or Escape and return to the header button"],
+      "preconditions": "Documentation files must be available. Reading the catalogue requires no room code and grants no administrative permission.",
+      "business_rules": ["Display every baseline feature plus the current audit additions without changing the historical registry", "Keep audit controls separate from plan state, history, saving and publishing", "Report a documentation loading failure with Retry and a documentation link"],
+      "side_effects": ["Loads public reference files and temporarily opens a modal; no plan or registration writes"],
+      "related_capabilities": ["UI-API-REFERENCE", "CAP-060", "CAP-092"],
+      "known_limitations": ["This is reference documentation, not a live feature-health scan or a guarantee that all baseline assertions pass"],
+      "coverage_gaps": ["Screen-reader and physical mobile-device verification remain separate from automated browser checks"],
+      "source_references": [{"path":"acm1-planner/audit/catalogue.js","symbol":"loadFeatures"}]
+    },
+    {
+      "id": "UI-API-REFERENCE",
+      "group": "Audit",
+      "name": "Swagger UI API reference",
+      "description": "Browse the shared service's HTTP endpoints, authentication requirements, request fields, schemas and responses in a read-only Swagger UI view. Download the existing OpenAPI specification for development tools.",
+      "entry_points": ["Admin audit → API reference"],
+      "user_actions": ["Filter and expand HTTP endpoints", "Inspect request and response schemas", "Open or download the canonical OpenAPI YAML"],
+      "preconditions": "The API tab loads its locally bundled Swagger UI assets and the public OpenAPI document. No API or admin key is needed to read it.",
+      "business_rules": ["Disable request execution, persisted authorization, external validation and query-string configuration overrides", "Keep the OpenAPI document as the endpoint source of truth", "Document browser-only operations under Features and Workflows rather than pretending they are HTTP endpoints"],
+      "side_effects": ["Loads local reference assets only; does not call the shared service or OpenAI"],
+      "related_capabilities": ["UI-AUDIT", "CAP-098", "CAP-100"],
+      "known_limitations": ["The specification describes the pinned service contract, not a new audit of the independently deployed backend"],
+      "coverage_gaps": ["API availability and real production credentials are intentionally not tested by this documentation viewer"],
+      "source_references": [{"path":"acm1-planner/audit/api.js","symbol":"SwaggerUIBundle"}]
+    }
+  ]
+}

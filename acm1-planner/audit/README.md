@@ -1,6 +1,6 @@
 # Admin audit
 
-The planner header's **Admin audit** button follows Export. It opens an isolated native dialog containing a responsive reference page. This is public, read-only documentation, not a site-admin authentication or administration screen.
+The planner's **Help → Feature & API catalogue** entry opens the guide. It opens an isolated native dialog containing a responsive reference page. This is public, read-only documentation, not a site-admin authentication or administration screen.
 
 ## Content sources
 

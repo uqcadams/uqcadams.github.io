@@ -14,10 +14,10 @@
       dialog.setAttribute('aria-describedby', 'admin-audit-description');
       const heading = document.createElement('div'); heading.className = 'admin-audit-heading';
       const text = document.createElement('div');
-      const title = document.createElement('h2'); title.id = 'admin-audit-title'; title.textContent = 'Admin audit';
+      const title = document.createElement('h2'); title.id = 'admin-audit-title'; title.textContent = 'Feature & API catalogue';
       const description = document.createElement('p'); description.id = 'admin-audit-description'; description.textContent = 'Read-only system guide · features, workflows and APIs';
       text.append(title, description);
-      const exit = document.createElement('button'); exit.type = 'button'; exit.className = 'admin-audit-close'; exit.textContent = 'Close'; exit.setAttribute('aria-label', 'Close admin audit'); exit.onclick = close;
+      const exit = document.createElement('button'); exit.type = 'button'; exit.className = 'admin-audit-close'; exit.textContent = 'Close'; exit.setAttribute('aria-label', 'Close feature catalogue'); exit.onclick = close;
       heading.append(text, exit);
       frame = document.createElement('iframe'); frame.className = 'admin-audit-frame'; frame.title = 'Planner features, workflows and API reference'; frame.src = page;
       dialog.append(heading, frame); document.body.append(dialog);

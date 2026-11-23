@@ -1,0 +1,366 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Weekly collaboration extension",
+    "version": "1.0.0",
+    "description": "Additive to the pinned shared service baseline. Officer/coordinator codes required. Territory proposals conservatively require all allocated alliances; coordinator override is explicit. Access codes persist across weeks; unlocks and proposals do not."
+  },
+  "servers": [
+    {
+      "url": "https://acm1-shared-rooms.khrads.chatgpt.site"
+    }
+  ],
+  "paths": {
+    "/api/collaboration": {
+      "get": {
+        "summary": "Read weekly participants, permissions and proposals",
+        "operationId": "ReadCollaboration",
+        "security": [
+          {
+            "RoomCode": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collaboration state; decision returns {collaboration,state?}. No access codes."
+          },
+          "400": {
+            "description": "Invalid change or unsafe HQ footprint."
+          },
+          "401": {
+            "description": "Invalid or revoked code."
+          },
+          "403": {
+            "description": "Wrong role/alliance, paused access, closed room or archive."
+          },
+          "409": {
+            "description": "Stale week, plan, permission or proposal version. Refresh before retrying."
+          }
+        },
+        "parameters": [
+          {
+            "name": "week",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Optional archived week, read-only."
+          }
+        ]
+      }
+    },
+    "/api/collaboration/join": {
+      "post": {
+        "summary": "Record alliance participation this week",
+        "operationId": "Join",
+        "security": [
+          {
+            "RoomCode": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collaboration state; decision returns {collaboration,state?}. No access codes."
+          },
+          "400": {
+            "description": "Invalid change or unsafe HQ footprint."
+          },
+          "401": {
+            "description": "Invalid or revoked code."
+          },
+          "403": {
+            "description": "Wrong role/alliance, paused access, closed room or archive."
+          },
+          "409": {
+            "description": "Stale week, plan, permission or proposal version. Refresh before retrying."
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Join"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/collaboration/permissions": {
+      "patch": {
+        "summary": "Change explicit weekly shared editing permission",
+        "operationId": "Permissions",
+        "security": [
+          {
+            "RoomCode": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collaboration state; decision returns {collaboration,state?}. No access codes."
+          },
+          "400": {
+            "description": "Invalid change or unsafe HQ footprint."
+          },
+          "401": {
+            "description": "Invalid or revoked code."
+          },
+          "403": {
+            "description": "Wrong role/alliance, paused access, closed room or archive."
+          },
+          "409": {
+            "description": "Stale week, plan, permission or proposal version. Refresh before retrying."
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Permissions"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/collaboration/proposals": {
+      "post": {
+        "summary": "Submit existing HQ or territory changes for approval",
+        "operationId": "Proposal",
+        "security": [
+          {
+            "RoomCode": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collaboration state; decision returns {collaboration,state?}. No access codes."
+          },
+          "400": {
+            "description": "Invalid change or unsafe HQ footprint."
+          },
+          "401": {
+            "description": "Invalid or revoked code."
+          },
+          "403": {
+            "description": "Wrong role/alliance, paused access, closed room or archive."
+          },
+          "409": {
+            "description": "Stale week, plan, permission or proposal version. Refresh before retrying."
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Proposal"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/collaboration/decision": {
+      "post": {
+        "summary": "Approve, reject, withdraw or override a proposal",
+        "operationId": "Decision",
+        "security": [
+          {
+            "RoomCode": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collaboration state; decision returns {collaboration,state?}. No access codes."
+          },
+          "400": {
+            "description": "Invalid change or unsafe HQ footprint."
+          },
+          "401": {
+            "description": "Invalid or revoked code."
+          },
+          "403": {
+            "description": "Wrong role/alliance, paused access, closed room or archive."
+          },
+          "409": {
+            "description": "Stale week, plan, permission or proposal version. Refresh before retrying."
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Decision"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RoomCode": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Existing officer or coordinator code; never a member registration code."
+      }
+    },
+    "schemas": {
+      "Join": {
+        "type": "object",
+        "required": [
+          "week"
+        ],
+        "properties": {
+          "week": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "Permissions": {
+        "type": "object",
+        "required": [
+          "week",
+          "alliance",
+          "version"
+        ],
+        "properties": {
+          "week": {
+            "type": "string",
+            "format": "date"
+          },
+          "alliance": {
+            "type": "string",
+            "description": "Alliance tag, or * for shared territory editing (coordinator only)."
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hqOpen": {
+            "type": "boolean"
+          },
+          "territoryOpen": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Proposal": {
+        "type": "object",
+        "required": [
+          "week",
+          "baseVersion",
+          "reason",
+          "changes"
+        ],
+        "properties": {
+          "week": {
+            "type": "string",
+            "format": "date"
+          },
+          "baseVersion": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "changes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/Change"
+            }
+          }
+        }
+      },
+      "Change": {
+        "type": "object",
+        "required": [
+          "collection",
+          "op",
+          "id",
+          "fields",
+          "before",
+          "beforePresent"
+        ],
+        "properties": {
+          "collection": {
+            "type": "string",
+            "enum": [
+              "homes",
+              "regions"
+            ]
+          },
+          "op": {
+            "type": "string",
+            "enum": [
+              "patch"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "object",
+            "description": "HQ x/y and hasMoved:false; or zone points, polygons, manualBase, manualExtended and layout. Ownership changes prohibited."
+          },
+          "before": {
+            "type": "object"
+          },
+          "beforePresent": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "removeFields": {
+            "type": "array",
+            "maxItems": 0,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Decision": {
+        "type": "object",
+        "required": [
+          "week",
+          "id",
+          "version",
+          "decision"
+        ],
+        "properties": {
+          "week": {
+            "type": "string",
+            "format": "date"
+          },
+          "id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approve",
+              "reject",
+              "withdraw",
+              "override"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

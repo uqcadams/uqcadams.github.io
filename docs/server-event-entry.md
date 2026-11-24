@@ -46,3 +46,9 @@ Event creation is explicitly an organiser task and has two stages: **Set up a sh
 Only the review screen exposes the final create action. A signature covering source plan, target server, name and listing preference invalidates review when those details change. Cancellation returns to joining and uses a non-submit button. Private exploration and general coordinator navigation are absent during setup so they cannot become competing exits. Creation still uses the existing room API, copies the local draft and preserves coordinator access and existing shared plans.
 
 Browser verification covered the guest screen, setup, review, cancellation and 390×844 layout without horizontal overflow. No production event was created during the check. Automated event-entry tests cover acknowledgement, review gating, changed-draft invalidation, copied counts and target-server/listing payloads, alongside the earlier link, export and private-draft preservation assertions.
+
+## Fresh event or explicit draft copy
+
+Organiser setup now defaults to **Start fresh**. It uses standard OUTER/INNER map geometry, no deployed HQs, waiting players, alliance zones or custom blocked cells, and no formation anchor. **Copy my private draft** is an explicit alternative retaining the existing plan snapshot. The source selector is editable in setup and read-only in review. The source choice and selected plan are included in the review signature, so switching the choice requires another review.
+
+The existing creation endpoint receives the chosen snapshot; no private state is cleared before or after requesting creation. The standard shared-room application preserves the original local plan in localPlanMemory so returning to it remains possible. The older explicitly named “create from this plan” tool continues to copy its source as labelled. Tests verify the actual request payload for fresh and copy modes, reset geometry/exclusions/anchor, source preservation and review invalidation.

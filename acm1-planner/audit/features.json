@@ -262,7 +262,9 @@
         "Coordinate outputs use the active plan\u2019s server number",
         "Joining is the primary guest route; creation is an organiser task with mandatory review",
         "Public listing defaults off; changed setup/source invalidates review",
-        "Existing listed events require acknowledgement before creating a separate event"
+        "Existing listed events require acknowledgement before creating a separate event",
+        "New event setup defaults to a fresh standard map; copying a private draft requires explicit selection",
+        "Starting-plan selection is shown in review and changes invalidate that review"
       ],
       "side_effects": [
         "Reads the public directory; normal join/create actions retain existing shared-service behaviour"

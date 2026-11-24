@@ -248,7 +248,8 @@
         "Join with an alliance officer code or link",
         "Create a weekly event from a private draft",
         "Coordinator lists or unlists an existing event",
-        "Continue a clearly labelled private draft"
+        "Continue a clearly labelled private draft",
+        "Organisers review the copied source and sharing settings before creating an event"
       ],
       "preconditions": [
         "A valid server number from 1 to 999999",
@@ -258,7 +259,10 @@
         "Existing plans are never silently relabelled when browsing another server",
         "Shared server identity is immutable; legacy events default to 759",
         "Public listings contain metadata only and require opt-in",
-        "Coordinate outputs use the active plan\u2019s server number"
+        "Coordinate outputs use the active plan\u2019s server number",
+        "Joining is the primary guest route; creation is an organiser task with mandatory review",
+        "Public listing defaults off; changed setup/source invalidates review",
+        "Existing listed events require acknowledgement before creating a separate event"
       ],
       "side_effects": [
         "Reads the public directory; normal join/create actions retain existing shared-service behaviour"

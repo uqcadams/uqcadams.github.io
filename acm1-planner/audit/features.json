@@ -233,6 +233,55 @@
       "tests": [
         "tests/session-collaboration.cjs"
       ]
+    },
+    {
+      "id": "SERVER-EVENT-ENTRY",
+      "group": "Collaboration",
+      "name": "Server home and weekly event orientation",
+      "description": "Open a server home page, select a listed weekly event or enter an alliance code, and always see the current server, event, authority and sync state.",
+      "entry_points": [
+        "Planner opening screen",
+        "Persistent Server home / switch event action"
+      ],
+      "user_actions": [
+        "Browse explicitly listed events for a server",
+        "Join with an alliance officer code or link",
+        "Create a weekly event from a private draft",
+        "Coordinator lists or unlists an existing event",
+        "Continue a clearly labelled private draft"
+      ],
+      "preconditions": [
+        "A valid server number from 1 to 999999",
+        "An access code is required to open an event plan; directory metadata alone grants no access"
+      ],
+      "business_rules": [
+        "Existing plans are never silently relabelled when browsing another server",
+        "Shared server identity is immutable; legacy events default to 759",
+        "Public listings contain metadata only and require opt-in",
+        "Coordinate outputs use the active plan\u2019s server number"
+      ],
+      "side_effects": [
+        "Reads the public directory; normal join/create actions retain existing shared-service behaviour"
+      ],
+      "related_capabilities": [
+        "SESSION-PARTICIPATION",
+        "CAP-068",
+        "CAP-069",
+        "CAP-058"
+      ],
+      "source_references": [
+        {
+          "path": "acm1-planner/index.html",
+          "symbol": "renderEventHome"
+        },
+        {
+          "path": "docs/server-event-entry.md",
+          "symbol": "Entry routes"
+        }
+      ],
+      "coverage_gaps": [
+        "Full multi-officer browser acceptance remains broader than entry-screen tests"
+      ]
     }
   ]
 }

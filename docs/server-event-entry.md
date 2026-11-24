@@ -36,3 +36,13 @@ All existing weekly rollover and APOC/UTC−2 schedule rules remain unchanged. T
 `POST /api/rooms` accepts `features.serverNumber` (default 759) and `features.eventListed` (default false). `PATCH /api/settings` permits coordinator-controlled listing changes, preserves omitted feature values and rejects server reassignment. Existing authentication and edit authority are unchanged.
 
 Verification lives in frontend `tests/event-entry.cjs` and backend `scripts/test-event-directory.mjs`, covering private-draft preservation, code/event mismatch, authoritative coordinate exports, public data minimisation, server isolation, listing permissions and immutable shared server identity.
+
+## Guest and organiser journey refinement
+
+The opening screen leads with **Join your alliance’s plan**, a directly usable access-code form and **Open shared plan**. Server selection, listed plans and organiser tools are secondary disclosures. A member arriving to confirm availability is directed to their registration link. Private exploration is a text action, with actual saved zone/player counts. An opaque backdrop prevents the underlying private map being mistaken for a shared event.
+
+Event creation is explicitly an organiser task and has two stages: **Set up a shared SvS event** and **Review your new shared event**. Setup names include the week, describe the actual copied zones/players or an empty plan, and leave public listing off. Listing copy distinguishes public name/date metadata from protected map/roster/codes. Listed existing events trigger a warning and require acknowledgement that a separate event is intended; unlisted events cannot be detected and this limitation is explained.
+
+Only the review screen exposes the final create action. A signature covering source plan, target server, name and listing preference invalidates review when those details change. Cancellation returns to joining and uses a non-submit button. Private exploration and general coordinator navigation are absent during setup so they cannot become competing exits. Creation still uses the existing room API, copies the local draft and preserves coordinator access and existing shared plans.
+
+Browser verification covered the guest screen, setup, review, cancellation and 390×844 layout without horizontal overflow. No production event was created during the check. Automated event-entry tests cover acknowledgement, review gating, changed-draft invalidation, copied counts and target-server/listing payloads, alongside the earlier link, export and private-draft preservation assertions.

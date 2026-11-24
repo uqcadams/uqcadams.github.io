@@ -3,7 +3,7 @@
   "info": {
     "title": "Weekly collaboration extension",
     "version": "1.0.0",
-    "description": "Additive to the pinned shared service baseline. Officer/coordinator codes required. Territory proposals conservatively require all allocated alliances; coordinator override is explicit. Access codes persist across weeks; unlocks and proposals do not."
+    "description": "Additive to the pinned shared service baseline. Officer/coordinator codes required. Territory proposals conservatively require all allocated alliances; coordinator override is explicit. Access codes persist across weeks; unlocks and proposals do not. Server event identity and opt-in listing controls are documented in server-event-entry.md; legacy rooms default to 759 and remain unlisted."
   },
   "servers": [
     {
@@ -198,6 +198,70 @@
                 "$ref": "#/components/schemas/Decision"
               }
             }
+          }
+        }
+      }
+    },
+    "/api/events": {
+      "get": {
+        "summary": "List explicitly discoverable open weekly events for one server",
+        "operationId": "ListServerEvents",
+        "security": [],
+        "parameters": [
+          {
+            "name": "server",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999999,
+              "default": 759
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Public event metadata only; no codes or roster data. At most 50 events.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "serverNumber": {
+                      "type": "integer"
+                    },
+                    "week": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "events": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "serverNumber": {
+                            "type": "integer"
+                          },
+                          "week": {
+                            "type": "string",
+                            "format": "date"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid server number."
           }
         }
       }

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACM1 Territory Planner — Phase 2 prototype</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1422;
+      --panel: #111f31;
+      --panel-2: #17283d;
+      --line: #2a4059;
+      --text: #e7f0fb;
+      --muted: #9eb1c7;
+      --accent: #68e4b3;
+      --accent-2: #8db7ff;
+      --warn: #f5c66b;
+      --danger: #ff8c8c;
+      --shadow: 0 18px 50px #02071166;
+      font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 30% 0%, #18314b, var(--bg) 42%); color: var(--text); }
+    button, input, select { font: inherit; }
+    button { border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); color: var(--text); padding: 9px 12px; cursor: pointer; }
+    button:hover, button:focus-visible { border-color: var(--accent); outline: none; }
+    button.primary { background: var(--accent); color: #062319; border-color: var(--accent); font-weight: 700; }
+    button.ghost { background: transparent; }
+    button.danger { color: var(--danger); }
+    .app { display: grid; grid-template-rows: auto 1fr; min-height: 100vh; }
+    .topbar { display: flex; align-items: center; gap: 18px; padding: 12px 18px; border-bottom: 1px solid var(--line); background: #0d1a2bee; position: sticky; top: 0; z-index: 4; }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: max-content; }
+    .mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--accent); color: #062319; font-weight: 900; }
+    .brand strong { display: block; }
+    .brand small, .muted { color: var(--muted); }
+    .nav { display: flex; gap: 4px; flex: 1; overflow-x: auto; }
+    .nav button { border-color: transparent; background: transparent; white-space: nowrap; }
+    .nav button.active { background: var(--panel-2); border-color: var(--line); color: var(--accent); }
+    .top-actions { display: flex; gap: 8px; align-items: center; }
+    .status { padding: 5px 9px; border-radius: 999px; background: #193b36; color: var(--accent); font-size: 12px; white-space: nowrap; }
+    .shell { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 14px; padding: 14px; min-height: 0; }
+    .workspace { min-width: 0; display: grid; grid-template-rows: auto minmax(400px, 1fr); gap: 12px; }
+    .workspace-head, .panel, .map-card { background: #101e30dd; border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+    .workspace-head { padding: 15px 18px; display: flex; justify-content: space-between; gap: 15px; align-items: start; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 20px; }
+    h2 { font-size: 17px; }
+    h3 { font-size: 14px; margin-bottom: 8px; }
+    .workspace-head p { color: var(--muted); margin-top: 4px; }
+    .composition { display: flex; gap: 6px; flex-wrap: wrap; justify-content: end; }
+    .composition button.active { color: var(--accent); border-color: var(--accent); }
+    .map-card { position: relative; overflow: hidden; min-height: 500px; background: #13263a; }
+    .map-toolbar { position: absolute; z-index: 2; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; gap: 8px; pointer-events: none; }
+    .map-toolbar > * { pointer-events: auto; }
+    .tool-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .map-toolbar button { background: #0e1b2ddd; }
+    .map { position: absolute; inset: 0; display: grid; place-items: center; background: radial-gradient(circle, #284d62 0 3%, transparent 3.5%), linear-gradient(30deg, #173049 12%, transparent 12.5%, transparent 87%, #173049 87.5%), linear-gradient(150deg, #173049 12%, transparent 12.5%, transparent 87%, #173049 87.5%); background-size: 86px 74px, 86px 148px, 86px 148px; }
+    .map::after { content: ""; position: absolute; inset: 12% 16%; border: 2px solid #68e4b388; border-radius: 44% 56% 48% 52%; box-shadow: inset 0 0 0 24px #68e4b311; pointer-events: none; }
+    .cells { display: grid; grid-template-columns: repeat(9, 42px); gap: 4px; transform: rotate(0deg); }
+    .cell { width: 42px; height: 36px; border: 1px solid #86a9bf55; background: #4a725766; clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0 50%); color: #d7efff99; font-size: 10px; display: grid; place-items: center; cursor: pointer; }
+    .cell:nth-child(3n) { background: #7a654b99; }
+    .cell.blocked { background: #9d505099; border-color: var(--danger); }
+    .cell.selected { background: #68e4b3cc; color: #062319; border-color: white; }
+    .cell.hq { background: #8db7ffdd; color: #07182e; font-weight: 800; }
+    .cell.preview { outline: 3px solid var(--warn); outline-offset: -2px; }
+    .map-legend { position: absolute; bottom: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; gap: 8px; align-items: end; }
+    .legend, .map-message { background: #0e1b2de8; border: 1px solid var(--line); border-radius: 9px; padding: 9px 11px; }
+    .legend { display: flex; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; background: #7a654b; }
+    .legend .green { background: #4a7257; }.legend .blue { background: var(--accent-2); }.legend .red { background: #9d5050; }
+    .map-message { max-width: 340px; color: var(--warn); }
+    .panel { padding: 16px; overflow: auto; min-height: 0; }
+    .panel-head { display: flex; align-items: start; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .panel-head p { color: var(--muted); margin-top: 3px; }
+    .section { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px; }
+    .stack { display: grid; gap: 9px; }
+    .row { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+    .player { display: grid; grid-template-columns: 30px 1fr auto; gap: 9px; align-items: center; padding: 9px; border: 1px solid var(--line); border-radius: 9px; background: #14243a; cursor: pointer; text-align: left; width: 100%; }
+    .player.selected { border-color: var(--accent); background: #16352f; }
+    .avatar { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: var(--accent-2); color: #06152b; font-weight: 800; }
+    .player small { display: block; color: var(--muted); }
+    .chip { display: inline-block; border-radius: 999px; padding: 3px 7px; background: #263d58; color: var(--muted); font-size: 11px; }
+    .chip.ok { background: #193b36; color: var(--accent); }.chip.warn { background: #49391e; color: var(--warn); }
+    .field { display: grid; gap: 5px; color: var(--muted); }
+    input, select { width: 100%; border: 1px solid var(--line); border-radius: 7px; background: #0d1929; color: var(--text); padding: 9px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 7px; }
+    .notice { padding: 10px; border-radius: 8px; background: #243248; border-left: 3px solid var(--accent-2); color: var(--muted); }
+    .notice.warn { border-color: var(--warn); }.notice.good { border-color: var(--accent); }
+    .journey { display: grid; gap: 8px; }
+    .step { display: flex; gap: 9px; align-items: start; color: var(--muted); }
+    .step b { display: grid; place-items: center; min-width: 22px; height: 22px; border-radius: 50%; background: var(--panel-2); color: var(--muted); }
+    .step.current { color: var(--text); }.step.current b { background: var(--accent); color: #062319; }
+    .hidden { display: none !important; }
+    .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+    .metric { padding: 12px; border: 1px solid var(--line); border-radius: 9px; background: #14243a; }.metric strong { display: block; font-size: 22px; }.metric span { color: var(--muted); font-size: 12px; }
+    .data-mode .map-card { display: none; }.data-mode .workspace { grid-template-rows: 1fr; }.data-mode .data-board { display: block; }
+    .data-board { display: none; padding: 18px; background: #101e30dd; border: 1px solid var(--line); border-radius: 12px; overflow: auto; }
+    table { width: 100%; border-collapse: collapse; }.data-board th, .data-board td { padding: 10px; text-align: left; border-bottom: 1px solid var(--line); }.data-board th { color: var(--muted); font-weight: 500; }
+    @media (max-width: 900px) { .shell { grid-template-columns: 1fr; }.panel { max-height: none; }.topbar { flex-wrap: wrap; }.nav { order: 3; flex-basis: 100%; }.top-actions { margin-left: auto; } }
+    @media (max-width: 600px) { .shell { padding: 8px; }.workspace-head { display: block; }.composition { justify-content: start; margin-top: 12px; }.map-card { min-height: 430px; }.cells { grid-template-columns: repeat(7, 34px); gap: 2px; }.cell { width: 34px; height: 30px; font-size: 9px; }.map-toolbar { top: 8px; left: 8px; right: 8px; }.map-legend { left: 8px; right: 8px; display: block; }.map-message { margin-top: 6px; max-width: none; }.overview-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="brand"><div class="mark">LZ</div><div><strong>ACM1 Territory Planner</strong><small>Phase 2 interaction prototype</small></div></div>
+      <nav class="nav" aria-label="Primary navigation">
+        <button data-nav="overview" class="active">Overview</button>
+        <button data-nav="players">Players</button>
+        <button data-nav="regions">Regions</button>
+        <button data-nav="deploy">Deploy</button>
+        <button data-nav="share">Share</button>
+      </nav>
+      <div class="top-actions"><span class="status" id="sync-status">Local draft · ready</span><button class="ghost" id="help">?</button></div>
+    </header>
+    <main class="shell">
+      <section class="workspace">
+        <div class="workspace-head">
+          <div><h1 id="page-title">Plan overview</h1><p id="page-subtitle">A task-oriented workspace for building and checking the ACM1 territory plan.</p></div>
+          <div class="composition" aria-label="Workspace composition">
+            <button data-layout="map" class="active">Map focus</button>
+            <button data-layout="split">Split view</button>
+            <button data-layout="data">Data focus</button>
+          </div>
+        </div>
+        <div class="map-card">
+          <div class="map-toolbar">
+            <div class="tool-group"><button id="blocked-tool">Blocked cells</button><button id="layers-tool">Layers</button><button id="fit-map">Fit map</button></div>
+            <div class="tool-group"><button id="zoom-out">−</button><button id="zoom-in">+</button></div>
+          </div>
+          <div class="map" aria-label="Synthetic territory map"><div class="cells" id="cells"></div></div>
+          <div class="map-legend"><div class="legend"><span><i class="green"></i>clear</span><span><i></i>mud</span><span><i class="blue"></i>HQ</span><span><i class="red"></i>blocked</span></div><div class="map-message" id="map-message">Select a player or task to begin.</div></div>
+        </div>
+        <div class="data-board" id="data-board">
+          <h2>Plan data</h2><p class="muted" style="margin:5px 0 14px">A data-focused composition for operators who need to scan state before acting.</p>
+          <table><thead><tr><th>Player</th><th>Alliance</th><th>Position</th><th>State</th></tr></thead><tbody id="data-rows"></tbody></table>
+        </div>
+      </section>
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const state = {
+        nav: 'overview', layout: 'map', selected: 'mira', task: null, blockedMode: false,
+        players: [
+          { id: 'mira', name: 'Mira Chen', alliance: 'ACM1', level: 29, pos: 'C7', status: 'Planned', locked: false },
+          { id: 'dax', name: 'Dax Rho', alliance: 'ACM1', level: 27, pos: 'F5', status: 'Arrived', locked: true },
+          { id: 'sana', name: 'Sana Vale', alliance: 'Northstar', level: 26, pos: 'B8', status: 'Waiting', locked: false }
+        ],
+        regions: [{ name: 'ACM1 Core', share: 62, members: 2 }, { name: 'Northstar', share: 38, members: 1 }]
+      };
+      const $ = (s) => document.querySelector(s);
+      const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const current = () => state.players.find((p) => p.id === state.selected);
+      function setNav(nav) { state.nav = nav; state.task = nav === 'players' ? 'players' : null; render(); }
+      function setLayout(layout) { state.layout = layout; document.body.classList.toggle('data-mode', layout === 'data'); renderPanel(); }
+      function selectPlayer(id) { state.selected = id; state.nav = 'players'; state.task = 'player'; render(); }
+      function cells() {
+        const blocked = new Set(['B3', 'G7', 'H2']), hqs = new Set(state.players.filter((p) => p.pos).map((p) => p.pos));
+        return Array.from({ length: 63 }, (_, i) => {
+          const col = String.fromCharCode(65 + (i % 9)), row = Math.floor(i / 9) + 1, key = col + row;
+          const cls = ['cell', blocked.has(key) ? 'blocked' : '', hqs.has(key) ? 'hq' : '', state.task === 'place' && key === 'D4' ? 'preview' : '', state.task === 'place' && key === 'D5' ? 'selected' : ''].filter(Boolean).join(' ');
+          return `<button class="${cls}" data-cell="${key}" aria-label="Cell ${key}">${key}</button>`;
+        }).join('');
+      }
+      function panelOverview() {
+        return `<div class="panel-head"><div><h2>Overview</h2><p>Choose the next task without losing map context.</p></div><span class="chip ok">Ready to plan</span></div>
+          <div class="overview-grid"><div class="metric"><strong>3</strong><span>players</span></div><div class="metric"><strong>2</strong><span>regions</span></div><div class="metric"><strong>1</strong><span>waiting</span></div><div class="metric"><strong>0</strong><span>conflicts</span></div></div>
+          <div class="section"><h3>Suggested next actions</h3><div class="stack"><button class="primary" data-action="add">Add a player</button><button data-action="regions">Review alliance regions</button><button data-action="deploy">Preview deployment</button></div></div>
+          <div class="section"><h3>Workspace state</h3><div class="stack"><div class="notice good">Plan changes are local and unapplied.</div><div class="notice">Shared synchronisation and deployment publication are separate actions.</div></div></div>`;
+      }
+      function playerList() {
+        return state.players.map((p) => `<button class="player ${p.id === state.selected ? 'selected' : ''}" data-player="${p.id}"><span class="avatar">${esc(p.level)}</span><span><b>${esc(p.name)}</b><small>${esc(p.alliance)} · ${esc(p.pos || 'Waiting')}</small></span><span class="chip ${p.status === 'Arrived' ? 'ok' : ''}">${esc(p.status)}</span></button>`).join('');
+      }
+      function panelPlayers() {
+        const p = current();
+        if (state.task === 'place') return panelPlacement();
+        if (state.task === 'add') return panelAdd();
+        return `<div class="panel-head"><div><h2>Players</h2><p>Roster, placement and HQ actions stay in one context.</p></div><button class="primary" data-action="add">＋ Add</button></div>
+          <div class="field"><label for="search">Search players</label><input id="search" placeholder="Name or alliance"></div>
+          <div class="section"><div class="row"><h3>Roster</h3><span class="chip">${state.players.length} total</span></div><div class="stack">${playerList()}</div></div>
+          <div class="section"><h3>${esc(p.name)}</h3><div class="notice ${p.pos ? 'good' : 'warn'}">${p.pos ? `HQ at ${esc(p.pos)} · ${p.status}` : 'Waiting for a placement'}</div><div class="actions" style="margin-top:9px"><button data-action="place">${p.pos ? 'Move HQ' : 'Place on map'}</button><button data-action="lock">${p.locked ? 'Unlock' : 'Lock'} position</button><button data-action="arrive">${p.status === 'Arrived' ? 'Mark planned' : 'Mark arrived'}</button></div></div>`;
+      }
+      function panelAdd() {
+        return `<div class="panel-head"><div><h2>Add player</h2><p>Identity first, placement second. Cancel is always safe.</p></div><button class="ghost" data-action="cancel">Cancel</button></div>
+          <div class="journey"><div class="step current"><b>1</b><span><strong>Player details</strong><br><span class="muted">Synthetic data for this prototype.</span></span></div><div class="step"><b>2</b><span>Choose a map location</span></div><div class="step"><b>3</b><span>Confirm or cancel</span></div></div>
+          <div class="section stack"><label class="field">Player name<input id="new-name" value="Kai Morgan"></label><div class="form-grid"><label class="field">Alliance<input value="ACM1"></label><label class="field">HQ level<input value="28"></label></div><label class="field"><span>Position</span><button data-action="choose-place">Choose position on map</button></label><div class="notice">Placement validation will check the full HQ footprint, terrain and blocked cells before commit.</div></div>`;
+      }
+      function panelPlacement() {
+        const p = current();
+        return `<div class="panel-head"><div><h2>Place ${esc(p.name)}</h2><p>Choose a clear cell. The map remains the working context.</p></div><button class="ghost" data-action="cancel">Cancel</button></div>
+          <div class="journey"><div class="step"><b>1</b><span>Player details complete</span></div><div class="step current"><b>2</b><span><strong>Choose location</strong><br><span class="muted">Try D5 (clear) or D4 (blocked preview).</span></span></div><div class="step"><b>3</b><span>Confirm placement</span></div></div>
+          <div class="section stack"><div class="notice good"><strong>D5 is valid.</strong><br>Clear seven-cell footprint · centre outside mud · can shield.</div><div class="notice warn"><strong>D4 is blocked.</strong><br>Full footprint overlaps a blocked cell.</div><div class="actions"><button class="primary" data-action="confirm-place">Confirm at D5</button><button data-action="cancel">Cancel placement</button></div></div>
+          <div class="section"><h3>After placement</h3><div class="actions"><button data-action="lock">Lock position</button><button data-action="copy">Copy coordinates</button><button data-action="arrive">Mark arrived</button></div></div>`;
+      }
+      function panelRegions() {
+        return `<div class="panel-head"><div><h2>Regions</h2><p>Define territory, then review allocation.</p></div><button class="primary" data-action="draw">＋ Draw</button></div><div class="stack">${state.regions.map((r) => `<div class="player"><span class="avatar">⌁</span><span><b>${esc(r.name)}</b><small>${r.members} players · ${r.share}% allocation</small></span><button data-action="focus">Focus</button></div>`).join('')}</div><div class="section"><h3>Contextual tools</h3><div class="actions"><button data-action="draw">Draw boundary</button><button data-action="blocked">Blocked cells</button><button data-action="layouts">Generate layout</button></div></div><div class="section"><div class="notice">Blocked-cell editing and placement validation stay visible during map work; they are not hidden in Advanced.</div></div>`;
+      }
+      function panelDeploy() {
+        return `<div class="panel-head"><div><h2>Deploy</h2><p>Preview is non-mutating; apply and publish are separate.</p></div><span class="chip warn">Preview ready</span></div><div class="stack"><div class="notice good"><strong>ACM1 · 2 eligible</strong><br>Terrain preference: mud first · 2 positions available</div><button class="primary" data-action="preview">Preview placement</button><button data-action="apply">Apply preview</button><button class="danger" data-action="recall">Recall deployments</button></div><div class="section"><h3>Publication status</h3><div class="stack"><div class="row"><span>Plan change</span><span class="chip ok">Local only</span></div><div class="row"><span>Shared synchronisation</span><span class="chip">Not connected</span></div><div class="row"><span>Deployment publication</span><span class="chip">Not enabled</span></div></div></div>`;
+      }
+      function panelShare() {
+        return `<div class="panel-head"><div><h2>Share</h2><p>Room state, roster source and publishing remain distinct.</p></div><span class="chip">Local plan</span></div><div class="stack"><button class="primary" data-action="create-room">Create shared room</button><button data-action="join-room">Join with code</button></div><div class="section"><h3>Connected systems</h3><div class="stack"><div class="notice">Shared synchronisation<br><span class="muted">No room connected · local changes are safe.</span></div><div class="notice">Roster source<br><span class="muted">No source linked · map positions stay local.</span></div><div class="notice">Deployment publication<br><span class="muted">Requires explicit write authority.</span></div></div></div>`;
+      }
+      function renderPanel() {
+        const panel = $('#panel');
+        panel.innerHTML = state.nav === 'overview' ? panelOverview() : state.nav === 'players' ? panelPlayers() : state.nav === 'regions' ? panelRegions() : state.nav === 'deploy' ? panelDeploy() : panelShare();
+        panel.querySelectorAll('[data-player]').forEach((el) => el.onclick = () => selectPlayer(el.dataset.player));
+        panel.querySelectorAll('[data-action]').forEach((el) => el.onclick = () => action(el.dataset.action));
+      }
+      function renderData() { $('#data-rows').innerHTML = state.players.map((p) => `<tr><td>${esc(p.name)}</td><td>${esc(p.alliance)}</td><td>${esc(p.pos || 'Waiting')}</td><td>${esc(p.status)}${p.locked ? ' · Locked' : ''}</td></tr>`).join(''); }
+      function action(type) {
+        if (type === 'add') { state.nav = 'players'; state.task = 'add'; }
+        if (type === 'place' || type === 'choose-place') { state.nav = 'players'; state.task = 'place'; }
+        if (type === 'cancel') state.task = null;
+        if (type === 'confirm-place') { current().pos = 'D5'; current().status = 'Planned'; state.task = null; $('#sync-status').textContent = 'Local draft · changed'; }
+        if (type === 'lock') { current().locked = !current().locked; }
+        if (type === 'arrive') { current().status = current().status === 'Arrived' ? 'Planned' : 'Arrived'; }
+        if (type === 'copy') { $('#map-message').textContent = 'Coordinates copied for ' + current().name + ' (synthetic).'; }
+        if (type === 'regions') state.nav = 'regions';
+        if (type === 'deploy' || type === 'preview' || type === 'apply' || type === 'recall') state.nav = 'deploy';
+        if (type === 'share' || type === 'create-room' || type === 'join-room') state.nav = 'share';
+        if (type === 'draw' || type === 'layouts') state.nav = 'regions';
+        if (type === 'blocked') state.blockedMode = true;
+        render();
+      }
+      function render() {
+        document.querySelectorAll('[data-nav]').forEach((b) => b.classList.toggle('active', b.dataset.nav === state.nav));
+        document.querySelectorAll('[data-layout]').forEach((b) => b.classList.toggle('active', b.dataset.layout === state.layout));
+        $('#page-title').textContent = ({ overview: 'Plan overview', players: 'Players and placement', regions: 'Alliance regions', deploy: 'Deployment workspace', share: 'Share and coordinate' })[state.nav];
+        $('#page-subtitle').textContent = ({ overview: 'Choose the next task without losing map context.', players: 'Maintain the roster and place headquarters in one continuous journey.', regions: 'Define territory and review allocation without leaving the map.', deploy: 'Preview, apply and publish with explicit state boundaries.', share: 'Coordinate room state, roster sources and publication separately.' })[state.nav];
+        $('#cells').innerHTML = cells(); $('#data-rows').innerHTML = ''; renderData(); renderPanel();
+        $('#map-message').textContent = state.blockedMode ? 'Blocked-cell editing is active. Select a red cell to toggle it.' : state.task === 'place' ? 'Placement mode: D5 is selected for preview.' : 'Map context stays visible while you work.';
+        document.querySelectorAll('[data-cell]').forEach((b) => b.onclick = () => { if (state.task === 'place') $('#map-message').textContent = b.dataset.cell === 'D4' ? 'Blocked: full HQ footprint overlaps a blocked cell.' : 'D5 is valid. Confirm placement in the task panel.'; else if (state.blockedMode) $('#map-message').textContent = 'Synthetic blocked-cell edit: ' + b.dataset.cell; });
+      }
+      document.querySelectorAll('[data-nav]').forEach((b) => b.onclick = () => setNav(b.dataset.nav));
+      document.querySelectorAll('[data-layout]').forEach((b) => b.onclick = () => setLayout(b.dataset.layout));
+      $('#blocked-tool').onclick = () => { state.blockedMode = !state.blockedMode; render(); };
+      $('#help').onclick = () => { $('#map-message').textContent = 'Prototype only: no production storage, rooms, registration records or deployments are touched.'; };
+      $('#fit-map').onclick = () => { $('#map-message').textContent = 'Map fit to all regions (synthetic).'; };
+      $('#zoom-in').onclick = () => { $('#map-message').textContent = 'Zoom in (synthetic).'; };
+      $('#zoom-out').onclick = () => { $('#map-message').textContent = 'Zoom out (synthetic).'; };
+      render();
+    })();
+  </script>
+</body>
+</html>
